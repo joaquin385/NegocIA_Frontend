@@ -130,3 +130,25 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# React specific
+*.tsbuildinfo
+
+# Vite specific
+.vite/
+dist-ssr/
+
+# shadcn/ui specific
+components.json.bak
+
+# Package manager specific
+package-lock.json.bak
+yarn.lock.bak
+pnpm-lock.yaml.bak
+
+# Context and documentation files (optional - remove if you want to version them)
+# CONTEXT.md
+# PROJECT_NOTES.md
+# DEVELOPMENT_NOTES.md
+# TODO.md
+# IDEAS.md

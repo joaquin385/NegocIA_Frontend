@@ -1,0 +1,4 @@
+# Esta carpeta contiene utilidades y configuraciones compartidas
+# - utils.js: Funciones utilitarias para Shadcn/ui
+# - mockData.js: Datos simulados para el prototipo (futuro)
+# - constants.js: Constantes de la aplicación (futuro) 
