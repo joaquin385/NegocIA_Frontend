@@ -1,158 +1,159 @@
-import { useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { useParams } from 'react-router-dom'
+import ExpandableSidebar from '@/components/ExpandableSidebar'
 
 const AnalisisDimension = () => {
-  const location = useLocation()
-  
-  // Extraer la dimensión de la URL
-  const dimension = location.pathname.split('/')[2] || 'ventas'
-  
+  const { dimension } = useParams()
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
   const dimensionTitles = {
-    ventas: 'Análisis de Ventas',
-    tickets: 'Análisis de Tickets',
-    productos: 'Análisis de Productos',
-    clientes: 'Análisis de Clientes',
-    proveedores: 'Análisis de Proveedores',
-    inventario: 'Análisis de Inventario',
-    finanzas: 'Análisis Financiero'
+    ventas: 'Análisis por Dimensión - Ventas',
+    clientes: 'Análisis por Dimensión - Clientes',
+    productos: 'Análisis por Dimensión - Productos',
+    proveedores: 'Análisis por Dimensión - Proveedores',
+    finanzas: 'Análisis por Dimensión - Finanzas'
   }
 
   const dimensionData = {
     ventas: {
-      metric: '$124,500',
-      change: '+12.5%',
-      changeType: 'positive',
-      description: 'Ventas totales del período actual'
-    },
-    tickets: {
-      metric: '342',
-      change: '+8.2%',
-      changeType: 'positive',
-      description: 'Total de tickets procesados'
-    },
-    productos: {
-      metric: '856',
-      change: '+5.1%',
-      changeType: 'positive',
-      description: 'Productos en catálogo activo'
+      metricas: ['Ticket promedio', 'Valor promedio ($)', 'Unidades promedio'],
+      valores: ['$1,234', '4.2', '85%'],
+      descripcion: 'Análisis detallado de las ventas por diferentes dimensiones'
     },
     clientes: {
-      metric: '1,247',
-      change: '+15.3%',
-      changeType: 'positive',
-      description: 'Clientes activos registrados'
+      metricas: ['Clientes activos', 'Retención', 'Satisfacción'],
+      valores: ['1,247', '92%', '4.8/5'],
+      descripcion: 'Análisis del comportamiento y satisfacción de clientes'
+    },
+    productos: {
+      metricas: ['Productos vendidos', 'Margen promedio', 'Rotación'],
+      valores: ['856', '23%', '15 días'],
+      descripcion: 'Análisis del rendimiento de productos'
     },
     proveedores: {
-      metric: '89',
-      change: '+2.1%',
-      changeType: 'positive',
-      description: 'Proveedores activos'
-    },
-    inventario: {
-      metric: '12,450',
-      change: '-3.2%',
-      changeType: 'negative',
-      description: 'Unidades en inventario'
+      metricas: ['Proveedores activos', 'Tiempo entrega', 'Calidad'],
+      valores: ['45', '3.2 días', '4.6/5'],
+      descripcion: 'Análisis de la relación con proveedores'
     },
     finanzas: {
-      metric: '$89,200',
-      change: '+18.7%',
-      changeType: 'positive',
-      description: 'Ingresos netos del período'
+      metricas: ['Margen neto', 'Liquidez', 'ROI'],
+      valores: ['18%', '2.4', '24%'],
+      descripcion: 'Análisis de la salud financiera'
     }
   }
 
-  const currentData = dimensionData[dimension]
+  const currentData = dimensionData[dimension] || dimensionData.ventas
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            {dimensionTitles[dimension]}
-          </h1>
-          <p className="text-gray-600">
-            Análisis detallado de la dimensión {dimension}
-          </p>
-        </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Subsección desplegable */}
+      <ExpandableSidebar 
+        title={`Ayuda - ${dimensionTitles[dimension]}`}
+        iconPosition="right"
+        onToggle={(isOpen) => setIsSidebarOpen(isOpen)}
+      >
+        <div className="space-y-6">
+          <div className="bg-blue-50 rounded-lg p-4">
+            <h3 className="text-lg font-semibold text-blue-900 mb-3">
+              {dimensionTitles[dimension]}
+            </h3>
+            <p className="text-blue-800 text-sm">
+              {currentData.descripcion}
+            </p>
+          </div>
 
-        {/* Métrica principal */}
-        <div className="bg-white rounded-lg shadow p-8 mb-8">
-          <div className="text-center">
-            <div className="text-4xl font-bold text-gray-900 mb-2">
-              {currentData.metric}
+          <div className="space-y-4">
+            <h4 className="font-semibold text-gray-800">Métricas Clave</h4>
+            <div className="space-y-2">
+              {currentData.metricas.map((metrica, index) => (
+                <div key={index} className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                  <span className="text-sm text-gray-700">{metrica}</span>
+                  <span className="text-sm font-medium text-gray-900">{currentData.valores[index]}</span>
+                </div>
+              ))}
             </div>
-            <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-              currentData.changeType === 'positive' 
-                ? 'bg-green-100 text-green-800' 
-                : 'bg-red-100 text-red-800'
-            }`}>
-              {currentData.change}
-            </div>
-            <p className="text-gray-600 mt-2">{currentData.description}</p>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-semibold text-gray-800">Filtros Disponibles</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• Fecha inicio y fin</li>
+              <li>• Categoría/Producto</li>
+              <li>• Región geográfica</li>
+              <li>• Segmento de cliente</li>
+            </ul>
           </div>
         </div>
+      </ExpandableSidebar>
 
-        {/* Gráficos y análisis */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* Contenido principal con desplazamiento */}
+      <div className={`
+        transition-all duration-300 ease-in-out
+        ${isSidebarOpen ? 'ml-96' : 'ml-0'}
+        p-6
+      `}>
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              {dimensionTitles[dimension]}
+            </h1>
+            <p className="text-gray-600">
+              {currentData.descripcion}
+            </p>
+          </div>
+
+          {/* Filtros */}
+          <div className="bg-white rounded-lg shadow p-6 mb-8">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Filtros de Análisis</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Fecha inicio:
+                </label>
+                <input
+                  type="date"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Fecha fin:
+                </label>
+                <input
+                  type="date"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Categoría / Producto:
+                </label>
+                <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <option>Todas las categorías</option>
+                  <option>Electrónicos</option>
+                  <option>Ropa</option>
+                  <option>Alimentos</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {/* Métricas principales */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {currentData.metricas.map((metrica, index) => (
+              <div key={index} className="bg-white rounded-lg shadow p-6">
+                <h4 className="text-lg font-medium text-gray-900 mb-2">{metrica}</h4>
+                <p className="text-3xl font-bold text-blue-600">{currentData.valores[index]}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Gráfico de ejemplo */}
           <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Tendencia Temporal</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Evolución Temporal</h3>
             <div className="h-64 bg-gray-100 rounded-lg flex items-center justify-center">
-              <p className="text-gray-500">Gráfico de tendencia para {dimension}</p>
+              <p className="text-gray-500">Gráfico de evolución de {dimension}</p>
             </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Distribución</h3>
-            <div className="h-64 bg-gray-100 rounded-lg flex items-center justify-center">
-              <p className="text-gray-500">Gráfico de distribución para {dimension}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Tabla de datos */}
-        <div className="bg-white rounded-lg shadow p-6 mt-6">
-          <h3 className="text-lg font-medium text-gray-900 mb-4">Datos Detallados</h3>
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Indicador
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Valor Actual
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Cambio
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Estado
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                <tr>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    Total
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    {currentData.metric}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    {currentData.change}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                      currentData.changeType === 'positive' 
-                        ? 'bg-green-100 text-green-800' 
-                        : 'bg-red-100 text-red-800'
-                    }`}>
-                      {currentData.changeType === 'positive' ? 'Mejorando' : 'Disminuyendo'}
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
