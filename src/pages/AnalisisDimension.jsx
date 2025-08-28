@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useAtom } from 'jotai'
 import { useParams } from 'react-router-dom'
 import ExpandableSidebar from '@/components/ExpandableSidebar'
+import { sidebarOpenAtom } from '@/stores'
 
 const AnalisisDimension = () => {
   const { dimension } = useParams()
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [isSidebarOpen] = useAtom(sidebarOpenAtom)
 
   const dimensionTitles = {
     ventas: 'Análisis por Dimensión - Ventas',
@@ -45,12 +46,11 @@ const AnalisisDimension = () => {
   const currentData = dimensionData[dimension] || dimensionData.ventas
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 relative">
       {/* Subsección desplegable */}
       <ExpandableSidebar 
         title={`Ayuda - ${dimensionTitles[dimension]}`}
-        iconPosition="right"
-        onToggle={(isOpen) => setIsSidebarOpen(isOpen)}
+        iconPosition="left"
       >
         <div className="space-y-6">
           <div className="bg-blue-50 rounded-lg p-4">
@@ -89,14 +89,17 @@ const AnalisisDimension = () => {
       {/* Contenido principal con desplazamiento */}
       <div className={`
         transition-all duration-300 ease-in-out
-        ${isSidebarOpen ? 'ml-96' : 'ml-0'}
+        ${isSidebarOpen ? 'ml-[20%]' : 'ml-24'}
         p-6
       `}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              {dimensionTitles[dimension]}
-            </h1>
+            <div className="flex items-center">
+              {/* Solo el título, sin icono duplicado */}
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                {dimensionTitles[dimension]}
+              </h1>
+            </div>
             <p className="text-gray-600">
               {currentData.descripcion}
             </p>

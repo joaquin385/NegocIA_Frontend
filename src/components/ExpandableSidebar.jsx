@@ -1,30 +1,21 @@
-import { useState, useEffect } from 'react'
+import { useAtom } from 'jotai'
 import { cn } from '@/lib/utils'
+import { sidebarOpenAtom } from '@/stores'
 
-const ExpandableSidebar = ({ children, title = "Ayuda educativa", iconPosition = "left", onToggle }) => {
-  const [isExpanded, setIsExpanded] = useState(false)
+const ExpandableSidebar = ({ children, title = "Ayuda educativa", iconPosition = "left" }) => {
+  const [isExpanded, setIsExpanded] = useAtom(sidebarOpenAtom)
 
   const toggleSidebar = () => {
-    const newState = !isExpanded
-    setIsExpanded(newState)
-    if (onToggle) {
-      onToggle(newState)
-    }
+    setIsExpanded(!isExpanded)
   }
-
-  // Notificar el estado inicial
-  useEffect(() => {
-    if (onToggle) {
-      onToggle(false)
-    }
-  }, [])
 
   return (
     <>
-      {/* Botón del icono de pregunta - sticky para que se mueva con el scroll */}
+      {/* Botón del icono de pregunta - posicionado en línea con el título */}
       <div className={cn(
-        "sticky top-6 z-50",
-        iconPosition === "left" ? "left-4" : "right-4"
+        "absolute z-50 top-0 transition-all duration-300 ease-in-out",
+        iconPosition === "left" ? "left-8" : "right-8",
+        isExpanded && "left-[20%]"
       )}>
         <button
           onClick={toggleSidebar}
@@ -42,10 +33,10 @@ const ExpandableSidebar = ({ children, title = "Ayuda educativa", iconPosition =
       {/* Sidebar desplegable */}
       <div
         className={cn(
-          "fixed left-0 top-0 h-full bg-white shadow-2xl z-50 transition-transform duration-300 ease-in-out transform",
+          "absolute left-0 top-0 h-full bg-white shadow-2xl z-50 transition-transform duration-300 ease-in-out transform",
           isExpanded ? "translate-x-0" : "-translate-x-full"
         )}
-        style={{ width: '400px' }}
+        style={{ width: '20%' }}
       >
         {/* Header del sidebar */}
         <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-6">

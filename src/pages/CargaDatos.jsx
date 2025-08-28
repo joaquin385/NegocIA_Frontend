@@ -1,16 +1,16 @@
-import { useState } from 'react'
+import { useAtom } from 'jotai'
 import ExpandableSidebar from '@/components/ExpandableSidebar'
+import { sidebarOpenAtom } from '@/stores'
 
 const CargaDatos = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [isSidebarOpen] = useAtom(sidebarOpenAtom)
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 relative">
       {/* Subsección desplegable */}
       <ExpandableSidebar 
         title="Ayuda - Carga de Datos"
-        iconPosition="right"
-        onToggle={(isOpen) => setIsSidebarOpen(isOpen)}
+        iconPosition="left"
       >
         <div className="space-y-6">
           <div className="bg-blue-50 rounded-lg p-4">
@@ -59,14 +59,17 @@ const CargaDatos = () => {
       {/* Contenido principal con desplazamiento */}
       <div className={`
         transition-all duration-300 ease-in-out
-        ${isSidebarOpen ? 'ml-96' : 'ml-0'}
+        ${isSidebarOpen ? 'ml-[20%]' : 'ml-24'}
         p-6
       `}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Carga de Datos
-            </h1>
+            <div className="flex items-center">
+              {/* Solo el título, sin icono duplicado */}
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                Carga de Datos
+              </h1>
+            </div>
             <p className="text-gray-600">
               Sistema para cargar y procesar datos de diferentes fuentes
             </p>

@@ -1,16 +1,16 @@
-import { useState } from 'react'
+import { useAtom } from 'jotai'
 import ExpandableSidebar from '@/components/ExpandableSidebar'
+import { sidebarOpenAtom } from '@/stores'
 
 const PanelGeneral = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [isSidebarOpen] = useAtom(sidebarOpenAtom)
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 relative">
       {/* Subsección desplegable */}
       <ExpandableSidebar 
         title="Ayuda educativa - Panel General" 
-        iconPosition="right"
-        onToggle={(isOpen) => setIsSidebarOpen(isOpen)}
+        iconPosition="left"
       >
         <div className="space-y-6">
           <div className="bg-blue-50 rounded-lg p-4">
@@ -54,24 +54,24 @@ const PanelGeneral = () => {
         </div>
       </ExpandableSidebar>
 
-      {/* Contenido principal con desplazamiento CORREGIDO */}
+      {/* Contenido principal con desplazamiento */}
       <div className={`
         transition-all duration-300 ease-in-out
-        ${isSidebarOpen ? 'ml-96' : 'ml-0'}
+        ${isSidebarOpen ? 'ml-[20%]' : 'ml-24'}
         p-6
       `}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 relative">
             <div className="flex items-center justify-between">
-              <div>
+              <div className="flex items-center">
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">
                   Panel General
                 </h1>
-                <p className="text-gray-600">
-                  Vista general de los indicadores clave de NegocIA
-                </p>
               </div>
             </div>
+            <p className="text-gray-600">
+              Vista general de los indicadores clave de NegocIA
+            </p>
           </div>
 
           {/* Grid de tarjetas de métricas */}
