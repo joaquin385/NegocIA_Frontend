@@ -12,19 +12,19 @@ const CargaDatos = () => {
         title="Ayuda - Carga de Datos"
         iconPosition="left"
       >
-        <div className="space-y-6">
+        <div className="space-y-5">
           <div className="bg-blue-50 rounded-lg p-4">
-            <h3 className="text-lg font-semibold text-blue-900 mb-3">
+            <h3 className="text-base font-semibold text-blue-900 mb-3">
               Carga de Datos
             </h3>
-            <p className="text-blue-800 text-sm">
+            <p className="text-blue-800 text-xs">
               Sistema para cargar, validar y procesar datos de diferentes fuentes en NegocIA.
             </p>
           </div>
 
           <div className="space-y-4">
             <h4 className="font-semibold text-gray-800">Tipos de Datos Soportados</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-xs text-gray-600">
               <li>• Archivos CSV y Excel</li>
               <li>• APIs externas</li>
               <li>• Bases de datos</li>
@@ -34,7 +34,7 @@ const CargaDatos = () => {
 
           <div className="space-y-4">
             <h4 className="font-semibold text-gray-800">Proceso de Carga</h4>
-            <ol className="space-y-2 text-sm text-gray-600 list-decimal list-inside">
+            <ol className="space-y-2 text-xs text-gray-600 list-decimal list-inside">
               <li>Seleccionar archivo o fuente de datos</li>
               <li>Validar formato y estructura</li>
               <li>Mapear campos a la base de datos</li>
@@ -45,7 +45,7 @@ const CargaDatos = () => {
 
           <div className="space-y-4">
             <h4 className="font-semibold text-gray-800">Validaciones</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-xs text-gray-600">
               <li>• Formato de archivo</li>
               <li>• Tipos de datos</li>
               <li>• Campos obligatorios</li>
@@ -60,13 +60,13 @@ const CargaDatos = () => {
       <div className={`
         transition-all duration-300 ease-in-out
         ${isSidebarOpen ? 'ml-[20%]' : 'ml-24'}
-        p-6
+        p-5
       `}>
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-7">
             <div className="flex items-center">
               {/* Solo el título, sin icono duplicado */}
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              <h1 className="text-2xl font-bold text-gray-900 mb-2">
                 Carga de Datos
               </h1>
             </div>
@@ -76,35 +76,35 @@ const CargaDatos = () => {
           </div>
 
           {/* Estado de carga */}
-          <div className="bg-white rounded-lg shadow p-6 mb-8">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Estado del Sistema</h3>
+          <div className="bg-white rounded-lg shadow p-5 mb-7">
+            <h3 className="text-base font-medium text-gray-900 mb-4">Estado del Sistema</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="text-center p-4 bg-green-50 rounded-lg">
-                <div className="text-2xl font-bold text-green-600">Online</div>
-                <div className="text-sm text-green-600">Sistema</div>
+                <div className="text-xl font-bold text-green-600">Online</div>
+                <div className="text-xs text-green-600">Sistema</div>
               </div>
               <div className="text-center p-4 bg-blue-50 rounded-lg">
-                <div className="text-2xl font-bold text-blue-600">0</div>
-                <div className="text-sm text-blue-600">Cargas en Proceso</div>
+                <div className="text-xl font-bold text-blue-600">0</div>
+                <div className="text-xs text-blue-600">Cargas en Proceso</div>
               </div>
               <div className="text-center p-4 bg-purple-50 rounded-lg">
-                <div className="text-2xl font-bold text-purple-600">24</div>
-                <div className="text-sm text-purple-600">Cargas Exitosas Hoy</div>
+                <div className="text-xl font-bold text-purple-600">24</div>
+                <div className="text-xs text-purple-600">Cargas Exitosas Hoy</div>
               </div>
               <div className="text-center p-4 bg-orange-50 rounded-lg">
-                <div className="text-2xl font-bold text-orange-600">2</div>
-                <div className="text-sm text-orange-600">Errores Hoy</div>
+                <div className="text-xl font-bold text-orange-600">2</div>
+                <div className="text-xs text-orange-600">Errores Hoy</div>
               </div>
             </div>
           </div>
 
           {/* Opciones de carga */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-            <div className="bg-white rounded-lg shadow p-6">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">Carga de Archivo</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-7">
+            <div className="bg-white rounded-lg shadow p-5">
+              <h3 className="text-base font-medium text-gray-900 mb-4">Carga de Archivo</h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-xs font-medium text-gray-700 mb-2">
                     Seleccionar archivo:
                   </label>
                   <input
@@ -114,7 +114,7 @@ const CargaDatos = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-xs font-medium text-gray-700 mb-2">
                     Tipo de datos:
                   </label>
                   <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -130,11 +130,11 @@ const CargaDatos = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow p-6">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">Carga desde API</h3>
+            <div className="bg-white rounded-lg shadow p-5">
+              <h3 className="text-base font-medium text-gray-900 mb-4">Carga desde API</h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-xs font-medium text-gray-700 mb-2">
                     URL de la API:
                   </label>
                   <input
@@ -144,7 +144,7 @@ const CargaDatos = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-xs font-medium text-gray-700 mb-2">
                     Clave de API:
                   </label>
                   <input
@@ -161,84 +161,84 @@ const CargaDatos = () => {
           </div>
 
           {/* Historial de cargas */}
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Historial de Cargas</h3>
+          <div className="bg-white rounded-lg shadow p-5">
+            <h3 className="text-base font-medium text-gray-900 mb-4">Historial de Cargas</h3>
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Fecha
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Tipo
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Registros
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Estado
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-5 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Acciones
                     </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       26/08/2025 14:30
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       Ventas CSV
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       1,247
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-5 py-4 whitespace-nowrap">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                         Completado
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       <button className="text-blue-600 hover:text-blue-900">Ver detalles</button>
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       26/08/2025 12:15
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       Clientes API
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       856
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-5 py-4 whitespace-nowrap">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                         Completado
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       <button className="text-blue-600 hover:text-blue-900">Ver detalles</button>
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       26/08/2025 10:45
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       Productos Excel
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       342
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-5 py-4 whitespace-nowrap">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
                         Error
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-5 py-4 whitespace-nowrap text-xs text-gray-900">
                       <button className="text-red-600 hover:text-red-900">Reintentar</button>
                     </td>
                   </tr>

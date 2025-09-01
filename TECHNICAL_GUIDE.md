@@ -23,6 +23,9 @@
 - **Shadcn/ui** - Componentes de UI reutilizables
 - **Radix UI** - Componentes primitivos accesibles
 
+### Visualización de Datos
+- **Recharts** - Librería React para gráficos interactivos y responsivos (más fácil de usar que Chart.js)
+
 ## 📦 Instalación de Dependencias
 
 ### 1. React Router
@@ -49,6 +52,11 @@ npx shadcn@latest init
 ### 5. Radix UI (se instala automáticamente con shadcn/ui)
 ```bash
 npm install @radix-ui/react-*
+```
+
+### 6. Recharts
+```bash
+npm install recharts
 ```
 
 ## 🗂️ Estructura de Carpetas Recomendada
@@ -147,6 +155,54 @@ function UserProfile() {
 }
 ```
 
+## 📊 Configuración de Recharts
+
+### Importación de componentes
+```jsx
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+```
+
+### Implementación básica de gráfico
+```jsx
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+function GraficoVentas() {
+  const datos = [
+    { fecha: 'Ene', ventas: 12000 },
+    { fecha: 'Feb', ventas: 19000 },
+    { fecha: 'Mar', ventas: 3000 },
+    { fecha: 'Abr', ventas: 5000 }
+  ];
+
+  return (
+    <div className="h-64">
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart data={datos}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="fecha" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line 
+            type="monotone" 
+            dataKey="ventas" 
+            stroke="#3b82f6" 
+            strokeWidth={2}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}
+```
+
+### Ventajas de Recharts
+- **React Native**: Componentes declarativos que se integran perfectamente con React
+- **Sin conflictos**: No hay problemas de canvas o instancias
+- **Responsive**: Automáticamente se adapta al tamaño del contenedor
+- **TypeScript**: Soporte nativo para TypeScript
+- **Performance**: Optimizado para React con re-renders eficientes
+
 ## 🎨 Configuración de Shadcn/ui
 
 ### components.json
@@ -192,6 +248,27 @@ export const mockApiCall = (data, delay = 1000) => {
 };
 ```
 
+### Datos para gráficos
+```javascript
+// src/lib/chartData.js
+export const ventasDiarias = [
+  { fecha: '2025-07-20', ventas: 85000 },
+  { fecha: '2025-07-21', ventas: 92000 },
+  { fecha: '2025-07-22', ventas: 78000 },
+  // ... más datos
+];
+
+export const procesarDatosGrafico = (datos, agrupacion = 'dia') => {
+  return datos.map(item => ({
+    x: new Date(item.fecha).toLocaleDateString('es-ES', { 
+      day: '2-digit', 
+      month: '2-digit' 
+    }),
+    y: item.ventas
+  }));
+};
+```
+
 ## 📱 Componentes Principales a Implementar
 
 ### Layout
@@ -212,6 +289,12 @@ export const mockApiCall = (data, delay = 1000) => {
 - Modales
 - Notificaciones
 
+### Gráficos y Visualizaciones
+- Gráficos de línea (evolución temporal)
+- Gráficos de barras (comparaciones)
+- Gráficos circulares (distribuciones)
+- Dashboards interactivos
+
 ## 🚀 Scripts de Desarrollo
 
 ```json
@@ -228,13 +311,15 @@ export const mockApiCall = (data, delay = 1000) => {
 ## 📝 Próximos Pasos
 
 1. ✅ Crear estructura base del proyecto
-2. 🔄 Instalar dependencias
-3. 🔄 Configurar Tailwind CSS
-4. 🔄 Configurar React Router
-5. 🔄 Configurar Jotai
-6. 🔄 Configurar Shadcn/ui
-7. 🔄 Crear componentes base
-8. 🔄 Implementar páginas principales
+2. ✅ Instalar dependencias
+3. ✅ Configurar Tailwind CSS
+4. ✅ Configurar React Router
+5. ✅ Configurar Jotai
+6. ✅ Configurar Shadcn/ui
+7. ✅ Configurar Chart.js
+8. ✅ Crear componentes base
+9. ✅ Implementar páginas principales
+10. ✅ Implementar gráficos y visualizaciones
 
 ## 🔗 Recursos Útiles
 
@@ -242,4 +327,6 @@ export const mockApiCall = (data, delay = 1000) => {
 - [Jotai Documentation](https://jotai.org/)
 - [Tailwind CSS Documentation](https://tailwindcss.com/)
 - [Shadcn/ui Documentation](https://ui.shadcn.com/)
-- [Radix UI Documentation](https://www.radix-ui.com/) 
+- [Radix UI Documentation](https://www.radix-ui.com/)
+- [Recharts Documentation](https://recharts.org/)
+- [Recharts Examples](https://recharts.org/en-US/examples) 
