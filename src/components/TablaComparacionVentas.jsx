@@ -73,36 +73,36 @@ const TablaComparacionVentas = () => {
     }
   ]
 
-  const datosPorSemana = [
+  const datosPorAño = [
     { 
-      periodo: 'Sem 1', 
-      salesAY: 750000, 
-      salesPY: 680000, 
-      salesPrevMonth: 720000 
+      periodo: '2020', 
+      salesAY: 12500000, 
+      salesPY: 11800000, 
+      salesPrevMonth: 12000000 
     },
     { 
-      periodo: 'Sem 2', 
-      salesAY: 820000, 
-      salesPY: 750000, 
-      salesPrevMonth: 780000 
+      periodo: '2021', 
+      salesAY: 13200000, 
+      salesPY: 12500000, 
+      salesPrevMonth: 12800000 
     },
     { 
-      periodo: 'Sem 3', 
-      salesAY: 780000, 
-      salesPY: 720000, 
-      salesPrevMonth: 760000 
+      periodo: '2022', 
+      salesAY: 12800000, 
+      salesPY: 13200000, 
+      salesPrevMonth: 13000000 
     },
     { 
-      periodo: 'Sem 4', 
-      salesAY: 850000, 
-      salesPY: 780000, 
-      salesPrevMonth: 820000 
+      periodo: '2023', 
+      salesAY: 14200000, 
+      salesPY: 12800000, 
+      salesPrevMonth: 13500000 
     },
     { 
-      periodo: 'Sem 5', 
-      salesAY: 920000, 
-      salesPY: 850000, 
-      salesPrevMonth: 880000 
+      periodo: '2024', 
+      salesAY: 15800000, 
+      salesPY: 14200000, 
+      salesPrevMonth: 15000000 
     }
   ]
 
@@ -162,8 +162,8 @@ const TablaComparacionVentas = () => {
     switch (periodo) {
       case 'dias':
         return datosPorDia
-      case 'semanas':
-        return datosPorSemana
+      case 'años':
+        return datosPorAño
       case 'meses':
         return datosPorMes
       default:
@@ -198,30 +198,30 @@ const TablaComparacionVentas = () => {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-5">
+    <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4">
       {/* Header con título y filtros */}
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-bold text-gray-800">Comparación de Ventas</h3>
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-sm font-bold text-gray-800">Comparación de Ventas</h3>
         
-                 <div className="flex items-center space-x-4">
+                 <div className="flex items-center space-x-3">
            <div className="flex items-center space-x-2">
-             <label className="text-sm font-medium text-gray-700">Período:</label>
+             <label className="text-xs font-medium text-gray-700">Período:</label>
              <select 
-               className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+               className="px-2 py-1 border border-gray-300 rounded text-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
                value={periodo}
                onChange={(e) => setPeriodo(e.target.value)}
              >
                <option value="dias">Días</option>
-               <option value="semanas">Semanas</option>
                <option value="meses">Meses</option>
+               <option value="años">Años</option>
              </select>
            </div>
            
            {periodo === 'dias' && (
              <div className="flex items-center space-x-2">
-               <label className="text-sm font-medium text-gray-700">Criterio:</label>
+               <label className="text-xs font-medium text-gray-700">Criterio:</label>
                <select 
-                 className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                 className="px-2 py-1 border border-gray-300 rounded text-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
                  value={criterio}
                  onChange={(e) => setCriterio(e.target.value)}
                >
@@ -238,12 +238,12 @@ const TablaComparacionVentas = () => {
         <table className="w-full border-collapse">
           <thead>
             <tr className="border-b border-gray-200">
-              <th className="text-left py-3 px-4 font-semibold text-gray-700">Período</th>
-              <th className="text-right py-3 px-4 font-semibold text-gray-700">Sales AY ($)</th>
-              <th className="text-right py-3 px-4 font-semibold text-gray-700">Sales PY ($)</th>
-              <th className="text-right py-3 px-4 font-semibold text-gray-700">% Var vs PY</th>
-              <th className="text-right py-3 px-4 font-semibold text-gray-700">Sales Prev Month ($)</th>
-              <th className="text-right py-3 px-4 font-semibold text-gray-700">% Var vs Prev Month</th>
+              <th className="text-left py-2 px-3 font-semibold text-xs text-gray-700">Período</th>
+              <th className="text-right py-2 px-3 font-semibold text-xs text-gray-700">Ventas Año Actual ($)</th>
+              <th className="text-right py-2 px-3 font-semibold text-xs text-gray-700">Ventas Año Anterior ($)</th>
+              <th className="text-right py-2 px-3 font-semibold text-xs text-gray-700">% Var vs Año Anterior</th>
+              <th className="text-right py-2 px-3 font-semibold text-xs text-gray-700">Ventas Mes Anterior ($)</th>
+              <th className="text-right py-2 px-3 font-semibold text-xs text-gray-700">% Var vs Mes Anterior</th>
             </tr>
           </thead>
           <tbody>
@@ -258,20 +258,20 @@ const TablaComparacionVentas = () => {
                     index % 2 === 0 ? 'bg-white' : 'bg-gray-25'
                   }`}
                 >
-                  <td className="py-3 px-4 font-medium text-gray-800">{fila.periodo}</td>
-                  <td className="py-3 px-4 text-right font-medium text-gray-800">
+                  <td className="py-2 px-3 font-medium text-xs text-gray-800">{fila.periodo}</td>
+                  <td className="py-2 px-3 text-right font-medium text-xs text-gray-800">
                     {formatearMoneda(fila.salesAY)}
                   </td>
-                  <td className="py-3 px-4 text-right text-gray-600">
+                  <td className="py-2 px-3 text-right text-xs text-gray-600">
                     {formatearMoneda(fila.salesPY)}
                   </td>
-                  <td className={`py-3 px-4 text-right font-medium ${obtenerColorPorcentaje(varVsPY)}`}>
+                  <td className={`py-2 px-3 text-right font-medium text-xs ${obtenerColorPorcentaje(varVsPY)}`}>
                     {formatearPorcentaje(varVsPY)}
                   </td>
-                  <td className="py-3 px-4 text-right text-gray-600">
+                  <td className="py-2 px-3 text-right text-xs text-gray-600">
                     {formatearMoneda(fila.salesPrevMonth)}
                   </td>
-                  <td className={`py-3 px-4 text-right font-medium ${obtenerColorPorcentaje(varVsPrevMonth)}`}>
+                  <td className={`py-2 px-3 text-right font-medium text-xs ${obtenerColorPorcentaje(varVsPrevMonth)}`}>
                     {formatearPorcentaje(varVsPrevMonth)}
                   </td>
                 </tr>

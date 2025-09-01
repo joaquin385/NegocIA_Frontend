@@ -72,22 +72,22 @@ const GraficoEvolucion = ({
       }));
     }
     
-    if (agrupacion === 'semana') {
-      const datosPorSemana = {};
+    if (agrupacion === 'año') {
+      const datosPorAño = {};
       datos.forEach(item => {
         const fecha = new Date(`2025/${item.fecha.split('/')[1]}/${item.fecha.split('/')[0]}`);
-        const semana = `Sem ${Math.ceil(fecha.getDate() / 7)}`;
+        const año = fecha.getFullYear();
         
-        if (!datosPorSemana[semana]) {
-          datosPorSemana[semana] = { valor: 0, count: 0 };
+        if (!datosPorAño[año]) {
+          datosPorAño[año] = { valor: 0, count: 0 };
         }
-        datosPorSemana[semana].valor += item[campoDatos];
-        datosPorSemana[semana].count += 1;
+        datosPorAño[año].valor += item[campoDatos];
+        datosPorAño[año].count += 1;
       });
       
-      return Object.entries(datosPorSemana).map(([semana, data]) => ({
-        fecha: semana,
-        [campoDatos]: Math.round(data.valor / data.count) // Promedio de la semana
+      return Object.entries(datosPorAño).map(([año, data]) => ({
+        fecha: año,
+        [campoDatos]: Math.round(data.valor / data.count) // Promedio del año
       }));
     }
     
@@ -107,9 +107,9 @@ const GraficoEvolucion = ({
             value={agrupacion}
             onChange={(e) => setAgrupacion(e.target.value)}
           >
-            <option value="dia">Día</option>
-            <option value="semana">Semana</option>
-            <option value="mes">Mes</option>
+                         <option value="dia">Día</option>
+             <option value="mes">Mes</option>
+             <option value="año">Año</option>
           </select>
         </div>
         <div className="flex items-center space-x-2">

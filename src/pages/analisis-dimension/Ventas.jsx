@@ -435,14 +435,14 @@ const Ventas = () => {
   // Opciones para el gráfico de variación porcentual
   const opcionesAgrupacion = [
     { value: 'dia', label: 'Día' },
-    { value: 'semana', label: 'Semana' },
-    { value: 'mes', label: 'Mes' }
+    { value: 'mes', label: 'Mes' },
+    { value: 'año', label: 'Año' }
   ];
 
   const opcionesComparacion = [
     { value: 'vs-anio-anterior', label: 'vs Año anterior' },
     { value: 'vs-mes-anterior', label: 'vs Mes anterior' },
-    { value: 'vs-semana-anterior', label: 'vs Semana anterior' }
+    { value: 'vs-año-anterior', label: 'vs Año anterior' }
   ];
 
   // Función para obtener datos de distribución según la métrica seleccionada
@@ -554,17 +554,131 @@ const Ventas = () => {
         title="Ayuda educativa - Análisis de Ventas" 
         iconPosition="left"
       >
-        <div className="space-y-5">
+        <div className="space-y-4">
+          {/* Propósito de la página */}
+          <div className="bg-blue-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-blue-900 mb-2">📊 Propósito de esta página</h3>
+            <p className="text-blue-800 text-xs leading-relaxed">
+              Esta página te permite analizar el rendimiento de ventas desde múltiples perspectivas temporales y métricas. 
+              Podrás identificar tendencias, patrones y oportunidades de mejora en tu negocio.
+            </p>
+          </div>
+
+          {/* Gráfico de Evolución */}
           <div className="bg-green-50 rounded-lg p-4">
-            <h3 className="text-base font-semibold text-green-900 mb-3">Análisis de Ventas</h3>
-            <p className="text-green-800 text-xs">Análisis completo de métricas de ventas</p>
+            <h3 className="text-sm font-semibold text-green-900 mb-2">📈 Gráfico de Evolución</h3>
+            <p className="text-green-800 text-xs leading-relaxed mb-2">
+              <strong>Qué muestra:</strong> La tendencia de ventas a lo largo del tiempo.
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed mb-2">
+              <strong>Implicancias:</strong> Te ayuda a identificar si las ventas están creciendo, decreciendo o se mantienen estables. 
+              Detecta estacionalidad y patrones cíclicos.
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed">
+              <strong>Acciones:</strong> Usa los filtros de agrupación (Día/Mes/Año) para analizar diferentes períodos. 
+              Cambia entre métricas (Ventas, Unidades, Ticket promedio) según tu análisis.
+            </p>
+          </div>
+
+          {/* Gráfico de Variación Porcentual */}
+          <div className="bg-purple-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-purple-900 mb-2">📊 Gráfico de Variación %</h3>
+            <p className="text-purple-800 text-xs leading-relaxed mb-2">
+              <strong>Qué muestra:</strong> El cambio porcentual de ventas comparado con períodos anteriores.
+            </p>
+            <p className="text-purple-800 text-xs leading-relaxed mb-2">
+              <strong>Implicancias:</strong> Identifica si estás mejorando o empeorando respecto a períodos pasados. 
+              Valores positivos (verdes) indican crecimiento, negativos (rojos) indican disminución.
+            </p>
+            <p className="text-purple-800 text-xs leading-relaxed">
+              <strong>Acciones:</strong> Analiza comparaciones vs Año anterior, Mes anterior o Año anterior según tu necesidad. 
+              Usa agrupaciones temporales para diferentes niveles de detalle.
+            </p>
+          </div>
+
+          {/* Gráfico de Distribución por Día */}
+          <div className="bg-orange-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-orange-900 mb-2">📅 Distribución por Día</h3>
+            <p className="text-orange-800 text-xs leading-relaxed mb-2">
+              <strong>Qué muestra:</strong> Qué días de la semana generan más ventas.
+            </p>
+            <p className="text-orange-800 text-xs leading-relaxed mb-2">
+              <strong>Implicancias:</strong> Te ayuda a planificar recursos, personal y promociones según los días más rentables. 
+              Identifica si hay días problemáticos que requieren atención.
+            </p>
+            <p className="text-orange-800 text-xs leading-relaxed">
+              <strong>Acciones:</strong> Optimiza horarios de personal y promociones para días de mayor demanda. 
+              Investiga causas de bajo rendimiento en días específicos.
+            </p>
+          </div>
+
+          {/* Gráfico de Distribución Horaria */}
+          <div className="bg-teal-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-teal-900 mb-2">🕐 Distribución Horaria</h3>
+            <p className="text-teal-800 text-xs leading-relaxed mb-2">
+              <strong>Qué muestra:</strong> En qué horas del día se concentran las ventas.
+            </p>
+            <p className="text-teal-800 text-xs leading-relaxed mb-2">
+              <strong>Implicancias:</strong> Permite optimizar horarios de atención, personal y promociones. 
+              Identifica picos y valles de demanda durante el día.
+            </p>
+            <p className="text-teal-800 text-xs leading-relaxed">
+              <strong>Acciones:</strong> Ajusta horarios de personal según demanda. 
+              Programa promociones en horas de menor actividad para estimular ventas.
+            </p>
+          </div>
+
+          {/* Gráfico de Dispersión */}
+          <div className="bg-pink-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-pink-900 mb-2">🎯 Gráfico de Dispersión</h3>
+            <p className="text-pink-800 text-xs leading-relaxed mb-2">
+              <strong>Qué muestra:</strong> La relación entre ventas totales y ticket promedio por día.
+            </p>
+            <p className="text-pink-800 text-xs leading-relaxed mb-2">
+              <strong>Implicancias:</strong> Te ayuda a entender si las ventas altas se deben a muchos clientes con tickets bajos 
+              o pocos clientes con tickets altos.
+            </p>
+            <p className="text-pink-800 text-xs leading-relaxed">
+              <strong>Acciones:</strong> Si hay días con ventas altas pero tickets bajos, enfócate en aumentar el valor promedio. 
+              Si hay días con tickets altos pero pocas ventas, trabaja en atraer más clientes.
+            </p>
+          </div>
+
+          {/* Mapa de Calor */}
+          <div className="bg-red-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-red-900 mb-2">🔥 Mapa de Calor</h3>
+            <p className="text-red-800 text-xs leading-relaxed mb-2">
+              <strong>Qué muestra:</strong> Intensidad de ventas combinando día de la semana y hora del día.
+            </p>
+            <p className="text-red-800 text-xs leading-relaxed mb-2">
+              <strong>Implicancias:</strong> Identifica los momentos exactos de mayor y menor actividad. 
+              Útil para planificación detallada de recursos y estrategias.
+            </p>
+            <p className="text-red-800 text-xs leading-relaxed">
+              <strong>Acciones:</strong> Planifica promociones específicas para momentos de baja actividad. 
+              Asegura recursos suficientes en períodos de alta demanda.
+            </p>
+          </div>
+
+          {/* Tabla de Comparación */}
+          <div className="bg-indigo-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-indigo-900 mb-2">📋 Tabla de Comparación</h3>
+            <p className="text-indigo-800 text-xs leading-relaxed mb-2">
+              <strong>Objetivo:</strong> Comparar rendimiento actual vs períodos anteriores de manera detallada.
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed mb-2">
+              <strong>Criterio "Fecha a fecha":</strong> Compara el mismo día de diferentes períodos (ej: 15 de agosto 2024 vs 15 de agosto 2023).
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed">
+              <strong>Criterio "Día a día":</strong> Compara días consecutivos para identificar tendencias inmediatas y cambios rápidos en el negocio.
+            </p>
           </div>
         </div>
       </ExpandableSidebar>
 
       <div className={`
         transition-all duration-300 ease-in-out
-        ${isSidebarOpen ? 'ml-[20%]' : 'ml-24'}
+        ${isSidebarOpen ? 'ml-[30%]' : 'ml-1'}
         p-4
       `}>
         <div className="max-w-6xl mx-auto">
@@ -588,14 +702,6 @@ const Ventas = () => {
                   <label className="text-xs font-medium text-gray-700">Fecha fin:</label>
                   <input type="date" className="px-3 py-2 border border-gray-300 rounded-lg text-xs" defaultValue="2025-08-28" />
                 </div>
-                <div className="flex items-center space-x-2">
-                  <label className="text-xs font-medium text-gray-700">Categoría:</label>
-                  <select className="px-3 py-2 border border-gray-300 rounded-lg text-xs">
-                    <option value="todos">Todos</option>
-                    <option value="carnes">Carnes</option>
-                    <option value="lacteos">Lácteos</option>
-                  </select>
-                </div>
               </div>
             </div>
           </div>
@@ -613,7 +719,7 @@ const Ventas = () => {
 
             {/* Gráficos */}
             <div className="xl:col-span-2">
-              <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-5 min-h-[700px]">
+              <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-5 min-h-[550px]">
                 <h3 className="text-lg font-bold mb-5">Visualizaciones</h3>
                 
                 {/* Pestañas */}
@@ -669,14 +775,14 @@ const Ventas = () => {
                 </div>
 
                 {/* Contenido de gráficos */}
-                <div className="bg-gray-50 rounded-lg p-5" style={{ height: '663px' }}>
+                <div className="bg-gray-50 rounded-lg p-5" style={{ height: '500px' }}>
                                                          {activeTab === 'evolucion' && (
                       <div>
                         <GraficoEvolucion 
                          datos={obtenerDatosPorMetrica(metrica)}
                          titulo="Evolución de Ventas"
                          color="#10b981"
-                         altura="600px"
+                         altura="400px"
                          opcionesMetricas={opcionesMetricas}
                          campoDatos={metrica === 'unidades' ? 'unidades' : 'ventas'}
                          formatearEjeY={(value) => {
@@ -706,7 +812,7 @@ const Ventas = () => {
                          datos={datosVariacion}
                          titulo="Evolución de Variación % de Ventas"
                          color="#3b82f6"
-                         altura="600px"
+                         altura="400px"
                          opcionesAgrupacion={opcionesAgrupacion}
                          opcionesComparacion={opcionesComparacion}
                        campoDatos="variacion"
@@ -723,7 +829,7 @@ const Ventas = () => {
                        datos={obtenerDatosDistribucion(metricaDistribucion)}
                        titulo="Distribución de Ventas por Día de la Semana"
                        color="#3b82f6"
-                       altura="600px"
+                       altura="400px"
                        opcionesMetricas={opcionesMetricas}
                       campoDatos={metricaDistribucion === 'unidades' ? 'unidades' : 'ventas'}
                       campoEtiqueta="dia"
@@ -754,7 +860,7 @@ const Ventas = () => {
                        datos={obtenerDatosDistribucionHoraria(metricaDistribucionHoraria)}
                        titulo="Distribución Horaria de Ventas"
                        color="#10b981"
-                       altura="600px"
+                       altura="400px"
                        opcionesMetricas={opcionesMetricas}
                       campoDatos={metricaDistribucionHoraria === 'unidades' ? 'unidades' : 'ventas'}
                       campoEtiqueta="hora"
@@ -787,7 +893,7 @@ const Ventas = () => {
                        datos={obtenerDatosDispersion(metricaDispersion)}
                        titulo="Dispersión: Ventas vs Ticket Promedio"
                        color="#ec4899"
-                       altura="600px"
+                       altura="400px"
                        opcionesMetricas={opcionesMetricas}
                       campoX={metricaDispersion === 'unidades' ? 'ventas' : 'ventas'}
                       campoY="ticketPromedio"
@@ -818,7 +924,7 @@ const Ventas = () => {
                                              <GraficoMapaCalor
                          datos={obtenerDatosMapaCalor(metricaMapaCalor)}
                          titulo="Mapa de Calor Ventas por Día y Hora"
-                         altura="600px"
+                         altura="400px"
                          opcionesMetricas={opcionesMetricas}
                          onMetricaChange={setMetricaMapaCalor}
                        />

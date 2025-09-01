@@ -62,36 +62,36 @@ const MetricasGenerales = ({
   }
 
   return (
-    <div className={`bg-white rounded-xl shadow-sm border border-gray-100 p-6 ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border border-gray-100 p-4 ${className}`}>
       {/* Título principal */}
-      <h3 className="text-lg font-semibold text-gray-900 mb-6 border-b border-gray-200 pb-3">
+      <h3 className="text-sm font-semibold text-gray-900 mb-3 border-b border-gray-200 pb-2">
         {titulo}
       </h3>
 
       {/* Grid de subsecciones */}
-      <div className={`grid ${getGridCols()} gap-6`}>
+      <div className={`grid ${getGridCols()} gap-4`}>
         {subsecciones.map((subseccion, index) => (
           <div key={index} className={`${getColSpan()}`}>
             {/* Título de la subsección */}
-            <h4 className="text-base font-medium text-gray-700 mb-4 px-1">
+            <h4 className="text-sm font-semibold text-gray-800 mb-3 px-2 py-1 bg-gray-100 rounded-md border-l-4 border-gray-300">
               {subseccion.titulo}
             </h4>
 
             {/* Métricas de la subsección */}
-            <div className="space-y-3">
+            <div className="space-y-1">
               {subseccion.metricas.map((metrica, metricaIndex) => (
                 <div 
                   key={metricaIndex} 
-                  className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                  className="flex items-center justify-between p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors duration-200"
                 >
                   {/* Nombre de la métrica */}
-                  <span className="text-sm text-gray-600 font-medium">
+                  <span className="text-xs text-gray-600 font-medium">
                     {metrica.nombre}
                   </span>
                   
                   {/* Valor de la métrica */}
                   <span 
-                    className="text-sm  font-bold"
+                    className="text-xs font-bold"
                     style={{ color: metrica.color || colorTema || colorTemaLocal }}
                   >
                     {formatearValor(metrica.valor, metrica.formato)}

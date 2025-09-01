@@ -15,7 +15,7 @@ const ExpandableSidebar = ({ children, title = "Ayuda educativa", iconPosition =
       <div className={cn(
         "absolute z-50 top-0 transition-all duration-300 ease-in-out",
         iconPosition === "left" ? "left-8" : "right-8",
-        isExpanded && "left-[20%]"
+        isExpanded && "left-[30%]"
       )}>
         <button
           onClick={toggleSidebar}
@@ -36,7 +36,7 @@ const ExpandableSidebar = ({ children, title = "Ayuda educativa", iconPosition =
           "absolute left-0 top-0 h-full bg-white shadow-2xl z-50 transition-transform duration-300 ease-in-out transform",
           isExpanded ? "translate-x-0" : "-translate-x-full"
         )}
-        style={{ width: '20%' }}
+        style={{ width: '30%' }}
       >
         {/* Header del sidebar */}
         <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-6">

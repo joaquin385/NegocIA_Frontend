@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai'
 import { useEffect } from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import { agrupacionAtom } from '@/stores'
 
 // Atom local para la comparación (puede ser reemplazado por uno global si es necesario)
@@ -92,22 +92,22 @@ const GraficoVariacionPorcentual = ({
       }));
     }
     
-    if (agrupacion === 'semana') {
-      const datosPorSemana = {};
+    if (agrupacion === 'año') {
+      const datosPorAño = {};
       datos.forEach(item => {
         const fecha = new Date(`2025/${item.fecha.split('/')[1]}/${item.fecha.split('/')[0]}`);
-        const semana = `Sem ${Math.ceil(fecha.getDate() / 7)}`;
+        const año = fecha.getFullYear();
         
-        if (!datosPorSemana[semana]) {
-          datosPorSemana[semana] = { valor: 0, count: 0 };
+        if (!datosPorAño[año]) {
+          datosPorAño[año] = { valor: 0, count: 0 };
         }
-        datosPorSemana[semana].valor += item[campoDatos];
-        datosPorSemana[semana].count += 1;
+        datosPorAño[año].valor += item[campoDatos];
+        datosPorAño[año].count += 1;
       });
       
-      return Object.entries(datosPorSemana).map(([semana, data]) => ({
-        fecha: semana,
-        [campoDatos]: Math.round((data.valor / data.count) * 100) / 100 // Promedio de la semana con 2 decimales
+      return Object.entries(datosPorAño).map(([año, data]) => ({
+        fecha: año,
+        [campoDatos]: Math.round((data.valor / data.count) * 100) / 100 // Promedio del año con 2 decimales
       }));
     }
     
@@ -217,6 +217,21 @@ const GraficoVariacionPorcentual = ({
               strokeLinecap="round"
               strokeLinejoin="round"
             />
+            <Legend 
+              content={() => (
+                <div className="flex items-center justify-center mt-4">
+                  <div className="flex items-center space-x-2">
+                    <div 
+                      className="w-3 h-3 rounded"
+                      style={{ backgroundColor: color }}
+                    />
+                    <span className="text-xs text-gray-600 font-medium">
+                      {getComparacionLabel()}
+                    </span>
+                  </div>
+                </div>
+              )}
+            />
             <defs>
               <linearGradient id={`${comparacion}Gradient`} x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor={color} stopOpacity={1} />
@@ -227,18 +242,7 @@ const GraficoVariacionPorcentual = ({
         </ResponsiveContainer>
       </div>
 
-      {/* Leyenda */}
-      <div className="flex items-center justify-center mt-4">
-        <div className="flex items-center space-x-2">
-          <div 
-            className="w-3 h-3 rounded"
-            style={{ backgroundColor: color }}
-          />
-          <span className="text-xs text-gray-600 font-medium">
-            {getComparacionLabel()}
-          </span>
-        </div>
-      </div>
+
     </div>
   )
 }

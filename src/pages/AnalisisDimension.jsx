@@ -95,7 +95,7 @@ const AnalisisDimension = () => {
       {/* Contenido principal con desplazamiento */}
       <div className={`
         transition-all duration-300 ease-in-out
-        ${isSidebarOpen ? 'ml-[20%]' : 'ml-24'}
+        ${isSidebarOpen ? 'ml-[30%]' : 'ml-1'}
         p-5
       `}>
         <div className="max-w-6xl mx-auto">
