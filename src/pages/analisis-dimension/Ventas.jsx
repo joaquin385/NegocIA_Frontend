@@ -9,6 +9,7 @@ import GraficoDistribucionHoraria from '@/components/charts/GraficoDistribucionH
 import GraficoDispersion from '@/components/charts/GraficoDispersion'
 import MetricasGenerales from '@/components/MetricasGenerales'
 import GraficoMapaCalor from '@/components/charts/GraficoMapaCalor'
+import TablaComparacionVentas from '@/components/TablaComparacionVentas'
 
 const Ventas = () => {
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
@@ -668,7 +669,7 @@ const Ventas = () => {
                 </div>
 
                 {/* Contenido de gráficos */}
-                <div className="bg-gray-50 rounded-lg p-5" style={{ height: '700px' }}>
+                <div className="bg-gray-50 rounded-lg p-5" style={{ height: '663px' }}>
                                                          {activeTab === 'evolucion' && (
                       <div>
                         <GraficoEvolucion 
@@ -825,12 +826,17 @@ const Ventas = () => {
                   
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+                         </div>
+           </div>
+
+           {/* Tabla de Comparación de Ventas */}
+           <div className="mt-5">
+             <TablaComparacionVentas />
+           </div>
+         </div>
+       </div>
+     </div>
+   )
+ }
 
 export default Ventas 
