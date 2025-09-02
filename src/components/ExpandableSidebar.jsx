@@ -11,20 +11,19 @@ const ExpandableSidebar = ({ children, title = "Ayuda educativa", iconPosition =
 
   return (
     <>
-      {/* Botón del icono de pregunta - posicionado en línea con el título */}
+      {/* Botón del icono de pregunta - posicionado en esquina inferior derecha */}
       <div className={cn(
-        "absolute z-50 top-0 transition-all duration-300 ease-in-out",
-        iconPosition === "left" ? "left-8" : "right-8",
-        isExpanded && "left-[30%]"
+        "fixed z-50 bottom-8 right-8 transition-all duration-300 ease-in-out",
+        isExpanded && "right-[calc(30%-3rem)]"
       )}>
         <button
           onClick={toggleSidebar}
           className={cn(
-            "w-10 h-10 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-600 text-white flex items-center justify-center shadow-md transition-all duration-300 hover:from-indigo-600 hover:to-blue-700 hover:scale-105 hover:shadow-lg",
+            "w-16 h-16 rounded-xl bg-gradient-to-r from-indigo-500 to-blue-600 text-white flex items-center justify-center shadow-xl transition-all duration-300 hover:from-indigo-600 hover:to-blue-700 hover:scale-105 hover:shadow-2xl",
             isExpanded && "from-indigo-600 to-blue-700"
           )}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </button>
@@ -33,8 +32,8 @@ const ExpandableSidebar = ({ children, title = "Ayuda educativa", iconPosition =
       {/* Sidebar desplegable */}
       <div
         className={cn(
-          "absolute left-0 top-0 h-full bg-white shadow-2xl z-50 transition-transform duration-300 ease-in-out transform",
-          isExpanded ? "translate-x-0" : "-translate-x-full"
+          "absolute right-0 top-0 h-full bg-white shadow-2xl z-50 transition-transform duration-300 ease-in-out transform",
+          isExpanded ? "translate-x-0" : "translate-x-full"
         )}
         style={{ width: '30%' }}
       >

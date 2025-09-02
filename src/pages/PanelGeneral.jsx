@@ -75,7 +75,7 @@ const PanelGeneral = () => {
       {/* Contenido principal con desplazamiento */}
       <div className={`
         transition-all duration-300 ease-in-out
-        ${isSidebarOpen ? 'ml-[30%]' : 'ml-1'}
+        ${isSidebarOpen ? 'mr-[30%]' : 'mr-1'}
         p-6
       `}>
         <div className="max-w-7xl mx-auto">

@@ -678,10 +678,10 @@ const Ventas = () => {
 
       <div className={`
         transition-all duration-300 ease-in-out
-        ${isSidebarOpen ? 'ml-[30%]' : 'ml-1'}
-        p-4
+        ${isSidebarOpen ? 'mr-[30%]' : 'mr-0'}
+        py-4
       `}>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="mb-5">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-green-800 via-green-700 to-green-600 bg-clip-text text-transparent mb-2">
               Análisis de Ventas
@@ -776,61 +776,61 @@ const Ventas = () => {
 
                 {/* Contenido de gráficos */}
                 <div className="bg-gray-50 rounded-lg p-5" style={{ height: '500px' }}>
-                                                         {activeTab === 'evolucion' && (
+                  {activeTab === 'evolucion' && (
                       <div>
-                        <GraficoEvolucion 
-                         datos={obtenerDatosPorMetrica(metrica)}
-                         titulo="Evolución de Ventas"
-                         color="#10b981"
+                    <GraficoEvolucion 
+                      datos={obtenerDatosPorMetrica(metrica)}
+                      titulo="Evolución de Ventas"
+                      color="#10b981"
                          altura="400px"
-                         opcionesMetricas={opcionesMetricas}
-                         campoDatos={metrica === 'unidades' ? 'unidades' : 'ventas'}
-                         formatearEjeY={(value) => {
-                           if (metrica === 'ventas') {
-                             return `$${(value / 1000).toFixed(0)}k`;
-                           } else if (metrica === 'unidades') {
-                             return `${(value / 1000).toFixed(1)}k`;
-                           } else {
-                             return `$${value.toLocaleString()}`;
-                           }
-                         }}
-                         formatearTooltip={(value) => {
-                           if (metrica === 'ventas') {
-                             return [`$${value.toLocaleString()}`, 'Ventas'];
-                           } else if (metrica === 'unidades') {
+                      opcionesMetricas={opcionesMetricas}
+                      campoDatos={metrica === 'unidades' ? 'unidades' : 'ventas'}
+                      formatearEjeY={(value) => {
+                        if (metrica === 'ventas') {
+                          return `$${(value / 1000).toFixed(0)}k`;
+                        } else if (metrica === 'unidades') {
+                          return `${(value / 1000).toFixed(1)}k`;
+                        } else {
+                          return `$${value.toLocaleString()}`;
+                        }
+                      }}
+                      formatearTooltip={(value) => {
+                        if (metrica === 'ventas') {
+                          return [`$${value.toLocaleString()}`, 'Ventas'];
+                        } else if (metrica === 'unidades') {
                              return [`${value.toLocaleString()}`, 'Ticket Promedio'];
-                           }
-                         }}
-                         onMetricaChange={setMetrica}
-                       />
+                        }
+                      }}
+                      onMetricaChange={setMetrica}
+                    />
                      </div>
-                   )}
+                  )}
                   
-                                                         {activeTab === 'variacion' && (
+                  {activeTab === 'variacion' && (
                       <div>
-                        <GraficoVariacionPorcentual 
-                         datos={datosVariacion}
-                         titulo="Evolución de Variación % de Ventas"
-                         color="#3b82f6"
+                    <GraficoVariacionPorcentual 
+                      datos={datosVariacion}
+                      titulo="Evolución de Variación % de Ventas"
+                      color="#3b82f6"
                          altura="400px"
-                         opcionesAgrupacion={opcionesAgrupacion}
-                         opcionesComparacion={opcionesComparacion}
-                       campoDatos="variacion"
-                       formatearEjeY={(value) => `${value}%`}
-                       formatearTooltip={(value) => [`${value}%`, 'Variación']}
-                       onAgrupacionChange={setAgrupacionVariacion}
-                       onComparacionChange={setComparacionVariacion}
-                     />
+                      opcionesAgrupacion={opcionesAgrupacion}
+                      opcionesComparacion={opcionesComparacion}
+                      campoDatos="variacion"
+                      formatearEjeY={(value) => `${value}%`}
+                      formatearTooltip={(value) => [`${value}%`, 'Variación']}
+                      onAgrupacionChange={setAgrupacionVariacion}
+                      onComparacionChange={setComparacionVariacion}
+                    />
                      </div>
-                   )}
+                  )}
                   
                   {activeTab === 'distribucion-dia' && (
-                                         <GraficoDistribucionPorDia 
-                       datos={obtenerDatosDistribucion(metricaDistribucion)}
-                       titulo="Distribución de Ventas por Día de la Semana"
-                       color="#3b82f6"
+                    <GraficoDistribucionPorDia 
+                      datos={obtenerDatosDistribucion(metricaDistribucion)}
+                      titulo="Distribución de Ventas por Día de la Semana"
+                      color="#3b82f6"
                        altura="400px"
-                       opcionesMetricas={opcionesMetricas}
+                      opcionesMetricas={opcionesMetricas}
                       campoDatos={metricaDistribucion === 'unidades' ? 'unidades' : 'ventas'}
                       campoEtiqueta="dia"
                       formatearEjeY={(value) => {
@@ -856,12 +856,12 @@ const Ventas = () => {
                   )}
                   
                   {activeTab === 'distribucion-hora' && (
-                                         <GraficoDistribucionHoraria
-                       datos={obtenerDatosDistribucionHoraria(metricaDistribucionHoraria)}
-                       titulo="Distribución Horaria de Ventas"
-                       color="#10b981"
+                    <GraficoDistribucionHoraria
+                      datos={obtenerDatosDistribucionHoraria(metricaDistribucionHoraria)}
+                      titulo="Distribución Horaria de Ventas"
+                      color="#10b981"
                        altura="400px"
-                       opcionesMetricas={opcionesMetricas}
+                      opcionesMetricas={opcionesMetricas}
                       campoDatos={metricaDistribucionHoraria === 'unidades' ? 'unidades' : 'ventas'}
                       campoEtiqueta="hora"
                       formatearEjeY={(value) => {
@@ -889,12 +889,12 @@ const Ventas = () => {
 
                   
                   {activeTab === 'dispersion' && (
-                                         <GraficoDispersion
-                       datos={obtenerDatosDispersion(metricaDispersion)}
-                       titulo="Dispersión: Ventas vs Ticket Promedio"
-                       color="#ec4899"
+                    <GraficoDispersion
+                      datos={obtenerDatosDispersion(metricaDispersion)}
+                      titulo="Dispersión: Ventas vs Ticket Promedio"
+                      color="#ec4899"
                        altura="400px"
-                       opcionesMetricas={opcionesMetricas}
+                      opcionesMetricas={opcionesMetricas}
                       campoX={metricaDispersion === 'unidades' ? 'ventas' : 'ventas'}
                       campoY="ticketPromedio"
                       formatearEjeX={(value) => {
@@ -921,28 +921,28 @@ const Ventas = () => {
                   )}
                                   
                     {activeTab === 'mapa-calor' && (
-                                             <GraficoMapaCalor
-                         datos={obtenerDatosMapaCalor(metricaMapaCalor)}
-                         titulo="Mapa de Calor Ventas por Día y Hora"
+                      <GraficoMapaCalor
+                        datos={obtenerDatosMapaCalor(metricaMapaCalor)}
+                        titulo="Mapa de Calor Ventas por Día y Hora"
                          altura="400px"
-                         opcionesMetricas={opcionesMetricas}
-                         onMetricaChange={setMetricaMapaCalor}
-                       />
+                        opcionesMetricas={opcionesMetricas}
+                        onMetricaChange={setMetricaMapaCalor}
+                      />
                     )}
                   
                 </div>
               </div>
-                         </div>
-           </div>
+            </div>
+          </div>
 
            {/* Tabla de Comparación de Ventas */}
            <div className="mt-5">
              <TablaComparacionVentas />
            </div>
-         </div>
-       </div>
-     </div>
-   )
- }
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default Ventas 
