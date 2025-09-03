@@ -32,13 +32,13 @@ const ExpandableSidebar = ({ children, title = "Ayuda educativa", iconPosition =
       {/* Sidebar desplegable */}
       <div
         className={cn(
-          "absolute right-0 top-0 h-full bg-white shadow-2xl z-50 transition-transform duration-300 ease-in-out transform",
+          "fixed right-0 top-16 h-[calc(100vh-4rem)] bg-white shadow-2xl z-50 transition-transform duration-300 ease-in-out transform",
           isExpanded ? "translate-x-0" : "translate-x-full"
         )}
         style={{ width: '30%' }}
       >
         {/* Header del sidebar */}
-        <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-6">
+        <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-4">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold">{title}</h2>
             <button
@@ -53,8 +53,10 @@ const ExpandableSidebar = ({ children, title = "Ayuda educativa", iconPosition =
         </div>
 
         {/* Contenido del sidebar */}
-        <div className="p-6 overflow-y-auto h-full">
-          {children}
+        <div className="p-6 overflow-y-auto overflow-x-hidden h-[calc(100%-6rem)] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+          <div className="w-full max-w-full space-y-4">
+            {children}
+          </div>
         </div>
       </div>
     </>

@@ -119,9 +119,19 @@ const GraficoEvolucion = ({
             value={metrica}
             onChange={(e) => setMetrica(e.target.value)}
           >
-            <option value="ventas">Ventas totales ($)</option>
-            <option value="unidades">Unidades</option>
-            <option value="ticket-promedio">Ticket promedio</option>
+            {opcionesMetricas.length > 0 ? (
+              opcionesMetricas.map(opcion => (
+                <option key={opcion.value} value={opcion.value}>
+                  {opcion.label}
+                </option>
+              ))
+            ) : (
+              <>
+                <option value="ventas">Ventas totales ($)</option>
+                <option value="unidades">Unidades</option>
+                <option value="ticket-promedio">Ticket promedio</option>
+              </>
+            )}
           </select>
         </div>
       </div>

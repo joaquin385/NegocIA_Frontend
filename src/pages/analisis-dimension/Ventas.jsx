@@ -554,11 +554,11 @@ const Ventas = () => {
         title="Ayuda educativa - Análisis de Ventas" 
         iconPosition="left"
       >
-        <div className="space-y-4">
+        <div>
           {/* Propósito de la página */}
           <div className="bg-blue-50 rounded-lg p-4">
             <h3 className="text-sm font-semibold text-blue-900 mb-2">📊 Propósito de esta página</h3>
-            <p className="text-blue-800 text-xs leading-relaxed">
+            <p className="text-blue-800 text-xs leading-relaxed break-words">
               Esta página te permite analizar el rendimiento de ventas desde múltiples perspectivas temporales y métricas. 
               Podrás identificar tendencias, patrones y oportunidades de mejora en tu negocio.
             </p>
@@ -567,14 +567,14 @@ const Ventas = () => {
           {/* Gráfico de Evolución */}
           <div className="bg-green-50 rounded-lg p-4">
             <h3 className="text-sm font-semibold text-green-900 mb-2">📈 Gráfico de Evolución</h3>
-            <p className="text-green-800 text-xs leading-relaxed mb-2">
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
               <strong>Qué muestra:</strong> La tendencia de ventas a lo largo del tiempo.
             </p>
-            <p className="text-green-800 text-xs leading-relaxed mb-2">
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
               <strong>Implicancias:</strong> Te ayuda a identificar si las ventas están creciendo, decreciendo o se mantienen estables. 
               Detecta estacionalidad y patrones cíclicos.
             </p>
-            <p className="text-green-800 text-xs leading-relaxed">
+            <p className="text-green-800 text-xs leading-relaxed break-words">
               <strong>Acciones:</strong> Usa los filtros de agrupación (Día/Mes/Año) para analizar diferentes períodos. 
               Cambia entre métricas (Ventas, Unidades, Ticket promedio) según tu análisis.
             </p>
@@ -583,14 +583,14 @@ const Ventas = () => {
           {/* Gráfico de Variación Porcentual */}
           <div className="bg-purple-50 rounded-lg p-4">
             <h3 className="text-sm font-semibold text-purple-900 mb-2">📊 Gráfico de Variación %</h3>
-            <p className="text-purple-800 text-xs leading-relaxed mb-2">
+            <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
               <strong>Qué muestra:</strong> El cambio porcentual de ventas comparado con períodos anteriores.
             </p>
-            <p className="text-purple-800 text-xs leading-relaxed mb-2">
+            <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
               <strong>Implicancias:</strong> Identifica si estás mejorando o empeorando respecto a períodos pasados. 
               Valores positivos (verdes) indican crecimiento, negativos (rojos) indican disminución.
             </p>
-            <p className="text-purple-800 text-xs leading-relaxed">
+            <p className="text-purple-800 text-xs leading-relaxed break-words">
               <strong>Acciones:</strong> Analiza comparaciones vs Año anterior, Mes anterior o Año anterior según tu necesidad. 
               Usa agrupaciones temporales para diferentes niveles de detalle.
             </p>
@@ -599,14 +599,14 @@ const Ventas = () => {
           {/* Gráfico de Distribución por Día */}
           <div className="bg-orange-50 rounded-lg p-4">
             <h3 className="text-sm font-semibold text-orange-900 mb-2">📅 Distribución por Día</h3>
-            <p className="text-orange-800 text-xs leading-relaxed mb-2">
+            <p className="text-orange-800 text-xs leading-relaxed break-words mb-2">
               <strong>Qué muestra:</strong> Qué días de la semana generan más ventas.
             </p>
-            <p className="text-orange-800 text-xs leading-relaxed mb-2">
+            <p className="text-orange-800 text-xs leading-relaxed break-words mb-2">
               <strong>Implicancias:</strong> Te ayuda a planificar recursos, personal y promociones según los días más rentables. 
               Identifica si hay días problemáticos que requieren atención.
             </p>
-            <p className="text-orange-800 text-xs leading-relaxed">
+            <p className="text-orange-800 text-xs leading-relaxed break-words">
               <strong>Acciones:</strong> Optimiza horarios de personal y promociones para días de mayor demanda. 
               Investiga causas de bajo rendimiento en días específicos.
             </p>
@@ -615,14 +615,14 @@ const Ventas = () => {
           {/* Gráfico de Distribución Horaria */}
           <div className="bg-teal-50 rounded-lg p-4">
             <h3 className="text-sm font-semibold text-teal-900 mb-2">🕐 Distribución Horaria</h3>
-            <p className="text-teal-800 text-xs leading-relaxed mb-2">
+            <p className="text-teal-800 text-xs leading-relaxed break-words mb-2">
               <strong>Qué muestra:</strong> En qué horas del día se concentran las ventas.
             </p>
-            <p className="text-teal-800 text-xs leading-relaxed mb-2">
+            <p className="text-teal-800 text-xs leading-relaxed break-words mb-2">
               <strong>Implicancias:</strong> Permite optimizar horarios de atención, personal y promociones. 
               Identifica picos y valles de demanda durante el día.
             </p>
-            <p className="text-teal-800 text-xs leading-relaxed">
+            <p className="text-teal-800 text-xs leading-relaxed break-words">
               <strong>Acciones:</strong> Ajusta horarios de personal según demanda. 
               Programa promociones en horas de menor actividad para estimular ventas.
             </p>
@@ -631,14 +631,14 @@ const Ventas = () => {
           {/* Gráfico de Dispersión */}
           <div className="bg-pink-50 rounded-lg p-4">
             <h3 className="text-sm font-semibold text-pink-900 mb-2">🎯 Gráfico de Dispersión</h3>
-            <p className="text-pink-800 text-xs leading-relaxed mb-2">
+            <p className="text-pink-800 text-xs leading-relaxed break-words mb-2">
               <strong>Qué muestra:</strong> La relación entre ventas totales y ticket promedio por día.
             </p>
-            <p className="text-pink-800 text-xs leading-relaxed mb-2">
+            <p className="text-pink-800 text-xs leading-relaxed break-words mb-2">
               <strong>Implicancias:</strong> Te ayuda a entender si las ventas altas se deben a muchos clientes con tickets bajos 
               o pocos clientes con tickets altos.
             </p>
-            <p className="text-pink-800 text-xs leading-relaxed">
+            <p className="text-pink-800 text-xs leading-relaxed break-words">
               <strong>Acciones:</strong> Si hay días con ventas altas pero tickets bajos, enfócate en aumentar el valor promedio. 
               Si hay días con tickets altos pero pocas ventas, trabaja en atraer más clientes.
             </p>
@@ -647,14 +647,14 @@ const Ventas = () => {
           {/* Mapa de Calor */}
           <div className="bg-red-50 rounded-lg p-4">
             <h3 className="text-sm font-semibold text-red-900 mb-2">🔥 Mapa de Calor</h3>
-            <p className="text-red-800 text-xs leading-relaxed mb-2">
+            <p className="text-red-800 text-xs leading-relaxed break-words mb-2">
               <strong>Qué muestra:</strong> Intensidad de ventas combinando día de la semana y hora del día.
             </p>
-            <p className="text-red-800 text-xs leading-relaxed mb-2">
+            <p className="text-red-800 text-xs leading-relaxed break-words mb-2">
               <strong>Implicancias:</strong> Identifica los momentos exactos de mayor y menor actividad. 
               Útil para planificación detallada de recursos y estrategias.
             </p>
-            <p className="text-red-800 text-xs leading-relaxed">
+            <p className="text-red-800 text-xs leading-relaxed break-words">
               <strong>Acciones:</strong> Planifica promociones específicas para momentos de baja actividad. 
               Asegura recursos suficientes en períodos de alta demanda.
             </p>
@@ -663,13 +663,13 @@ const Ventas = () => {
           {/* Tabla de Comparación */}
           <div className="bg-indigo-50 rounded-lg p-4">
             <h3 className="text-sm font-semibold text-indigo-900 mb-2">📋 Tabla de Comparación</h3>
-            <p className="text-indigo-800 text-xs leading-relaxed mb-2">
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
               <strong>Objetivo:</strong> Comparar rendimiento actual vs períodos anteriores de manera detallada.
             </p>
-            <p className="text-indigo-800 text-xs leading-relaxed mb-2">
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
               <strong>Criterio "Fecha a fecha":</strong> Compara el mismo día de diferentes períodos (ej: 15 de agosto 2024 vs 15 de agosto 2023).
             </p>
-            <p className="text-indigo-800 text-xs leading-relaxed">
+            <p className="text-indigo-800 text-xs leading-relaxed break-words">
               <strong>Criterio "Día a día":</strong> Compara días consecutivos para identificar tendencias inmediatas y cambios rápidos en el negocio.
             </p>
           </div>

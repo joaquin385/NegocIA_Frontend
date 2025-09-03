@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import ExpandableSidebar from '@/components/ExpandableSidebar'
 import { sidebarOpenAtom } from '@/stores'
 import Ventas from './analisis-dimension/Ventas'
+import Tickets from './analisis-dimension/Tickets'
 
 const AnalisisDimension = () => {
   const { dimension } = useParams()
@@ -10,6 +11,7 @@ const AnalisisDimension = () => {
 
   const dimensionTitles = {
     ventas: 'Análisis por Dimensión - Ventas',
+    tickets: 'Análisis por Dimensión - Tickets',
     clientes: 'Análisis por Dimensión - Clientes',
     productos: 'Análisis por Dimensión - Productos',
     proveedores: 'Análisis por Dimensión - Proveedores',
@@ -21,6 +23,11 @@ const AnalisisDimension = () => {
       metricas: ['Ticket promedio', 'Valor promedio ($)', 'Unidades promedio'],
       valores: ['$1,234', '4.2', '85%'],
       descripcion: 'Análisis detallado de las ventas por diferentes dimensiones'
+    },
+    tickets: {
+      metricas: ['Tiempo promedio', 'Satisfacción', 'Resolución'],
+      valores: ['2.5h', '4.8/5', '95%'],
+      descripcion: 'Análisis detallado de los tickets por diferentes dimensiones'
     },
     clientes: {
       metricas: ['Clientes activos', 'Retención', 'Satisfacción'],
@@ -49,6 +56,11 @@ const AnalisisDimension = () => {
   // Si es la dimensión de ventas, renderizar el componente específico
   if (dimension === 'ventas') {
     return <Ventas />
+  }
+
+  // Si es la dimensión de tickets, renderizar el componente específico
+  if (dimension === 'tickets') {
+    return <Tickets />
   }
 
   return (
