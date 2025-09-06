@@ -4,6 +4,7 @@ import ExpandableSidebar from '@/components/ExpandableSidebar'
 import { sidebarOpenAtom } from '@/stores'
 import Ventas from './analisis-dimension/Ventas'
 import Tickets from './analisis-dimension/Tickets'
+import Productos from './analisis-dimension/Productos'
 
 const AnalisisDimension = () => {
   const { dimension } = useParams()
@@ -61,6 +62,11 @@ const AnalisisDimension = () => {
   // Si es la dimensión de tickets, renderizar el componente específico
   if (dimension === 'tickets') {
     return <Tickets />
+  }
+
+  // Si es la dimensión de productos, renderizar el componente específico
+  if (dimension === 'productos') {
+    return <Productos />
   }
 
   return (
