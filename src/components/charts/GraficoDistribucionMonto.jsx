@@ -10,6 +10,8 @@ const GraficoDistribucionMonto = ({
   datos = [], 
   titulo = "Distribución de Montos de Tickets", 
   altura = "400px",
+  etiquetaEjeY = "Cantidad de tickets",
+  etiquetaLeyenda = "Cantidad de tickets",
   formatearEjeY = (value) => `${value}`,
   formatearTooltip = (value, name) => [`${value}`, name]
 }) => {
@@ -101,7 +103,7 @@ const GraficoDistribucionMonto = ({
               tickLine={false}
               axisLine={false}
               tickFormatter={formatearEjeY}
-              label={{ value: 'Cantidad de tickets', angle: -90, position: 'insideLeft', style: { textAnchor: 'middle' } }}
+              label={{ value: etiquetaEjeY, angle: -90, position: 'insideLeft', style: { textAnchor: 'middle' } }}
             />
             <Tooltip 
               contentStyle={{
@@ -124,7 +126,7 @@ const GraficoDistribucionMonto = ({
             <Bar 
               dataKey="cantidad" 
               fill="#3b82f6"
-              name="Cantidad de tickets"
+              name={etiquetaLeyenda}
               radius={[2, 2, 0, 0]}
             />
           </BarChart>

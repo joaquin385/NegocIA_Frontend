@@ -6,6 +6,7 @@ import Ventas from './analisis-dimension/Ventas'
 import Tickets from './analisis-dimension/Tickets'
 import Clientes from './analisis-dimension/Clientes'
 import Productos from './analisis-dimension/Productos'
+import Proveedores from './analisis-dimension/Proveedores'
 
 const AnalisisDimension = () => {
   const { dimension } = useParams()
@@ -73,6 +74,11 @@ const AnalisisDimension = () => {
   // Si es la dimensión de productos, renderizar el componente específico
   if (dimension === 'productos') {
     return <Productos />
+  }
+
+  // Si es la dimensión de proveedores, renderizar el componente específico
+  if (dimension === 'proveedores') {
+    return <Proveedores />
   }
 
   return (
