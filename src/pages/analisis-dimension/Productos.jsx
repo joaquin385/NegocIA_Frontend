@@ -1,15 +1,44 @@
 import { useAtom } from 'jotai'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import ExpandableSidebar from '@/components/ExpandableSidebar'
 import { sidebarOpenAtom } from '@/stores'
 import MetricasGenerales from '@/components/MetricasGenerales'
 import GraficoEvolucion from '@/components/charts/GraficoEvolucion'
 import TablaAnalisisProductos from '@/components/TablaAnalisisProductos'
+import PreguntasProductos from '@/components/PreguntasProductos'
 
 const Productos = () => {
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
   const [activeTab, setActiveTab] = useState('evolucion')
   const [metrica, setMetrica] = useState('cantidad')
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Carnes')
+  const [productosSeleccionados, setProductosSeleccionados] = useState(new Set())
+  const [dropdownAbierto, setDropdownAbierto] = useState(false)
+  const dropdownRef = useRef(null)
+
+  // Efecto para cerrar el dropdown cuando se hace clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownAbierto(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  // Datos de categorías y productos
+  const categoriasProductos = {
+    'Carnes': ['Carne vacuna', 'Pollo', 'Cerdo'],
+    'Galletitas': ['Galletita A', 'Galletita B'],
+    'Lácteos': ['Leche', 'Queso'],
+    'Bebidas': ['Gaseosa', 'Jugos', 'Agua'],
+    'Limpieza': ['Detergente', 'Lavandina', 'Jabón'],
+    'Panadería': ['Pan', 'Facturas', 'Tortas']
+  }
 
   // Datos simulados para el gráfico de evolución
   const datosCantidadProductos = [
@@ -177,6 +206,37 @@ const Productos = () => {
   ]
 
 
+  // Funciones para manejar la selección de productos
+  const toggleProducto = (producto) => {
+    const nuevaSeleccion = new Set(productosSeleccionados)
+    if (nuevaSeleccion.has(producto)) {
+      nuevaSeleccion.delete(producto)
+    } else {
+      nuevaSeleccion.add(producto)
+    }
+    setProductosSeleccionados(nuevaSeleccion)
+  }
+
+  const toggleCategoria = (categoria) => {
+    const productosCategoria = categoriasProductos[categoria]
+    const todosSeleccionados = productosCategoria.every(producto => 
+      productosSeleccionados.has(producto)
+    )
+    
+    if (todosSeleccionados) {
+      // Deseleccionar todos los productos de la categoría
+      productosCategoria.forEach(producto => {
+        productosSeleccionados.delete(producto)
+      })
+    } else {
+      // Seleccionar todos los productos de la categoría
+      productosCategoria.forEach(producto => {
+        productosSeleccionados.add(producto)
+      })
+    }
+    setProductosSeleccionados(new Set(productosSeleccionados))
+  }
+
   // Función para obtener datos según la métrica seleccionada
   const obtenerDatosPorMetrica = (metrica) => {
     switch (metrica) {
@@ -274,25 +334,82 @@ const Productos = () => {
             </p>
           </div>
 
-          {/* Filtros de Fecha */}
+          {/* Filtros */}
           <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 mb-5">
-            <h3 className="text-sm font-semibold text-gray-800 mb-3">Filtros de Fecha</h3>
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center space-x-2">
-                <label className="text-xs font-medium text-gray-700">Fecha inicio:</label>
-                <input
-                  type="date"
-                  className="px-3 py-1 border border-gray-300 rounded text-xs"
-                  defaultValue="2025-07-28"
-                />
+            <h3 className="text-sm font-semibold text-gray-800 mb-3">Filtros</h3>
+            <div className="flex flex-wrap gap-6">
+              {/* Filtros de Fecha */}
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center space-x-2">
+                  <label className="text-xs font-medium text-gray-700">Fecha inicio:</label>
+                  <input
+                    type="date"
+                    className="px-3 py-1 border border-gray-300 rounded text-xs"
+                    defaultValue="2025-07-28"
+                  />
+                </div>
+                <div className="flex items-center space-x-2">
+                  <label className="text-xs font-medium text-gray-700">Fecha fin:</label>
+                  <input
+                    type="date"
+                    className="px-3 py-1 border border-gray-300 rounded text-xs"
+                    defaultValue="2025-08-28"
+                  />
+                </div>
               </div>
+
+              {/* Filtro de Categorías/Productos */}
               <div className="flex items-center space-x-2">
-                <label className="text-xs font-medium text-gray-700">Fecha fin:</label>
-                <input
-                  type="date"
-                  className="px-3 py-1 border border-gray-300 rounded text-xs"
-                  defaultValue="2025-08-28"
-                />
+                <label className="text-xs font-medium text-gray-700">Categoría / Producto:</label>
+                <div className="relative" ref={dropdownRef}>
+                  <button
+                    onClick={() => setDropdownAbierto(!dropdownAbierto)}
+                    className="px-3 py-1 border border-gray-300 rounded text-xs bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-w-[200px] text-left flex items-center justify-between"
+                  >
+                    <span>{categoriaSeleccionada}</span>
+                    <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  
+                  {dropdownAbierto && (
+                    <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-300 rounded shadow-lg z-50 max-h-60 overflow-y-auto">
+                      {Object.entries(categoriasProductos).map(([categoria, productos]) => (
+                        <div key={categoria} className="border-b border-gray-100 last:border-b-0">
+                          <div
+                            className="px-4 py-2 hover:bg-gray-50 cursor-pointer flex items-center justify-between"
+                            onClick={() => toggleCategoria(categoria)}
+                          >
+                            <span className="text-xs font-medium text-gray-800">{categoria}</span>
+                            <input
+                              type="checkbox"
+                              checked={productos.every(producto => productosSeleccionados.has(producto))}
+                              onChange={() => toggleCategoria(categoria)}
+                              className="w-3 h-3 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                            />
+                          </div>
+                          <div className="pl-6">
+                            {productos.map((producto) => (
+                              <div
+                                key={producto}
+                                className="px-4 py-2 hover:bg-gray-50 cursor-pointer flex items-center justify-between"
+                                onClick={() => toggleProducto(producto)}
+                              >
+                                <span className="text-xs text-gray-700">{producto}</span>
+                                <input
+                                  type="checkbox"
+                                  checked={productosSeleccionados.has(producto)}
+                                  onChange={() => toggleProducto(producto)}
+                                  className="w-3 h-3 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -375,6 +492,11 @@ const Productos = () => {
           {/* Tabla de Análisis de Productos */}
           <div className="mt-5">
             <TablaAnalisisProductos />
+          </div>
+
+          {/* Preguntas de Análisis */}
+          <div className="mt-8">
+            <PreguntasProductos />
           </div>
         </div>
       </div>
