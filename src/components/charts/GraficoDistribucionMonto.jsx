@@ -4,7 +4,8 @@ import { atom } from 'jotai'
 
 // Atoms para el estado del gráfico
 const rangoMontosAtom = atom('0-500')
-const intervalosAtom = atom(25)
+const intervalosAtom = atom(10)
+const metricaAtom = atom('costo-unitario')
 
 const GraficoDistribucionMonto = ({ 
   datos = [], 
@@ -17,9 +18,10 @@ const GraficoDistribucionMonto = ({
 }) => {
   const [rangoMontos, setRangoMontos] = useAtom(rangoMontosAtom)
   const [intervalos, setIntervalos] = useAtom(intervalosAtom)
+  const [metrica, setMetrica] = useAtom(metricaAtom)
 
   // Función para generar datos de distribución según el rango y intervalos
-  const generarDatosDistribucion = (rango, numIntervalos) => {
+  const generarDatosDistribucion = (rango, numIntervalos, metricaSeleccionada) => {
     const [min, max] = rango.split('-').map(Number)
     const anchoIntervalo = (max - min) / numIntervalos
     const datos = []
@@ -28,10 +30,18 @@ const GraficoDistribucionMonto = ({
       const inicio = min + (i * anchoIntervalo)
       const fin = min + ((i + 1) * anchoIntervalo)
       
-      // Generar datos simulados con distribución normal sesgada hacia valores bajos
-      const valorBase = Math.max(0, 100 - (i * 2)) // Decrece hacia valores altos
-      const variacion = Math.random() * 30
-      const cantidad = Math.round(valorBase + variacion + Math.random() * 20)
+      let cantidad
+      if (metricaSeleccionada === 'costo-unitario') {
+        // Para costo unitario: distribución sesgada hacia valores bajos (más productos baratos)
+        const valorBase = Math.max(0, 200 - (i * 15)) // Decrece más dramáticamente
+        const variacion = Math.random() * 40
+        cantidad = Math.round(valorBase + variacion + Math.random() * 30)
+      } else {
+        // Para costo total: distribución normal sesgada hacia valores bajos
+        const valorBase = Math.max(0, 100 - (i * 2))
+        const variacion = Math.random() * 30
+        cantidad = Math.round(valorBase + variacion + Math.random() * 20)
+      }
       
       datos.push({
         rango: `${Math.round(inicio)}-${Math.round(fin)}`,
@@ -44,7 +54,7 @@ const GraficoDistribucionMonto = ({
     return datos
   }
 
-  const datosProcesados = generarDatosDistribucion(rangoMontos, intervalos)
+  const datosProcesados = generarDatosDistribucion(rangoMontos, intervalos, metrica)
 
   return (
     <div className="space-y-4">
@@ -63,6 +73,9 @@ const GraficoDistribucionMonto = ({
               <option value="0-1000">$0-$1000</option>
               <option value="0-2000">$0-$2000</option>
               <option value="500-1500">$500-$1500</option>
+              <option value="0-50">$0-$50</option>
+              <option value="0-100">$0-$100</option>
+              <option value="0-200">$0-$200</option>
             </select>
           </div>
           <div className="flex items-center space-x-2">
@@ -77,6 +90,17 @@ const GraficoDistribucionMonto = ({
               <option value={20}>20</option>
               <option value={25}>25</option>
               <option value={30}>30</option>
+            </select>
+          </div>
+          <div className="flex items-center space-x-2">
+            <label className="text-xs font-medium text-gray-700">Métrica:</label>
+            <select 
+              className="px-3 py-1 border border-gray-300 rounded text-xs"
+              value={metrica}
+              onChange={(e) => setMetrica(e.target.value)}
+            >
+              <option value="costo-total">Costo Total</option>
+              <option value="costo-unitario">Costo Unitario</option>
             </select>
           </div>
         </div>
