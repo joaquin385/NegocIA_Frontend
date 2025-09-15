@@ -938,7 +938,7 @@ const Ventas = () => {
            {/* Tabla de Comparación de Ventas */}
            <div className="mt-5">
              <TablaComparacionVentas />
-           </div>
+          </div>
         </div>
       </div>
     </div>
