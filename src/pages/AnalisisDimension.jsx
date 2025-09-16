@@ -8,6 +8,7 @@ import Clientes from './analisis-dimension/Clientes'
 import Productos from './analisis-dimension/Productos'
 import Proveedores from './analisis-dimension/Proveedores'
 import Inventario from './analisis-dimension/Inventario'
+import Finanzas from './analisis-dimension/Finanzas'
 
 const AnalisisDimension = () => {
   const { dimension } = useParams()
@@ -84,6 +85,10 @@ const AnalisisDimension = () => {
 
   if (dimension === 'inventario') {
     return <Inventario />
+  }
+
+  if (dimension === 'finanzas') {
+    return <Finanzas />
   }
 
   return (
