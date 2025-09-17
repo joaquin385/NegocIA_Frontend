@@ -1,6 +1,8 @@
 import { useAtom } from 'jotai'
 import ExpandableSidebar from '@/components/ExpandableSidebar'
 import { sidebarOpenAtom } from '@/stores'
+import MetricaExpandible from '../components/MetricaExpandible'
+import PanelExpandible from '../components/PanelExpandible'
 
 const PanelGeneral = () => {
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
@@ -61,237 +63,216 @@ const PanelGeneral = () => {
         p-6
       `}>
         <div className="max-w-7xl mx-auto">
-          
-          {/* Indicadores Globales (Semáforo) */}
+
+                       {/* Indicadores Globales (Semáforo) */}
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl border border-gray-100 p-6 mb-8">
             <div className="flex items-center mb-6">
-              <div className="p-3 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl mr-4">
+                <div className="p-3 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl mr-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2zm0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                  Indicadores Globales
-                </h3>
-                <p className="text-gray-500 text-sm">Sistema de semáforo para monitoreo de métricas clave</p>
-              </div>
-            </div>
-
-            {/* Tabla de Indicadores Globales */}
-            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-                <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
-                  <h4 className="text-sm font-semibold text-gray-800">Indicadores Globales</h4>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2zm0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
                 </div>
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <div>
+                <h3 className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                    Indicadores Globales
+                  </h3>
+                  <p className="text-gray-500 text-sm">Sistema de semáforo para monitoreo de métricas clave</p>
+                </div>
+              </div>
+             
+            {/* Layout de dos columnas: Tabla y Panel Expandible */}
+            <div className="flex gap-6">
+              {/* Tabla de Indicadores Globales - 40% */}
+              <div className="w-2/5">
+                <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                  <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
+                    <h4 className="text-sm font-semibold text-gray-800">Indicadores Globales</h4>
+                  </div>
+                               <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Indicador
                       </th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Valor
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Valor
                       </th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Status
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Status
+                      </th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Detalle
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {/* Salud Financiera */}
+                 <tbody className="bg-white divide-y divide-gray-200">
+                                       {/* Salud Financiera */}
                     <tr className="bg-blue-50">
-                      <td className="px-4 py-2 text-sm font-semibold text-blue-800" colSpan="3">
+                      <td className="px-4 py-2 text-sm font-semibold text-blue-800" colSpan="4">
                         Salud Financiera
                       </td>
                     </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Ventas</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">$85,420</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                          Bien - Crecimiento +8.5%
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Costos</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">$69,970</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                          <div className="w-2 h-2 bg-yellow-500 rounded-full mr-1"></div>
-                          Revisar - Incremento +6.2%
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Beneficio Neto</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">$15,450</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                          Bien - Crecimiento +12%
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Margen de Beneficio</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">18.2%</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                          Bien - Por encima del 15%
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Utilidad Neta</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">$12,890</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                          <div className="w-2 h-2 bg-yellow-500 rounded-full mr-1"></div>
-                          Revisar - Bajo vs objetivo
-                        </span>
-                      </td>
-                    </tr>
-
-                    {/* Salud Comercial */}
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Ventas",
+                        valor: "$85,420",
+                        status: "Bien - Crecimiento +8.5%",
+                        categoria: "Salud Financiera"
+                      }}
+                    />
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Costos",
+                        valor: "$69,970",
+                        status: "Revisar - Incremento +6.2%",
+                        categoria: "Salud Financiera"
+                      }}
+                    />
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Beneficio Neto",
+                        valor: "$15,450",
+                        status: "Bien - Crecimiento +12%",
+                        categoria: "Salud Financiera"
+                      }}
+                    />
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Margen de Beneficio",
+                        valor: "18.2%",
+                        status: "Bien - Por encima del 15%",
+                        categoria: "Salud Financiera"
+                      }}
+                    />
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Utilidad Neta",
+                        valor: "$12,890",
+                        status: "Revisar - Bajo vs objetivo",
+                        categoria: "Salud Financiera"
+                      }}
+                    />
+                   
+                                                                              {/* Salud Comercial */}
                     <tr className="bg-green-50">
-                      <td className="px-4 py-2 text-sm font-semibold text-green-800" colSpan="3">
+                      <td className="px-4 py-2 text-sm font-semibold text-green-800" colSpan="4">
                         Salud Comercial
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Ventas vs Objetivo</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">95.2%</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                          <div className="w-2 h-2 bg-yellow-500 rounded-full mr-1"></div>
-                          Revisar - 4.8% bajo objetivo
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Ticket Promedio</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">$45.80</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                          Bien - Crecimiento +5.3%
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Crecimiento Ventas</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">+12.3%</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                          Bien - Por encima del 10%
-                        </span>
-                      </td>
-                    </tr>
-
+                          </td>
+                        </tr>
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Ventas vs Objetivo",
+                        valor: "95.2%",
+                        status: "Revisar - 4.8% bajo objetivo",
+                        categoria: "Salud Comercial"
+                      }}
+                    />
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Ticket Promedio",
+                        valor: "$45.80",
+                        status: "Bien - Crecimiento +5.3%",
+                        categoria: "Salud Comercial"
+                      }}
+                    />
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Crecimiento Ventas",
+                        valor: "+12.3%",
+                        status: "Bien - Por encima del 10%",
+                        categoria: "Salud Comercial"
+                      }}
+                    />
+                        
                     {/* Salud Operativa */}
                     <tr className="bg-purple-50">
-                      <td className="px-4 py-2 text-sm font-semibold text-purple-800" colSpan="3">
+                      <td className="px-4 py-2 text-sm font-semibold text-purple-800" colSpan="4">
                         Salud Operativa
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Rotación Inventario</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">4.2x</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                          <div className="w-2 h-2 bg-yellow-500 rounded-full mr-1"></div>
-                          Revisar - Bajo vs estándar 6x
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Stock Crítico</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">8%</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                          Bien - Dentro del rango óptimo
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Días Cobertura</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">18 días</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
-                          <div className="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
-                          Crítico - Muy bajo para operación
-                        </span>
-                      </td>
-                    </tr>
-
+                          </td>
+                        </tr>
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Rotación Inventario",
+                        valor: "4.2x",
+                        status: "Revisar - Bajo vs estándar 6x",
+                        categoria: "Salud Operativa"
+                      }}
+                    />
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Stock Crítico",
+                        valor: "8%",
+                        status: "Bien - Dentro del rango óptimo",
+                        categoria: "Salud Operativa"
+                      }}
+                    />
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Días Cobertura",
+                        valor: "18 días",
+                        status: "Crítico - Muy bajo para operación",
+                        categoria: "Salud Operativa"
+                      }}
+                    />
+                        
                     {/* Proveedores */}
                     <tr className="bg-orange-50">
-                      <td className="px-4 py-2 text-sm font-semibold text-orange-800" colSpan="3">
+                      <td className="px-4 py-2 text-sm font-semibold text-orange-800" colSpan="4">
                         Proveedores
                       </td>
                     </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Plazo Promedio Pago</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">30 días</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                          Bien - Plazo estándar
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Cumplimiento</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">94%</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                          <div className="w-2 h-2 bg-yellow-500 rounded-full mr-1"></div>
-                          Revisar - Bajo del 98% objetivo
-                        </span>
-                      </td>
-                    </tr>
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Plazo Promedio Pago",
+                        valor: "30 días",
+                        status: "Bien - Plazo estándar",
+                        categoria: "Proveedores"
+                      }}
+                    />
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Cumplimiento",
+                        valor: "94%",
+                        status: "Revisar - Bajo del 98% objetivo",
+                        categoria: "Proveedores"
+                      }}
+                    />
 
                     {/* Clientes */}
                     <tr className="bg-teal-50">
-                      <td className="px-4 py-2 text-sm font-semibold text-teal-800" colSpan="3">
+                      <td className="px-4 py-2 text-sm font-semibold text-teal-800" colSpan="4">
                         Clientes
                       </td>
                     </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Satisfacción</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">4.2/5</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                          Bien - Por encima de 4.0
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-2 text-sm text-gray-900">Retención</td>
-                      <td className="px-4 py-2 text-sm font-semibold text-gray-900">78%</td>
-                      <td className="px-4 py-2 text-sm">
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                          Bien - Crecimiento +3%
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Satisfacción",
+                        valor: "4.2/5",
+                        status: "Bien - Por encima de 4.0",
+                        categoria: "Clientes"
+                      }}
+                    />
+                    <MetricaExpandible 
+                      metrica={{
+                        nombre: "Retención",
+                        valor: "78%",
+                        status: "Bien - Crecimiento +3%",
+                        categoria: "Clientes"
+                      }}
+                    />
+                </tbody>
+              </table>
             </div>
           </div>
 
-
+          {/* Panel Expandible - 60% */}
+          <PanelExpandible />
+        </div>
+      </div>
         </div>
       </div>
     </div>
   )
-}
-
-export default PanelGeneral
+ }
+ 
+ export default PanelGeneral 
