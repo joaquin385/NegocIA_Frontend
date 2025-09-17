@@ -4,14 +4,13 @@ import { cn } from '@/lib/utils'
 const SecondaryNavigation = () => {
   const location = useLocation()
   
-  // Solo mostrar cuando estemos en análisis por dimensión o análisis cross
-  const shouldShow = location.pathname.startsWith('/analisis-dimension') || 
-                     location.pathname.startsWith('/analisis-cross')
+  // Solo mostrar cuando estemos en análisis por dimensión
+  const shouldShow = location.pathname.startsWith('/analisis-dimension')
   
   if (!shouldShow) return null
 
   // Navegación secundaria para análisis por dimensión
-  const dimensionNavItems = [
+  const secondaryNavItems = [
     { path: '/analisis-dimension/ventas', label: 'Ventas' },
     { path: '/analisis-dimension/tickets', label: 'Tickets' },
     { path: '/analisis-dimension/productos', label: 'Productos' },
@@ -20,18 +19,6 @@ const SecondaryNavigation = () => {
     { path: '/analisis-dimension/inventario', label: 'Inventario' },
     { path: '/analisis-dimension/finanzas', label: 'Finanzas' }
   ]
-
-  // Navegación secundaria para análisis cross (solo 3 opciones)
-  const crossNavItems = [
-    { path: '/analisis-cross/productos', label: 'Productos' },
-    { path: '/analisis-cross/clientes', label: 'Clientes' },
-    { path: '/analisis-cross/proveedores', label: 'Proveedores' }
-  ]
-
-  // Seleccionar los items según el tipo de análisis
-  const secondaryNavItems = location.pathname.startsWith('/analisis-cross') 
-    ? crossNavItems
-    : dimensionNavItems
 
   return (
     <div className="bg-gray-50 border-b border-gray-200">

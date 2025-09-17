@@ -7,7 +7,6 @@ const Navigation = () => {
   const mainNavItems = [
     { path: '/', label: 'Panel General' },
     { path: '/analisis-dimension', label: 'Análisis por Dimensión' },
-    { path: '/analisis-cross', label: 'Análisis Cross' },
     { path: '/carga-datos', label: 'Carga de Datos' }
   ]
 
