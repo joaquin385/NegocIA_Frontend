@@ -1,6 +1,20 @@
 # Node modules (contains Python files that confuse Vercel)
 node_modules/
 
+# Documentation files (causing "Other" detection)
+*.md
+README.md
+README_INSTALLATION.md
+FOLDER_STRUCTURE.md
+TECHNICAL_GUIDE.md
+src/components/README_Layout.md
+src/components/README_Filtros.md
+
+# Static assets (causing "Other" detection)
+*.svg
+public/vite.svg
+src/assets/react.svg
+
 # Python files - IGNORE ALL PYTHON
 requirements.txt
 *.py
@@ -40,8 +54,3 @@ Dockerfile
 docker-compose.yml
 .env.local
 .env.production
-
-# Force Node.js detection
-.nvmrc
-package.json
-package-lock.json
