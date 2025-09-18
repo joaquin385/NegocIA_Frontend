@@ -1,3 +1,4 @@
+# Python files
 requirements.txt
 *.py
 __pycache__/
@@ -22,3 +23,17 @@ coverage.xml
 .mypy_cache
 .pytest_cache
 .hypothesis
+
+# FastAPI files
+main.py
+app.py
+api/
+backend/
+*.db
+*.sqlite
+
+# Other files that might confuse Vercel
+Dockerfile
+docker-compose.yml
+.env.local
+.env.production
