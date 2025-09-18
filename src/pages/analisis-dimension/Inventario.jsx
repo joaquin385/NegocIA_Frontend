@@ -1,16 +1,23 @@
 import { useAtom } from 'jotai'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import ExpandableSidebar from '@/components/ExpandableSidebar'
 import { sidebarOpenAtom } from '@/stores'
 import MetricasGenerales from '@/components/MetricasGenerales'
 import GraficoDistribucionStock from '@/components/charts/GraficoDistribucionStock'
 import GraficoEvolucion from '@/components/charts/GraficoEvolucion'
 import TablaInventarioProductos from '@/components/TablaInventarioProductos'
+import FiltrosFecha from '@/components/FiltrosFecha'
 
 const Inventario = () => {
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
   const [activeTab, setActiveTab] = useState('evolucion')
   const [metrica, setMetrica] = useState('valorCosto')
+  const [fechaInicio, setFechaInicio] = useState('2025-07-28')
+  const [fechaFin, setFechaFin] = useState('2025-08-28')
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Carnes')
+  const [productosSeleccionados, setProductosSeleccionados] = useState(new Set())
+  const [dropdownAbierto, setDropdownAbierto] = useState(false)
+  const dropdownRef = useRef(null)
 
   // Datos simulados para métricas generales de inventario
   const metricasGenerales = [
@@ -76,52 +83,140 @@ const Inventario = () => {
     { fecha: '12/01', cantidad: 48900, valorCosto: 3100000, valorVenta: 4650000 }
   ]
 
+  // Datos de categorías y productos para el filtro
+  const categoriasProductos = {
+    'Carnes': ['Carne de Res', 'Carne de Pollo', 'Carne de Cerdo', 'Carne de Cordero'],
+    'Lácteos': ['Leche', 'Queso', 'Yogur', 'Mantequilla'],
+    'Verduras': ['Tomate', 'Lechuga', 'Zanahoria', 'Cebolla'],
+    'Frutas': ['Manzana', 'Plátano', 'Naranja', 'Fresa'],
+    'Granos': ['Arroz', 'Frijoles', 'Lentejas', 'Garbanzos']
+  }
+
+  // Efecto para cerrar el dropdown cuando se hace clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownAbierto(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  // Función para alternar la selección de una categoría
+  const toggleCategoria = (categoria) => {
+    const productos = categoriasProductos[categoria]
+    const todosSeleccionados = productos.every(producto => productosSeleccionados.has(producto))
+    
+    if (todosSeleccionados) {
+      // Deseleccionar todos los productos de la categoría
+      productos.forEach(producto => {
+        productosSeleccionados.delete(producto)
+      })
+    } else {
+      // Seleccionar todos los productos de la categoría
+      productos.forEach(producto => {
+        productosSeleccionados.add(producto)
+      })
+    }
+    
+    setProductosSeleccionados(new Set(productosSeleccionados))
+  }
+
+  // Función para alternar la selección de un producto individual
+  const toggleProducto = (producto) => {
+    const nuevosSeleccionados = new Set(productosSeleccionados)
+    if (nuevosSeleccionados.has(producto)) {
+      nuevosSeleccionados.delete(producto)
+    } else {
+      nuevosSeleccionados.add(producto)
+    }
+    setProductosSeleccionados(nuevosSeleccionados)
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white shadow-sm border-b border-gray-200 px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">Análisis de Inventario</h1>
-            <p className="text-sm text-gray-600 mt-1">Gestión y análisis del inventario de productos</p>
+      <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="mb-5">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-800 via-purple-700 to-purple-600 bg-clip-text text-transparent mb-2">
+            Análisis de Inventario
+          </h1>
+          <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias de inventario por dimensión</p>
+        </div>
+
+        {/* Filtros */}
+        <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 mb-5">
+          <h3 className="text-sm font-semibold text-gray-800 mb-3">Filtros</h3>
+          <div className="flex flex-wrap gap-6">
+            {/* Filtros de Fecha */}
+            <FiltrosFecha 
+              fechaInicio={fechaInicio}
+              fechaFin={fechaFin}
+              onFechaInicioChange={setFechaInicio}
+              onFechaFinChange={setFechaFin}
+              standalone={false}
+            />
+
+            {/* Filtro de Categorías/Productos */}
+            <div className="flex items-center space-x-2">
+              <label className="text-xs font-medium text-gray-700">Categoría / Producto:</label>
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setDropdownAbierto(!dropdownAbierto)}
+                  className="px-3 py-2 border border-gray-300 rounded-lg text-xs bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-w-[200px] text-left flex items-center justify-between"
+                >
+                  <span>{categoriaSeleccionada}</span>
+                  <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {dropdownAbierto && (
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-300 rounded shadow-lg z-50 max-h-60 overflow-y-auto">
+                    {Object.entries(categoriasProductos).map(([categoria, productos]) => (
+                      <div key={categoria} className="border-b border-gray-100 last:border-b-0">
+                        <div
+                          className="px-4 py-2 hover:bg-gray-50 cursor-pointer flex items-center justify-between"
+                          onClick={() => toggleCategoria(categoria)}
+                        >
+                          <span className="text-xs font-medium text-gray-800">{categoria}</span>
+                          <input
+                            type="checkbox"
+                            checked={productos.every(producto => productosSeleccionados.has(producto))}
+                            onChange={() => {}}
+                            className="w-3 h-3 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                          />
+                        </div>
+                        <div className="pl-4">
+                          {productos.map(producto => (
+                            <div
+                              key={producto}
+                              className="px-3 py-1 hover:bg-gray-50 cursor-pointer flex items-center justify-between"
+                              onClick={() => toggleProducto(producto)}
+                            >
+                              <span className="text-xs text-gray-600">{producto}</span>
+                              <input
+                                type="checkbox"
+                                checked={productosSeleccionados.has(producto)}
+                                onChange={() => {}}
+                                className="w-3 h-3 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Filtros */}
-      <div className="bg-white border-b border-gray-200 px-6 py-4">
-        <div className="flex flex-wrap items-center gap-4">
-          <div className="flex items-center space-x-2">
-            <label className="text-sm font-medium text-gray-700">Período:</label>
-            <select className="px-3 py-2 border border-gray-300 rounded-md text-sm">
-              <option>Últimos 30 días</option>
-              <option>Últimos 90 días</option>
-              <option>Último año</option>
-            </select>
-          </div>
-          <div className="flex items-center space-x-2">
-            <label className="text-sm font-medium text-gray-700">Categoría:</label>
-            <select className="px-3 py-2 border border-gray-300 rounded-md text-sm">
-              <option>Todas las categorías</option>
-              <option>Electrónicos</option>
-              <option>Ropa</option>
-              <option>Hogar</option>
-            </select>
-          </div>
-          <div className="flex items-center space-x-2">
-            <label className="text-sm font-medium text-gray-700">Almacén:</label>
-            <select className="px-3 py-2 border border-gray-300 rounded-md text-sm">
-              <option>Todos los almacenes</option>
-              <option>Almacén Central</option>
-              <option>Almacén Norte</option>
-              <option>Almacén Sur</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      {/* Contenido principal */}
-      <div className="p-6">
+        {/* Contenido principal */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Métricas Generales */}
             <div className="lg:col-span-1">

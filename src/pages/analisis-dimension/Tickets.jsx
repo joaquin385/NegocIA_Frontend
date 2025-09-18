@@ -7,12 +7,15 @@ import GraficoEvolucion from '@/components/charts/GraficoEvolucion'
 import GraficoEvolucionPorTipo from '@/components/charts/GraficoEvolucionPorTipo'
 import GraficoDistribucionMonto from '@/components/charts/GraficoDistribucionMonto'
 import TablaCombinacionesProductos from '@/components/TablaCombinacionesProductos'
+import FiltrosFecha from '@/components/FiltrosFecha'
 // import GraficoDistribucionTiempo from '@/components/charts/GraficoDistribucionTiempo'
 
 const Tickets = () => {
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
   const [activeTab, setActiveTab] = useState('evolucion')
   const [metrica, setMetrica] = useState('cantidad')
+  const [fechaInicio, setFechaInicio] = useState('2025-07-28')
+  const [fechaFin, setFechaFin] = useState('2025-08-28')
 
   // Datos simulados para el gráfico de evolución
   const datosCantidadTickets = [
@@ -411,22 +414,13 @@ const Tickets = () => {
             <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias de tickets por dimensión</p>
           </div>
 
-          {/* Filtro de fechas */}
-          <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-5 mb-5">
-            <div className="flex items-center justify-between">
-              <h3 className="text-base font-semibold text-gray-800">Filtros de Fecha</h3>
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <label className="text-xs font-medium text-gray-700">Fecha inicio:</label>
-                  <input type="date" className="px-3 py-2 border border-gray-300 rounded-lg text-xs" defaultValue="2025-07-28" />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <label className="text-xs font-medium text-gray-700">Fecha fin:</label>
-                  <input type="date" className="px-3 py-2 border border-gray-300 rounded-lg text-xs" defaultValue="2025-08-28" />
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Filtros */}
+          <FiltrosFecha 
+            fechaInicio={fechaInicio}
+            fechaFin={fechaFin}
+            onFechaInicioChange={setFechaInicio}
+            onFechaFinChange={setFechaFin}
+          />
 
           {/* Layout principal */}
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
@@ -442,8 +436,6 @@ const Tickets = () => {
             {/* Gráficos */}
             <div className="xl:col-span-2">
               <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-5 min-h-[550px]">
-                <h3 className="text-lg font-bold mb-5">Visualizaciones</h3>
-                
                 {/* Pestañas */}
                 <div className="flex space-x-1 border-b mb-4">
                   <button 

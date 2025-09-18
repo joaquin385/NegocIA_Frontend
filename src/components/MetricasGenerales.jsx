@@ -62,7 +62,7 @@ const MetricasGenerales = ({
   }
 
   return (
-    <div className={`bg-white rounded-xl shadow-sm border border-gray-100 p-4 ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border border-gray-100 p-4 min-h-[550px] ${className}`}>
       {/* Título principal */}
       <h3 className="text-sm font-semibold text-gray-900 mb-3 border-b border-gray-200 pb-2">
         {titulo}

@@ -6,11 +6,14 @@ import MetricasGenerales from '@/components/MetricasGenerales'
 import GraficoEvolucionFinanciero from '@/components/charts/GraficoEvolucionFinanciero'
 import GraficoEvolucionRentabilidad from '@/components/charts/GraficoEvolucionRentabilidad'
 import TablaEstadoResultados from '@/components/TablaEstadoResultados'
+import FiltrosFecha from '@/components/FiltrosFecha'
 
 const Finanzas = () => {
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
   const [activeTab, setActiveTab] = useState('evolucion')
   const [metrica, setMetrica] = useState('ingresos')
+  const [fechaInicio, setFechaInicio] = useState('2025-07-28')
+  const [fechaFin, setFechaFin] = useState('2025-08-28')
 
   // Datos simulados para el gráfico de evolución financiera
   const datosEvolucionFinanciera = [
@@ -144,18 +147,23 @@ const Finanzas = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white shadow-sm border-b border-gray-200 px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">Análisis de Finanzas</h1>
-            <p className="text-sm text-gray-600 mt-1">Análisis financiero y gestión de recursos</p>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="mb-5">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-800 via-purple-700 to-purple-600 bg-clip-text text-transparent mb-2">
+            Análisis de Finanzas
+          </h1>
+          <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias financieras por dimensión</p>
         </div>
-      </div>
 
-      {/* Contenido principal */}
-      <div className="p-6">
+        {/* Filtros */}
+        <FiltrosFecha 
+          fechaInicio={fechaInicio}
+          fechaFin={fechaFin}
+          onFechaInicioChange={setFechaInicio}
+          onFechaFinChange={setFechaFin}
+        />
+
+        {/* Contenido principal */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Métricas Generales */}
           <div className="lg:col-span-1">

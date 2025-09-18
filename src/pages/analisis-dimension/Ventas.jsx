@@ -10,6 +10,7 @@ import GraficoDispersion from '@/components/charts/GraficoDispersion'
 import MetricasGenerales from '@/components/MetricasGenerales'
 import GraficoMapaCalor from '@/components/charts/GraficoMapaCalor'
 import TablaComparacionVentas from '@/components/TablaComparacionVentas'
+import FiltrosFecha from '@/components/FiltrosFecha'
 
 const Ventas = () => {
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
@@ -21,6 +22,10 @@ const Ventas = () => {
   const [metricaDistribucionHoraria, setMetricaDistribucionHoraria] = useState('ventas')
   const [metricaDispersion, setMetricaDispersion] = useState('ventas')
   const [metricaMapaCalor, setMetricaMapaCalor] = useState('ventas')
+  
+  // Estados para filtros de fecha
+  const [fechaInicio, setFechaInicio] = useState('2025-07-28')
+  const [fechaFin, setFechaFin] = useState('2025-08-28')
 
 
 
@@ -689,41 +694,32 @@ const Ventas = () => {
             <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias de ventas por dimensión</p>
           </div>
 
-          {/* Filtro de fechas */}
-          <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-5 mb-5">
-            <div className="flex items-center justify-between">
-              <h3 className="text-base font-semibold text-gray-800">Filtros de Fecha</h3>
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <label className="text-xs font-medium text-gray-700">Fecha inicio:</label>
-                  <input type="date" className="px-3 py-2 border border-gray-300 rounded-lg text-xs" defaultValue="2025-07-28" />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <label className="text-xs font-medium text-gray-700">Fecha fin:</label>
-                  <input type="date" className="px-3 py-2 border border-gray-300 rounded-lg text-xs" defaultValue="2025-08-28" />
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Filtros de fecha */}
+          <FiltrosFecha 
+            fechaInicio={fechaInicio}
+            fechaFin={fechaFin}
+            onFechaInicioChange={setFechaInicio}
+            onFechaFinChange={setFechaFin}
+          />
 
           {/* Layout principal */}
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
             {/* Métricas Generales */}
-            <div className="xl:col-span-1">
+            <div className="lg:col-span-1">
               <MetricasGenerales 
-                {...metricasGenerales}
-                colorTema="#10b981"
+                titulo={metricasGenerales.titulo}
+                subsecciones={metricasGenerales.subsecciones}
                 columnas={1}
+                colorTema="#10b981"
               />
             </div>
 
-            {/* Gráficos */}
-            <div className="xl:col-span-2">
-              <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-5 min-h-[550px]">
-                <h3 className="text-lg font-bold mb-5">Visualizaciones</h3>
-                
-                {/* Pestañas */}
-                <div className="flex space-x-1 border-b mb-4">
+            {/* Visualizaciones */}
+            <div className="lg:col-span-2">
+              <div className="bg-white rounded-xl shadow-lg border border-gray-100">
+                {/* Pestañas de gráficos */}
+                <div className="border-b border-gray-200 p-4">
+                  <div className="flex space-x-1">
                   <button 
                     onClick={() => setActiveTab('evolucion')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
@@ -772,6 +768,7 @@ const Ventas = () => {
                   >
                     Mapa de Calor
                   </button>
+                  </div>
                 </div>
 
                 {/* Contenido de gráficos */}

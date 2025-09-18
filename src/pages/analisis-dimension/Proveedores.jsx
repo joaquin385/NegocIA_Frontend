@@ -8,10 +8,13 @@ import GraficoDistribucionMonto from '@/components/charts/GraficoDistribucionMon
 import GraficoVariacionPorcentual from '@/components/charts/GraficoVariacionPorcentual'
 import GraficoEvolucionCategorias from '@/components/charts/GraficoEvolucionCategorias'
 import TablaAnalisisProveedores from '@/components/TablaAnalisisProveedores'
+import FiltrosFecha from '@/components/FiltrosFecha'
 
 const Proveedores = () => {
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
   const [activeTab, setActiveTab] = useState('evolucion')
+  const [fechaInicio, setFechaInicio] = useState('2025-07-28')
+  const [fechaFin, setFechaFin] = useState('2025-08-28')
 
   // Datos simulados para el gráfico de evolución de compras
   const datosEvolucionCompras = [
@@ -572,38 +575,22 @@ const Proveedores = () => {
   }
 
   return (
-    <div className={`transition-all duration-300 ${isSidebarOpen ? 'mr-[30%]' : 'mr-1'}`}>
+    <div className={`transition-all duration-300 ${isSidebarOpen ? 'mr-[30%]' : 'mr-1'} py-4`}>
       <div className="max-w-7xl mx-auto px-4">
-        {/* Header */}
-        <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 mb-5">
-          <h1 className="text-2xl font-bold text-purple-600 mb-2">Análisis de Proveedores</h1>
-          <p className="text-gray-600 text-sm">
-            Análisis completo de métricas y tendencias de proveedores por dimensión
-          </p>
-        </div>
-
-        {/* Filtros de Fecha */}
-        <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 mb-5">
-          <h3 className="text-sm font-semibold text-gray-800 mb-3">Filtros de Fecha</h3>
-          <div className="flex flex-wrap gap-4">
-            <div className="flex items-center space-x-2">
-              <label className="text-xs font-medium text-gray-700">Fecha inicio:</label>
-              <input
-                type="date"
-                className="px-3 py-1 border border-gray-300 rounded text-xs"
-                defaultValue="2025-07-28"
-              />
-            </div>
-            <div className="flex items-center space-x-2">
-              <label className="text-xs font-medium text-gray-700">Fecha fin:</label>
-              <input
-                type="date"
-                className="px-3 py-1 border border-gray-300 rounded text-xs"
-                defaultValue="2025-08-28"
-              />
-            </div>
+          <div className="mb-5">
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-800 via-purple-700 to-purple-600 bg-clip-text text-transparent mb-2">
+              Análisis de Proveedores
+            </h1>
+            <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias de proveedores por dimensión</p>
           </div>
-        </div>
+
+        {/* Filtros */}
+        <FiltrosFecha 
+          fechaInicio={fechaInicio}
+          fechaFin={fechaFin}
+          onFechaInicioChange={setFechaInicio}
+          onFechaFinChange={setFechaFin}
+        />
 
         {/* Métricas Generales y Visualizaciones */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">

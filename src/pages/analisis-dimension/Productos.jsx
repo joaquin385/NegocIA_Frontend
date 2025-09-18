@@ -6,6 +6,7 @@ import MetricasGenerales from '@/components/MetricasGenerales'
 import GraficoEvolucion from '@/components/charts/GraficoEvolucion'
 import TablaAnalisisProductos from '@/components/TablaAnalisisProductos'
 import PreguntasProductos from '@/components/PreguntasProductos'
+import FiltrosFecha from '@/components/FiltrosFecha'
 
 const Productos = () => {
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
@@ -14,6 +15,8 @@ const Productos = () => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Carnes')
   const [productosSeleccionados, setProductosSeleccionados] = useState(new Set())
   const [dropdownAbierto, setDropdownAbierto] = useState(false)
+  const [fechaInicio, setFechaInicio] = useState('2025-07-28')
+  const [fechaFin, setFechaFin] = useState('2025-08-28')
   const dropdownRef = useRef(null)
 
   // Efecto para cerrar el dropdown cuando se hace clic fuera
@@ -329,9 +332,7 @@ const Productos = () => {
             <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-800 via-purple-700 to-purple-600 bg-clip-text text-transparent mb-2">
               Análisis de Productos
             </h1>
-            <p className="text-gray-600 text-sm">
-              Análisis completo de métricas y tendencias de productos por dimensión
-            </p>
+            <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias de productos por dimensión</p>
           </div>
 
           {/* Filtros */}
@@ -339,24 +340,13 @@ const Productos = () => {
             <h3 className="text-sm font-semibold text-gray-800 mb-3">Filtros</h3>
             <div className="flex flex-wrap gap-6">
               {/* Filtros de Fecha */}
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center space-x-2">
-                  <label className="text-xs font-medium text-gray-700">Fecha inicio:</label>
-                  <input
-                    type="date"
-                    className="px-3 py-1 border border-gray-300 rounded text-xs"
-                    defaultValue="2025-07-28"
-                  />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <label className="text-xs font-medium text-gray-700">Fecha fin:</label>
-                  <input
-                    type="date"
-                    className="px-3 py-1 border border-gray-300 rounded text-xs"
-                    defaultValue="2025-08-28"
-                  />
-                </div>
-              </div>
+              <FiltrosFecha 
+                fechaInicio={fechaInicio}
+                fechaFin={fechaFin}
+                onFechaInicioChange={setFechaInicio}
+                onFechaFinChange={setFechaFin}
+                standalone={false}
+              />
 
               {/* Filtro de Categorías/Productos */}
               <div className="flex items-center space-x-2">
