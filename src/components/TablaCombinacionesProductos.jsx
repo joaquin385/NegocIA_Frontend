@@ -5,75 +5,75 @@ const TablaCombinacionesProductos = () => {
   const combinaciones = [
     {
       id: 1,
-      combinacion: "Carne vacuna + Leche + Pan + Queso",
-      frecuencia: 156,
-      ticketPromedio: 1250,
-      ticketMaximo: 2100,
-      ticketMinimo: 800,
-      recomendaciones: "Promocionar como combo premium para aumentar frecuencia"
+      combinacion: "Novela + Cuaderno + Bolígrafo + Marcador",
+      frecuencia: 89,
+      ticketPromedio: 285,
+      ticketMaximo: 450,
+      ticketMinimo: 180,
+      recomendaciones: "Promocionar como combo de lectura y estudio"
     },
     {
       id: 2,
-      combinacion: "Pollo + Queso + Verduras + Arroz",
-      frecuencia: 142,
-      ticketPromedio: 980,
-      ticketMaximo: 1650,
-      ticketMinimo: 650,
-      recomendaciones: "Oportunidad para crear oferta especial de fin de semana"
+      combinacion: "Libro de texto + Cuaderno + Lápices + Goma",
+      frecuencia: 76,
+      ticketPromedio: 320,
+      ticketMaximo: 520,
+      ticketMinimo: 220,
+      recomendaciones: "Oportunidad para crear oferta especial de inicio de clases"
     },
     {
       id: 3,
-      combinacion: "Leche + Pan + Galletitas + Yogur",
-      frecuencia: 128,
-      ticketPromedio: 750,
-      ticketMaximo: 1200,
-      ticketMinimo: 450,
+      combinacion: "Revista + Lápiz + Sacapuntas + Regla",
+      frecuencia: 65,
+      ticketPromedio: 195,
+      ticketMaximo: 280,
+      ticketMinimo: 125,
       recomendaciones: "Usar para generar tráfico en horarios de menor demanda"
     },
     {
       id: 4,
-      combinacion: "Carne vacuna + Pollo + Verduras + Pasta",
-      frecuencia: 115,
-      ticketPromedio: 1850,
-      ticketMaximo: 2800,
-      ticketMinimo: 1200,
-      recomendaciones: "Promocionar como combo familiar para eventos especiales"
+      combinacion: "Libro técnico + Diccionario + Cuaderno + Resaltadores",
+      frecuencia: 54,
+      ticketPromedio: 485,
+      ticketMaximo: 680,
+      ticketMinimo: 320,
+      recomendaciones: "Promocionar como combo profesional para estudiantes"
     },
     {
       id: 5,
-      combinacion: "Queso + Galletitas + Frutas + Jugos",
-      frecuencia: 98,
-      ticketPromedio: 680,
-      ticketMaximo: 1100,
-      ticketMinimo: 420,
-      recomendaciones: "Usar para generar ventas en horarios de merienda"
+      combinacion: "Cómic + Pegamento + Tijeras + Cartulina",
+      frecuencia: 43,
+      ticketPromedio: 235,
+      ticketMaximo: 380,
+      ticketMinimo: 155,
+      recomendaciones: "Usar para generar ventas en horarios de tarde"
     },
     {
       id: 6,
-      combinacion: "Pescado + Limón + Arroz + Verduras",
-      frecuencia: 87,
-      ticketPromedio: 920,
-      ticketMaximo: 1450,
-      ticketMinimo: 580,
-      recomendaciones: "Promocionar como opción saludable los viernes"
+      combinacion: "Libro de cocina + Cuaderno de recetas + Lápices + Goma",
+      frecuencia: 38,
+      ticketPromedio: 275,
+      ticketMaximo: 420,
+      ticketMinimo: 185,
+      recomendaciones: "Promocionar como opción para aficionados a la cocina"
     },
     {
       id: 7,
-      combinacion: "Huevos + Leche + Pan + Mantequilla",
-      frecuencia: 76,
-      ticketPromedio: 650,
-      ticketMaximo: 980,
-      ticketMinimo: 380,
-      recomendaciones: "Combo ideal para desayunos y brunch"
+      combinacion: "Cuento infantil + Crayones + Cuaderno + Pegamento",
+      frecuencia: 32,
+      ticketPromedio: 245,
+      ticketMaximo: 350,
+      ticketMinimo: 165,
+      recomendaciones: "Combo ideal para regalos y actividades infantiles"
     },
     {
       id: 8,
-      combinacion: "Carne de cerdo + Papas + Cebolla + Especias",
-      frecuencia: 65,
-      ticketPromedio: 1100,
-      ticketMaximo: 1750,
-      ticketMinimo: 720,
-      recomendaciones: "Promocionar como opción para asados familiares"
+      combinacion: "Libro de arte + Pinceles + Acuarelas + Cuaderno de bocetos",
+      frecuencia: 28,
+      ticketPromedio: 425,
+      ticketMaximo: 580,
+      ticketMinimo: 285,
+      recomendaciones: "Promocionar como opción para artistas y creativos"
     }
   ]
 

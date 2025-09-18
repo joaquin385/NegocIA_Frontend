@@ -31,46 +31,46 @@ const Ventas = () => {
 
   // Datos simulados para el gráfico
   const datosVentas = [
-    { fecha: '19/7', ventas: 85000 },
-    { fecha: '20/7', ventas: 92000 },
-    { fecha: '21/7', ventas: 78000 },
-    { fecha: '22/7', ventas: 105000 },
-    { fecha: '23/7', ventas: 118000 },
-    { fecha: '24/7', ventas: 95000 },
-    { fecha: '25/7', ventas: 87000 },
-    { fecha: '26/7', ventas: 102000 },
-    { fecha: '27/7', ventas: 115000 },
-    { fecha: '28/7', ventas: 89000 },
-    { fecha: '29/7', ventas: 98000 },
-    { fecha: '30/7', ventas: 110000 },
-    { fecha: '31/7', ventas: 85000 },
-    { fecha: '1/8', ventas: 92000 },
-    { fecha: '2/8', ventas: 108000 },
-    { fecha: '3/8', ventas: 95000 },
-    { fecha: '4/8', ventas: 87000 },
-    { fecha: '5/8', ventas: 102000 },
-    { fecha: '6/8', ventas: 115000 },
-    { fecha: '7/8', ventas: 89000 },
-    { fecha: '8/8', ventas: 98000 },
-    { fecha: '9/8', ventas: 110000 },
-    { fecha: '10/8', ventas: 85000 },
-    { fecha: '11/8', ventas: 92000 },
-    { fecha: '12/8', ventas: 108000 },
-    { fecha: '13/8', ventas: 95000 },
-    { fecha: '14/8', ventas: 87000 },
-    { fecha: '15/8', ventas: 102000 },
-    { fecha: '16/8', ventas: 115000 },
-    { fecha: '17/8', ventas: 89000 },
-    { fecha: '18/8', ventas: 98000 },
-    { fecha: '19/8', ventas: 110000 },
-    { fecha: '20/8', ventas: 85000 },
-    { fecha: '21/8', ventas: 92000 },
-    { fecha: '22/8', ventas: 108000 },
-    { fecha: '23/8', ventas: 95000 },
-    { fecha: '24/8', ventas: 87000 },
-    { fecha: '25/8', ventas: 102000 },
-    { fecha: '26/8', ventas: 115000 },
-    { fecha: '27/8', ventas: 89000 }
+    { fecha: '19/7', ventas: 8200 },
+    { fecha: '20/7', ventas: 9500 },
+    { fecha: '21/7', ventas: 7800 },
+    { fecha: '22/7', ventas: 11200 },
+    { fecha: '23/7', ventas: 12800 },
+    { fecha: '24/7', ventas: 9800 },
+    { fecha: '25/7', ventas: 8900 },
+    { fecha: '26/7', ventas: 10500 },
+    { fecha: '27/7', ventas: 11800 },
+    { fecha: '28/7', ventas: 9200 },
+    { fecha: '29/7', ventas: 10100 },
+    { fecha: '30/7', ventas: 11500 },
+    { fecha: '31/7', ventas: 8600 },
+    { fecha: '1/8', ventas: 9400 },
+    { fecha: '2/8', ventas: 10900 },
+    { fecha: '3/8', ventas: 9700 },
+    { fecha: '4/8', ventas: 8800 },
+    { fecha: '5/8', ventas: 10300 },
+    { fecha: '6/8', ventas: 11700 },
+    { fecha: '7/8', ventas: 9100 },
+    { fecha: '8/8', ventas: 9900 },
+    { fecha: '9/8', ventas: 11300 },
+    { fecha: '10/8', ventas: 8500 },
+    { fecha: '11/8', ventas: 9300 },
+    { fecha: '12/8', ventas: 10800 },
+    { fecha: '13/8', ventas: 9600 },
+    { fecha: '14/8', ventas: 8700 },
+    { fecha: '15/8', ventas: 10200 },
+    { fecha: '16/8', ventas: 11600 },
+    { fecha: '17/8', ventas: 9000 },
+    { fecha: '18/8', ventas: 9800 },
+    { fecha: '19/8', ventas: 11200 },
+    { fecha: '20/8', ventas: 8400 },
+    { fecha: '21/8', ventas: 9200 },
+    { fecha: '22/8', ventas: 10700 },
+    { fecha: '23/8', ventas: 9500 },
+    { fecha: '24/8', ventas: 8600 },
+    { fecha: '25/8', ventas: 10100 },
+    { fecha: '26/8', ventas: 11500 },
+    { fecha: '27/8', ventas: 8900 }
   ];
 
   // Datos simulados para unidades
@@ -524,30 +524,30 @@ const Ventas = () => {
       {
         titulo: "Ventas Totales",
         metricas: [
-          { nombre: "Ventas totales ($)", valor: 2450000, formato: "moneda" },
-          { nombre: "Unidades vendidas", valor: 1250, formato: "numero" }
+          { nombre: "Ventas totales ($)", valor: 285000, formato: "moneda" },
+          { nombre: "Unidades vendidas", valor: 1850, formato: "numero" }
         ]
       },
       {
         titulo: "Variación Interanual",
         metricas: [
-          { nombre: "Variación vs año anterior", valor: 267500, formato: "moneda", color: "#10b981" },
-          { nombre: "Variación full year", valor: 187500, formato: "moneda", color: "#10b981" },
-          { nombre: "Variación vs mes anterior", valor: 118750, formato: "moneda", color: "#10b981" }
+          { nombre: "Variación vs año anterior", valor: 28500, formato: "moneda", color: "#10b981" },
+          { nombre: "Variación full year", valor: 19800, formato: "moneda", color: "#10b981" },
+          { nombre: "Variación vs mes anterior", valor: 12500, formato: "moneda", color: "#10b981" }
         ]
       },
       {
         titulo: "Variación Porcentual",
         metricas: [
-          { nombre: "% vs año anterior", valor: 15.2, formato: "porcentaje", color: "#10b981" },
-          { nombre: "% full year", valor: 10.8, formato: "porcentaje", color: "#10b981" },
-          { nombre: "% vs mes anterior", valor: 7.1, formato: "porcentaje", color: "#10b981" }
+          { nombre: "% vs año anterior", valor: 11.1, formato: "porcentaje", color: "#10b981" },
+          { nombre: "% full year", valor: 7.5, formato: "porcentaje", color: "#10b981" },
+          { nombre: "% vs mes anterior", valor: 4.6, formato: "porcentaje", color: "#10b981" }
         ]
       },
       {
         titulo: "Promedio Diario",
         metricas: [
-          { nombre: "Promedio ventas diarias ($)", valor: 81667, formato: "moneda" }
+          { nombre: "Promedio ventas diarias ($)", valor: 9194, formato: "moneda" }
         ]
       }
     ]
