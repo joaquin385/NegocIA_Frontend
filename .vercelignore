@@ -1,4 +1,4 @@
-# Python files
+# Python files - IGNORE ALL PYTHON
 requirements.txt
 *.py
 __pycache__/
@@ -37,3 +37,8 @@ Dockerfile
 docker-compose.yml
 .env.local
 .env.production
+
+# Force Node.js detection
+.nvmrc
+package.json
+package-lock.json
