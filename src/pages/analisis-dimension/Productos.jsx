@@ -329,9 +329,9 @@ const Productos = () => {
       `}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-5">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-800 via-purple-700 to-purple-600 bg-clip-text text-transparent mb-2">
-              Análisis de Productos
-            </h1>
+           <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-800 via-indigo-800 to-blue-800 bg-clip-text text-transparent mb-2">
+             Análisis de Productos
+           </h1>
             <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias de productos por dimensión</p>
           </div>
 
@@ -425,7 +425,7 @@ const Productos = () => {
                     <button 
                       onClick={() => setActiveTab('evolucion')}
                       className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                        activeTab === 'evolucion' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                        activeTab === 'evolucion' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                       }`}
                     >
                       Evolución

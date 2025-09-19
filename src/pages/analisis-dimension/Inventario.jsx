@@ -141,9 +141,9 @@ const Inventario = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="mb-5">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-800 via-purple-700 to-purple-600 bg-clip-text text-transparent mb-2">
-            Análisis de Inventario
-          </h1>
+           <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-800 via-slate-700 to-gray-700 bg-clip-text text-transparent mb-2">
+             Análisis de Inventario
+           </h1>
           <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias de inventario por dimensión</p>
         </div>
 
@@ -231,7 +231,7 @@ const Inventario = () => {
                 <button
                   onClick={() => setActiveTab('evolucion')}
                   className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                    activeTab === 'evolucion' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                    activeTab === 'evolucion' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                   }`}
                 >
                   Evolución
@@ -239,7 +239,7 @@ const Inventario = () => {
                 <button
                   onClick={() => setActiveTab('distribucion')}
                   className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                    activeTab === 'distribucion' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                    activeTab === 'distribucion' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                   }`}
                 >
                   Distribución
@@ -247,7 +247,7 @@ const Inventario = () => {
                 <button
                   onClick={() => setActiveTab('rotacion')}
                   className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                    activeTab === 'rotacion' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                    activeTab === 'rotacion' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                   }`}
                 >
                   Rotación
@@ -255,7 +255,7 @@ const Inventario = () => {
                 <button
                   onClick={() => setActiveTab('categorias')}
                   className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                    activeTab === 'categorias' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                    activeTab === 'categorias' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                   }`}
                 >
                   Por categorías
@@ -263,7 +263,7 @@ const Inventario = () => {
                 <button
                   onClick={() => setActiveTab('abc')}
                   className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                    activeTab === 'abc' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                    activeTab === 'abc' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                   }`}
                 >
                   Análisis ABC

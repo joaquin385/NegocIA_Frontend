@@ -270,105 +270,105 @@ const Tickets = () => {
           </div>
 
           {/* Gráficos */}
-          <div className="bg-purple-50 rounded-lg p-4">
-            <h3 className="text-sm font-semibold text-purple-900 mb-2">📈 Gráficos</h3>
+          <div className="bg-slate-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-slate-900 mb-2">📈 Gráficos</h3>
             
             <div className="mb-4">
-              <h4 className="text-sm font-semibold text-purple-800 mb-2">📈 Evolución del ticket promedio por hora, día y mes</h4>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <h4 className="text-sm font-semibold text-slate-800 mb-2">📈 Evolución del ticket promedio por hora, día y mes</h4>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 <strong>Qué muestra:</strong>
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 El valor promedio de los tickets (ventas) a lo largo del tiempo, segmentado por hora del día, día de la semana y mes.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 <strong>Para qué sirve / Decisiones posibles:</strong>
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Identificar cuándo los clientes gastan más (por ejemplo, los sábados por la tarde o a fin de mes).
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Ajustar estrategias de precios o promociones según momentos de alta o baja compra.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Decidir horarios de apertura o refuerzo de personal en los momentos donde el ticket promedio es alto.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words">
+              <p className="text-slate-700 text-xs leading-relaxed break-words">
                 • Detectar caídas en el valor del ticket y actuar con estrategias correctivas (promociones cruzadas, combos, etc.).
               </p>
             </div>
 
             <div className="mb-4">
-              <h4 className="text-sm font-semibold text-purple-800 mb-2">📊 Evolución del % de tickets bajos, medios y altos por hora, día y mes</h4>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <h4 className="text-sm font-semibold text-slate-800 mb-2">📊 Evolución del % de tickets bajos, medios y altos por hora, día y mes</h4>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 <strong>Qué muestra:</strong>
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 La proporción de tickets de bajo, medio y alto valor según el momento del día, semana o mes.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 <strong>Para qué sirve / Decisiones posibles:</strong>
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Detectar momentos en los que predominan tickets bajos para lanzar promociones que incentiven mayor gasto.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Medir el impacto de campañas o cambios de precios sobre el comportamiento del cliente.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Definir si ciertos horarios o días son más atractivos para clientes de alto valor, y enfocar recursos ahí (personal, atención, productos premium).
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words">
+              <p className="text-slate-700 text-xs leading-relaxed break-words">
                 • Segmentar acciones según tipo de cliente en función del patrón temporal (ej. ofrecer combos de mediodía para aumentar ticket en horarios bajos).
               </p>
             </div>
 
             <div className="mb-4">
-              <h4 className="text-sm font-semibold text-purple-800 mb-2">📉 Histograma del monto del ticket (distribución)</h4>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <h4 className="text-sm font-semibold text-slate-800 mb-2">📉 Histograma del monto del ticket (distribución)</h4>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 <strong>Qué muestra:</strong>
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 La distribución de los tickets según su monto. Permite ver si hay muchos tickets pequeños, una mayoría media, o si hay casos extremos.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 <strong>Para qué sirve / Decisiones posibles:</strong>
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Entender si el negocio tiene una distribución sana de ingresos, o si la mayoría de las ventas son de bajo valor.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Detectar concentración en rangos específicos (ej. la mayoría compra entre $2000 y $3000).
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Analizar si hay tickets muy altos aislados que podrían indicar ventas atípicas o incluso errores de carga.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words">
+              <p className="text-slate-700 text-xs leading-relaxed break-words">
                 • Tomar decisiones para elevar el ticket medio diseñando ofertas que empujen hacia el siguiente rango de valor.
               </p>
             </div>
 
             <div className="mb-4">
-              <h4 className="text-sm font-semibold text-purple-800 mb-2">🧊 Boxplot del ticket promedio por hora del día / día de la semana</h4>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <h4 className="text-sm font-semibold text-slate-800 mb-2">🧊 Boxplot del ticket promedio por hora del día / día de la semana</h4>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 <strong>Qué muestra:</strong>
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 Resumen estadístico de los tickets por hora o día, mostrando la mediana, rangos y valores atípicos.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 <strong>Para qué sirve / Decisiones posibles:</strong>
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Comparar rápidamente variabilidad en el ticket según horarios o días.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Identificar momentos con alta dispersión, donde algunos clientes gastan mucho y otros muy poco.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
                 • Ver momentos de ticket muy estable o predecible: ideal para pruebas A/B de promociones.
               </p>
-              <p className="text-purple-700 text-xs leading-relaxed break-words">
+              <p className="text-slate-700 text-xs leading-relaxed break-words">
                 • Detectar outliers que pueden indicar errores, eventos especiales o clientes grandes (potenciales a fidelizar).
               </p>
             </div>
@@ -409,9 +409,9 @@ const Tickets = () => {
       `}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-5">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 bg-clip-text text-transparent mb-2">
-              Análisis de Tickets
-            </h1>
+           <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-2">
+             Análisis de Tickets
+           </h1>
             <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias de tickets por dimensión</p>
           </div>
 
@@ -429,7 +429,7 @@ const Tickets = () => {
             <div className="xl:col-span-1">
               <MetricasGenerales 
                 {...metricasGenerales}
-                colorTema="#3b82f6"
+                colorTema="#1e40af"
                 columnas={1}
               />
             </div>
@@ -442,7 +442,7 @@ const Tickets = () => {
                   <button 
                     onClick={() => setActiveTab('evolucion')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'evolucion' ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50' : 'text-gray-500'
+                      activeTab === 'evolucion' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Evolución
@@ -450,7 +450,7 @@ const Tickets = () => {
                   <button 
                     onClick={() => setActiveTab('evolucion-tipo')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'evolucion-tipo' ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50' : 'text-gray-500'
+                      activeTab === 'evolucion-tipo' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Evolución por tipo
@@ -458,7 +458,7 @@ const Tickets = () => {
                   <button 
                     onClick={() => setActiveTab('distribucion-monto')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'distribucion-monto' ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50' : 'text-gray-500'
+                      activeTab === 'distribucion-monto' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Distribución de monto

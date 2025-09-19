@@ -13,11 +13,11 @@ const CargaDatos = () => {
         iconPosition="left"
       >
         <div className="space-y-5">
-          <div className="bg-blue-50 rounded-lg p-4">
-            <h3 className="text-base font-semibold text-blue-900 mb-3">
+          <div className="bg-slate-50 rounded-lg p-4">
+            <h3 className="text-base font-semibold text-slate-900 mb-3">
               Carga de Datos
             </h3>
-            <p className="text-blue-800 text-xs">
+            <p className="text-slate-800 text-xs">
               Sistema para cargar, validar y procesar datos de diferentes fuentes en NegocIA.
             </p>
           </div>
@@ -87,9 +87,9 @@ const CargaDatos = () => {
                 <div className="text-xl font-bold text-blue-600">0</div>
                 <div className="text-xs text-blue-600">Cargas en Proceso</div>
               </div>
-              <div className="text-center p-4 bg-purple-50 rounded-lg">
-                <div className="text-xl font-bold text-purple-600">24</div>
-                <div className="text-xs text-purple-600">Cargas Exitosas Hoy</div>
+              <div className="text-center p-4 bg-slate-50 rounded-lg">
+                <div className="text-xl font-bold text-slate-600">24</div>
+                <div className="text-xs text-slate-600">Cargas Exitosas Hoy</div>
               </div>
               <div className="text-center p-4 bg-orange-50 rounded-lg">
                 <div className="text-xl font-bold text-orange-600">2</div>

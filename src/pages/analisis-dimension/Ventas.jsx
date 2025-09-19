@@ -688,9 +688,9 @@ const Ventas = () => {
       `}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-5">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-green-800 via-green-700 to-green-600 bg-clip-text text-transparent mb-2">
-              Análisis de Ventas
-            </h1>
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-2">
+            Análisis de Ventas
+          </h1>
             <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias de ventas por dimensión</p>
           </div>
 
@@ -710,7 +710,7 @@ const Ventas = () => {
                 titulo={metricasGenerales.titulo}
                 subsecciones={metricasGenerales.subsecciones}
                 columnas={1}
-                colorTema="#10b981"
+                colorTema="#1e40af"
               />
             </div>
 

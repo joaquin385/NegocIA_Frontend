@@ -158,20 +158,20 @@ const GraficoEvolucionPorTipo = ({
              <Line 
                type="monotone" 
                dataKey="medioValor" 
-               stroke="#3b82f6" 
+               stroke="#475569" 
                strokeWidth={3}
-               dot={{ fill: '#3b82f6', strokeWidth: 0, r: 0 }}
-               activeDot={{ r: 8, stroke: '#3b82f6', strokeWidth: 3, fill: 'white' }}
+               dot={{ fill: '#475569', strokeWidth: 0, r: 0 }}
+               activeDot={{ r: 8, stroke: '#475569', strokeWidth: 3, fill: 'white' }}
                name="Medio valor"
                strokeDasharray="0"
              />
              <Line 
                type="monotone" 
                dataKey="altoValor" 
-               stroke="#10b981" 
+               stroke="#1e40af" 
                strokeWidth={3}
-               dot={{ fill: '#10b981', strokeWidth: 0, r: 0 }}
-               activeDot={{ r: 8, stroke: '#10b981', strokeWidth: 3, fill: 'white' }}
+               dot={{ fill: '#1e40af', strokeWidth: 0, r: 0 }}
+               activeDot={{ r: 8, stroke: '#1e40af', strokeWidth: 3, fill: 'white' }}
                name="Alto valor"
                strokeDasharray="0"
              />

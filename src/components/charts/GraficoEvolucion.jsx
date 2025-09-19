@@ -6,7 +6,7 @@ import { agrupacionAtom, metricaAtom } from '@/stores'
 const GraficoEvolucion = ({ 
   datos = [], 
   titulo = "Evolución", 
-  color = "#10b981",
+  color = "#1e40af",
   altura = "450px",
   opcionesMetricas = [],
   campoDatos = "valor",

@@ -2,13 +2,13 @@ import { useAtom } from 'jotai'
 import { atom } from 'jotai'
 
 // Atom local para el tema de colores (puede ser reemplazado por uno global si es necesario)
-const colorTemaAtom = atom('#10b981')
+const colorTemaAtom = atom('#1e40af')
 
 const MetricasGenerales = ({ 
   titulo = "Métricas Generales",
   subsecciones = [],
   columnas = 2,
-  colorTema = "#10b981",
+  colorTema = "#1e40af",
   className = ""
 }) => {
   const [colorTemaLocal] = useAtom(colorTemaAtom)

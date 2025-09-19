@@ -15,8 +15,8 @@ const PanelGeneral = () => {
         iconPosition="left"
       >
         <div className="space-y-5">
-          <div className="bg-blue-50 rounded-lg p-4">
-            <h3 className="text-base font-semibold text-blue-900 mb-3 flex items-center">
+          <div className="bg-slate-50 rounded-lg p-4">
+            <h3 className="text-base font-semibold text-slate-900 mb-3 flex items-center">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2zm0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
@@ -67,13 +67,13 @@ const PanelGeneral = () => {
                        {/* Indicadores Globales (Semáforo) */}
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl border border-gray-100 p-6 mb-8">
             <div className="flex items-center mb-6">
-                <div className="p-3 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl mr-4">
+                <div className="p-3 bg-gradient-to-r from-slate-600 to-slate-700 rounded-xl mr-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2zm0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
                 <div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                <h3 className="text-xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
                     Indicadores Globales
                   </h3>
                   <p className="text-gray-500 text-sm">Sistema de semáforo para monitoreo de métricas clave</p>
@@ -107,8 +107,8 @@ const PanelGeneral = () => {
                   </thead>
                  <tbody className="bg-white divide-y divide-gray-200">
                                        {/* Salud Financiera */}
-                    <tr className="bg-blue-50">
-                      <td className="px-4 py-2 text-sm font-semibold text-blue-800" colSpan="4">
+                    <tr className="bg-slate-50">
+                      <td className="px-4 py-2 text-sm font-semibold text-slate-800" colSpan="4">
                         Salud Financiera
                       </td>
                     </tr>
@@ -154,8 +154,8 @@ const PanelGeneral = () => {
                     />
                    
                                                                               {/* Salud Comercial */}
-                    <tr className="bg-green-50">
-                      <td className="px-4 py-2 text-sm font-semibold text-green-800" colSpan="4">
+                    <tr className="bg-slate-50">
+                      <td className="px-4 py-2 text-sm font-semibold text-slate-800" colSpan="4">
                         Salud Comercial
                           </td>
                         </tr>
@@ -185,8 +185,8 @@ const PanelGeneral = () => {
                     />
                         
                     {/* Salud Operativa */}
-                    <tr className="bg-purple-50">
-                      <td className="px-4 py-2 text-sm font-semibold text-purple-800" colSpan="4">
+                    <tr className="bg-slate-50">
+                      <td className="px-4 py-2 text-sm font-semibold text-slate-800" colSpan="4">
                         Salud Operativa
                           </td>
                         </tr>

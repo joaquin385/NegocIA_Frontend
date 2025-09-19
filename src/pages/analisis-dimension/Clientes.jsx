@@ -100,9 +100,9 @@ const Clientes = () => {
     <div className={`min-h-screen bg-gray-50 transition-all duration-300 ${isSidebarOpen ? 'mr-[30%]' : 'mr-1'} py-4`}>
       <div className="max-w-7xl mx-auto px-4">
           <div className="mb-5">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-800 via-purple-700 to-purple-600 bg-clip-text text-transparent mb-2">
-              Análisis de Clientes
-            </h1>
+           <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-800 via-emerald-800 to-teal-800 bg-clip-text text-transparent mb-2">
+             Análisis de Clientes
+           </h1>
             <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias de clientes por dimensión</p>
           </div>
 
@@ -135,7 +135,7 @@ const Clientes = () => {
                   <button 
                     onClick={() => setActiveTab('evolucion')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'evolucion' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                      activeTab === 'evolucion' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Evolución
@@ -143,7 +143,7 @@ const Clientes = () => {
                   <button 
                     onClick={() => setActiveTab('distribucion-compra')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'distribucion-compra' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                      activeTab === 'distribucion-compra' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Distribución por compra
@@ -151,7 +151,7 @@ const Clientes = () => {
                   <button 
                     onClick={() => setActiveTab('curva-retencion')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'curva-retencion' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                      activeTab === 'curva-retencion' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Curva de retención
@@ -159,7 +159,7 @@ const Clientes = () => {
                   <button 
                     onClick={() => setActiveTab('mapa-calor')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'mapa-calor' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                      activeTab === 'mapa-calor' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Mapa de calor
@@ -236,18 +236,18 @@ const Clientes = () => {
         >
           <div>
             {/* Métricas de Clientes */}
-            <div className="bg-purple-50 rounded-lg p-4">
-              <h3 className="text-sm font-semibold text-purple-900 mb-2">👥 Clientes activos</h3>
-              <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+            <div className="bg-slate-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-slate-900 mb-2">👥 Clientes activos</h3>
+              <p className="text-slate-800 text-xs leading-relaxed break-words mb-2">
                 <strong>¿Qué es?</strong>
               </p>
-              <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-800 text-xs leading-relaxed break-words mb-2">
                 Son los clientes que han realizado al menos una compra en el período analizado. Se dividen en nuevos (primera compra) y recurrentes (compras anteriores).
               </p>
-              <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-800 text-xs leading-relaxed break-words mb-2">
                 <strong>¿Por qué es importante?</strong>
               </p>
-              <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+              <p className="text-slate-800 text-xs leading-relaxed break-words mb-2">
                 Te permite entender el tamaño de tu base de clientes y su composición. Los clientes recurrentes son más valiosos que los nuevos.
               </p>
             </div>

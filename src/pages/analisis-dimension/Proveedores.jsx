@@ -578,9 +578,9 @@ const Proveedores = () => {
     <div className={`transition-all duration-300 ${isSidebarOpen ? 'mr-[30%]' : 'mr-1'} py-4`}>
       <div className="max-w-7xl mx-auto px-4">
           <div className="mb-5">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-800 via-purple-700 to-purple-600 bg-clip-text text-transparent mb-2">
-              Análisis de Proveedores
-            </h1>
+           <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-800 via-amber-800 to-orange-800 bg-clip-text text-transparent mb-2">
+             Análisis de Proveedores
+           </h1>
             <p className="text-sm text-gray-600">Análisis completo de métricas y tendencias de proveedores por dimensión</p>
           </div>
 
@@ -613,7 +613,7 @@ const Proveedores = () => {
                   <button 
                     onClick={() => setActiveTab('evolucion')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'evolucion' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                      activeTab === 'evolucion' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Evolución
@@ -621,7 +621,7 @@ const Proveedores = () => {
                   <button 
                     onClick={() => setActiveTab('distribucion-compra')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'distribucion-compra' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                      activeTab === 'distribucion-compra' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Distribución por compra
@@ -629,7 +629,7 @@ const Proveedores = () => {
                   <button 
                     onClick={() => setActiveTab('variacion-costo')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'variacion-costo' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                      activeTab === 'variacion-costo' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Variación del costo promedio
@@ -637,7 +637,7 @@ const Proveedores = () => {
                   <button 
                     onClick={() => setActiveTab('evolucion-categorias')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'evolucion-categorias' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                      activeTab === 'evolucion-categorias' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Evolución de costos por categoría
@@ -645,7 +645,7 @@ const Proveedores = () => {
                   <button 
                     onClick={() => setActiveTab('curva-abc')}
                     className={`px-4 py-2 text-xs font-medium rounded-t-lg ${
-                      activeTab === 'curva-abc' ? 'text-purple-600 border-b-2 border-purple-600 bg-purple-50' : 'text-gray-500'
+                      activeTab === 'curva-abc' ? 'text-slate-600 border-b-2 border-slate-600 bg-slate-50' : 'text-gray-500'
                     }`}
                   >
                     Curva ABC
