@@ -18,7 +18,7 @@ const GraficoDistribucionStock = ({
     '#3b82f6', // Azul - Carnes
     '#10b981', // Verde - Lácteos
     '#ef4444', // Rojo - Granos
-    '#8b5cf6', // Púrpura - Verduras
+    '#4338ca', // Índigo - Verduras
     '#f59e0b', // Naranja - Frutas
     '#06b6d4', // Cian - Bebidas
     '#1e40af', // Azul oscuro - Snacks

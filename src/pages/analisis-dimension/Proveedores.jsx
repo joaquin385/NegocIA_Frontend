@@ -600,7 +600,7 @@ const Proveedores = () => {
               titulo={metricasGenerales.titulo}
               subsecciones={metricasGenerales.subsecciones}
               columnas={1}
-              colorTema="#8b5cf6"
+              colorTema="#1e40af"
             />
           </div>
 
@@ -660,7 +660,7 @@ const Proveedores = () => {
                 <GraficoEvolucion
                   datos={datosEvolucionCompras}
                   titulo="Evolución del Gasto en Compras por Mes"
-                  color="#8b5cf6"
+                  color="#d97706"
                   altura="400px"
                   opcionesMetricas={[
                     { value: 'gasto', label: 'Gasto en Compras ($)' }
@@ -690,7 +690,7 @@ const Proveedores = () => {
                 <GraficoVariacionPorcentual
                   datos={datosVariacionCosto}
                   titulo="Variación del Costo Promedio vs Comparador"
-                  color="#8b5cf6"
+                  color="#d97706"
                   altura="400px"
                   opcionesAgrupacion={[
                     { value: 'mes', label: 'Mes' }

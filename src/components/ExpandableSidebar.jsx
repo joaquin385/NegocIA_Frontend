@@ -19,8 +19,8 @@ const ExpandableSidebar = ({ children, title = "Ayuda educativa", iconPosition =
         <button
           onClick={toggleSidebar}
           className={cn(
-            "w-16 h-16 rounded-xl bg-gradient-to-r from-indigo-500 to-blue-600 text-white flex items-center justify-center shadow-xl transition-all duration-300 hover:from-indigo-600 hover:to-blue-700 hover:scale-105 hover:shadow-2xl",
-            isExpanded && "from-indigo-600 to-blue-700"
+            "w-16 h-16 rounded-xl bg-gradient-to-r from-slate-600 to-slate-700 text-white flex items-center justify-center shadow-xl transition-all duration-300 hover:from-slate-700 hover:to-slate-800 hover:scale-105 hover:shadow-2xl",
+            isExpanded && "from-slate-700 to-slate-800"
           )}
         >
           <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,7 +38,7 @@ const ExpandableSidebar = ({ children, title = "Ayuda educativa", iconPosition =
         style={{ width: '30%' }}
       >
         {/* Header del sidebar */}
-        <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-4">
+        <div className="bg-gradient-to-r from-slate-600 to-slate-700 text-white p-4">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold">{title}</h2>
             <button

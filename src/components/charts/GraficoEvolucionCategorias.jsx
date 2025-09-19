@@ -18,7 +18,7 @@ const GraficoEvolucionCategorias = ({
     '#3b82f6', // Azul
     '#10b981', // Verde
     '#ef4444', // Rojo
-    '#8b5cf6', // Púrpura
+    '#4338ca', // Índigo
     '#f59e0b', // Amarillo/Naranja
     '#06b6d4', // Cian
     '#84cc16', // Lima

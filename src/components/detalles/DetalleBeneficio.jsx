@@ -123,7 +123,7 @@ const DetalleBeneficio = () => {
       </div>
 
       {/* Desglose del Beneficio */}
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border border-blue-100">
+      <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-4 rounded-lg border border-blue-100">
         <h4 className="text-md font-medium text-gray-800 mb-3 flex items-center">
           🧮 Desglose del Beneficio
         </h4>
@@ -155,7 +155,7 @@ const DetalleBeneficio = () => {
       </div>
 
       {/* Ratios de Rentabilidad */}
-      <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-100">
+      <div className="bg-gradient-to-r from-slate-50 to-emerald-50 p-4 rounded-lg border border-slate-100">
         <h4 className="text-md font-medium text-gray-800 mb-3 flex items-center">
           📊 Ratios de Rentabilidad
         </h4>

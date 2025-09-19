@@ -118,7 +118,7 @@ const DetalleCostos = () => {
       </div>
 
       {/* Distribución de Costos por Categoría */}
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border border-blue-100">
+      <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-4 rounded-lg border border-blue-100">
         <h4 className="text-md font-medium text-gray-800 mb-3 flex items-center">
           📊 Distribución de Costos por Categoría
         </h4>

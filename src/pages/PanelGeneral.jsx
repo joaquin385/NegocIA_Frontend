@@ -1,11 +1,27 @@
 import { useAtom } from 'jotai'
+import { useEffect } from 'react'
 import ExpandableSidebar from '@/components/ExpandableSidebar'
 import { sidebarOpenAtom } from '@/stores'
+import { metricaSeleccionadaAtom, panelExpandidoAtom } from '@/stores/metricas'
 import MetricaExpandible from '../components/MetricaExpandible'
 import PanelExpandible from '../components/PanelExpandible'
 
 const PanelGeneral = () => {
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
+  const [, setMetricaSeleccionada] = useAtom(metricaSeleccionadaAtom)
+  const [, setPanelExpandido] = useAtom(panelExpandidoAtom)
+
+  // Inicializar con el análisis de Ventas desplegado por defecto
+  useEffect(() => {
+    const metricaVentas = {
+      nombre: "Ventas",
+      valor: "$85,420",
+      status: "Bien - Crecimiento +8.5%",
+      categoria: "Salud Financiera"
+    }
+    setMetricaSeleccionada(metricaVentas)
+    setPanelExpandido(true)
+  }, [setMetricaSeleccionada, setPanelExpandido])
 
   return (
     <div className="min-h-screen bg-gray-50 relative">

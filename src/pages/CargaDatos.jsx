@@ -91,9 +91,9 @@ const CargaDatos = () => {
                 <div className="text-xl font-bold text-slate-600">24</div>
                 <div className="text-xs text-slate-600">Cargas Exitosas Hoy</div>
               </div>
-              <div className="text-center p-4 bg-orange-50 rounded-lg">
-                <div className="text-xl font-bold text-orange-600">2</div>
-                <div className="text-xs text-orange-600">Errores Hoy</div>
+              <div className="text-center p-4 bg-red-50 rounded-lg">
+                <div className="text-xl font-bold text-red-600">2</div>
+                <div className="text-xs text-red-600">Errores Hoy</div>
               </div>
             </div>
           </div>

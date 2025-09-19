@@ -14,7 +14,8 @@ const PanelExpandible = () => {
   const [metricaSeleccionada] = useAtom(metricaSeleccionadaAtom);
   const [panelExpandido] = useAtom(panelExpandidoAtom);
 
-  if (!panelExpandido || !metricaSeleccionada) {
+  // Si no hay métrica seleccionada, mostrar estado por defecto
+  if (!metricaSeleccionada) {
     return (
       <div className="w-3/5 bg-gray-50 rounded-lg border border-gray-200 flex items-center justify-center">
         <div className="text-center text-gray-500">

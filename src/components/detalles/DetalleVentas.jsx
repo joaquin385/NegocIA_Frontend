@@ -18,7 +18,7 @@ const DetalleVentas = () => {
 
   const ventasPorCategoria = [
     { categoria: 'Electrónicos', ventas: 25000, porcentaje: 29.3, color: '#3b82f6' },
-    { categoria: 'Ropa', ventas: 18000, porcentaje: 21.1, color: '#8b5cf6' },
+    { categoria: 'Ropa', ventas: 18000, porcentaje: 21.1, color: '#4338ca' },
     { categoria: 'Hogar', ventas: 15000, porcentaje: 17.6, color: '#06b6d4' },
     { categoria: 'Deportes', ventas: 12000, porcentaje: 14.0, color: '#10b981' },
     { categoria: 'Libros', ventas: 8500, porcentaje: 9.9, color: '#f59e0b' },
@@ -138,7 +138,7 @@ const DetalleVentas = () => {
       </div>
 
       {/* Ventas por Categoría */}
-      <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-4 rounded-lg border border-purple-100">
+      <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-4 rounded-lg border border-slate-100">
         <h4 className="text-md font-medium text-gray-800 mb-3 flex items-center">
           📊 Ventas por Categoría
         </h4>
@@ -171,7 +171,7 @@ const DetalleVentas = () => {
               />
               <Bar 
                 dataKey="ventas" 
-                fill="#8b5cf6"
+                fill="#4338ca"
                 radius={[4, 4, 0, 0]}
               />
             </BarChart>

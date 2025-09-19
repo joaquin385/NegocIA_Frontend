@@ -122,7 +122,7 @@ const Clientes = () => {
               titulo={metricasGenerales.titulo}
               subsecciones={metricasGenerales.subsecciones}
               columnas={1}
-              colorTema="#8b5cf6"
+              colorTema="#1e40af"
             />
           </div>
 

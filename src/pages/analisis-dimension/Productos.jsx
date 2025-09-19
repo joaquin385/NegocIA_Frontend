@@ -412,7 +412,7 @@ const Productos = () => {
                 titulo={metricasGenerales.titulo}
                 subsecciones={metricasGenerales.subsecciones}
                 columnas={1}
-                colorTema="#8b5cf6"
+                colorTema="#1e40af"
               />
             </div>
 
@@ -440,7 +440,7 @@ const Productos = () => {
                       <GraficoEvolucion 
                         datos={obtenerDatosPorMetrica(metrica)}
                         titulo="Evolución de Productos"
-                        color="#8b5cf6"
+                        color="#4338ca"
                         altura="400px"
                         opcionesAgrupacion={['Día', 'Mes', 'Año']}
                         opcionesMetricas={[

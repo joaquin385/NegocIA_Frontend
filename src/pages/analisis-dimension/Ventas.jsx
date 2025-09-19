@@ -586,16 +586,16 @@ const Ventas = () => {
           </div>
 
           {/* Gráfico de Variación Porcentual */}
-          <div className="bg-purple-50 rounded-lg p-4">
-            <h3 className="text-sm font-semibold text-purple-900 mb-2">📊 Gráfico de Variación %</h3>
-            <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+          <div className="bg-slate-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-slate-900 mb-2">📊 Gráfico de Variación %</h3>
+            <p className="text-slate-800 text-xs leading-relaxed break-words mb-2">
               <strong>Qué muestra:</strong> El cambio porcentual de ventas comparado con períodos anteriores.
             </p>
-            <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+            <p className="text-slate-800 text-xs leading-relaxed break-words mb-2">
               <strong>Implicancias:</strong> Identifica si estás mejorando o empeorando respecto a períodos pasados. 
               Valores positivos (verdes) indican crecimiento, negativos (rojos) indican disminución.
             </p>
-            <p className="text-purple-800 text-xs leading-relaxed break-words">
+            <p className="text-slate-800 text-xs leading-relaxed break-words">
               <strong>Acciones:</strong> Analiza comparaciones vs Año anterior, Mes anterior o Año anterior según tu necesidad. 
               Usa agrupaciones temporales para diferentes niveles de detalle.
             </p>

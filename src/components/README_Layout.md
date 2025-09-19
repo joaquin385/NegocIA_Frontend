@@ -143,7 +143,7 @@ const Productos = () => {
       {/* Layout estándar */}
       <LayoutAnalisis 
         metricasGenerales={metricasGenerales}
-        colorTema="#8b5cf6"
+        colorTema="#4338ca"
       >
         {/* Contenido específico de productos */}
       </LayoutAnalisis>

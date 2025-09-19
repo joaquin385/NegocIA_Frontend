@@ -127,10 +127,10 @@ const GraficoEvolucionRentabilidad = ({
             <Line
               type="monotone"
               dataKey="margenPorcentaje"
-              stroke="#8b5cf6"
+              stroke="#059669"
               strokeWidth={3}
-              dot={{ fill: '#8b5cf6', strokeWidth: 2, r: 4 }}
-              activeDot={{ r: 6, stroke: '#8b5cf6', strokeWidth: 2 }}
+              dot={{ fill: '#059669', strokeWidth: 2, r: 4 }}
+              activeDot={{ r: 6, stroke: '#059669', strokeWidth: 2 }}
               name="Margen %"
             />
             <Line
