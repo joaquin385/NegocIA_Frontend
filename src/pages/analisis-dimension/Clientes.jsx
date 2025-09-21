@@ -235,105 +235,110 @@ const Clientes = () => {
           iconPosition="right"
         >
           <div>
-            {/* Métricas de Clientes */}
-            <div className="bg-slate-50 rounded-lg p-4">
-              <h3 className="text-sm font-semibold text-slate-900 mb-2">👥 Clientes activos</h3>
-              <p className="text-slate-800 text-xs leading-relaxed break-words mb-2">
-                <strong>¿Qué es?</strong>
+            {/* Métricas Generales */}
+            <div className="bg-blue-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-blue-900 mb-2">📊 Métricas Generales de Clientes</h3>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Métricas Generales:</strong>
               </p>
-              <p className="text-slate-800 text-xs leading-relaxed break-words mb-2">
-                Son los clientes que han realizado al menos una compra en el período analizado. Se dividen en nuevos (primera compra) y recurrentes (compras anteriores).
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Cantidad total de clientes activos:</strong> Clientes que han comprado en el período seleccionado.
               </p>
-              <p className="text-slate-800 text-xs leading-relaxed break-words mb-2">
-                <strong>¿Por qué es importante?</strong>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Cantidad de clientes nuevos:</strong> Clientes que realizaron su primera compra en el período.
               </p>
-              <p className="text-slate-800 text-xs leading-relaxed break-words mb-2">
-                Te permite entender el tamaño de tu base de clientes y su composición. Los clientes recurrentes son más valiosos que los nuevos.
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Cantidad de clientes recurrentes:</strong> Clientes que ya habían comprado anteriormente.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Tasas de Retención:</strong>
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Tasa de retención:</strong> Porcentaje de clientes que regresan a comprar.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Tasa de abandono (churn):</strong> Porcentaje de clientes que dejan de comprar.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Valor del Cliente:</strong>
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Valor promedio por cliente:</strong> Gasto promedio de cada cliente.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Frecuencia de compra promedio:</strong> Cuántas veces compra cada cliente en promedio.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Tiempo promedio entre compras:</strong> Días que pasan entre una compra y otra.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words">
+                <strong>Segmentación RFM:</strong> Clasificación de clientes en Premium (alto valor), Regulares (valor medio) y en Riesgo (bajo valor).
               </p>
             </div>
 
-            {/* Tasas de Retención */}
-            <div className="bg-green-50 rounded-lg p-4 mt-4">
-              <h3 className="text-sm font-semibold text-green-900 mb-2">📈 Tasas de retención</h3>
+            {/* Filtros */}
+            <div className="bg-green-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-green-900 mb-2">🔍 Filtros de Análisis</h3>
               <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
-                <strong>¿Qué es?</strong>
+                <strong>Filtro por Fecha:</strong> Permite seleccionar el período de análisis de clientes (hoy, ayer, última semana, etc.).
               </p>
-              <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
-                La tasa de retención mide qué porcentaje de clientes regresan a comprar. La tasa de abandono (churn) mide qué porcentaje se va.
-              </p>
-              <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
-                <strong>¿Por qué es importante?</strong>
-              </p>
-              <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
-                Un cliente retenido es más valioso que uno nuevo. Te ayuda a medir la satisfacción y lealtad de tus clientes.
-              </p>
-            </div>
-
-            {/* Valor del Cliente */}
-            <div className="bg-blue-50 rounded-lg p-4 mt-4">
-              <h3 className="text-sm font-semibold text-blue-900 mb-2">💰 Valor del cliente</h3>
-              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
-                <strong>¿Qué es?</strong>
-              </p>
-              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
-                Es el valor promedio que genera cada cliente en términos de dinero gastado, frecuencia de compra y tiempo entre compras.
-              </p>
-              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
-                <strong>¿Por qué es importante?</strong>
-              </p>
-              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
-                Te ayuda a segmentar clientes, calcular el ROI de marketing y tomar decisiones de precios y promociones.
-              </p>
-            </div>
-
-            {/* Segmentación RFM */}
-            <div className="bg-orange-50 rounded-lg p-4 mt-4">
-              <h3 className="text-sm font-semibold text-orange-900 mb-2">🎯 Segmentación RFM</h3>
-              <p className="text-orange-800 text-xs leading-relaxed break-words mb-2">
-                <strong>¿Qué es?</strong>
-              </p>
-              <p className="text-orange-800 text-xs leading-relaxed break-words mb-2">
-                RFM significa Recencia (última compra), Frecuencia (veces que compra) y Monto (dinero gastado). Clasifica clientes en categorías como Campeones, Leales, Potenciales, etc.
-              </p>
-              <p className="text-orange-800 text-xs leading-relaxed break-words mb-2">
-                <strong>¿Por qué es importante?</strong>
-              </p>
-              <p className="text-orange-800 text-xs leading-relaxed break-words mb-2">
-                Te permite personalizar estrategias de marketing, retener clientes valiosos y reactivar clientes en riesgo.
+              <p className="text-green-800 text-xs leading-relaxed break-words">
+                Los filtros se aplican a todas las métricas, gráficos y la tabla de la página para análisis específicos por período.
               </p>
             </div>
 
             {/* Gráficos */}
-            <div className="bg-gray-50 rounded-lg p-4 mt-4">
-              <h3 className="text-sm font-semibold text-gray-900 mb-2">📊 Gráficos</h3>
-              <p className="text-gray-700 text-xs leading-relaxed break-words mb-2">
-                <strong>Evolución:</strong> Muestra cómo cambian las métricas de clientes a lo largo del tiempo.
+            <div className="bg-slate-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-slate-900 mb-2">📈 Gráficos de Análisis</h3>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Evolución:</strong>
               </p>
-              <p className="text-gray-700 text-xs leading-relaxed break-words mb-2">
-                <strong>Evolución por tipo:</strong> Compara el comportamiento de diferentes segmentos de clientes.
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Muestra la evolución temporal de clientes nuevos vs recurrentes. Permite identificar patrones de crecimiento y retención.
               </p>
-              <p className="text-gray-700 text-xs leading-relaxed break-words mb-2">
-                <strong>Distribución de monto:</strong> Analiza cómo se distribuyen los valores de compra entre clientes.
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Distribución por compra:</strong>
               </p>
-              <p className="text-gray-700 text-xs leading-relaxed break-words mb-2">
-                <strong>Distribución por tiempo:</strong> Examina patrones temporales en el comportamiento de compra.
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Analiza cómo se distribuyen los clientes según la cantidad de compras que han realizado.
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Curva de retención:</strong>
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Visualización de cómo se comporta la retención de clientes a lo largo del tiempo.
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words">
+                <strong>Mapa de calor:</strong> Visualización de patrones de actividad y comportamiento de clientes.
               </p>
             </div>
 
-            {/* Combinaciones de Productos */}
-            <div className="bg-indigo-50 rounded-lg p-4 mt-4">
-              <h3 className="text-sm font-semibold text-indigo-900 mb-2">🛒 Combinaciones de Productos</h3>
+            {/* Tabla RFM */}
+            <div className="bg-indigo-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-indigo-900 mb-2">📋 Tabla de Clientes RFM</h3>
               <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
-                <strong>¿Qué es?</strong>
+                <strong>Qué muestra:</strong>
               </p>
               <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
-                Muestra qué productos se compran juntos con más frecuencia, incluyendo métricas como frecuencia, ticket promedio y recomendaciones.
+                Lista detallada de clientes con análisis RFM (Recencia, Frecuencia, Monto) y su clasificación.
               </p>
               <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
-                <strong>¿Por qué es importante?</strong>
+                <strong>Métricas RFM:</strong>
               </p>
               <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
-                Te ayuda a crear combos, optimizar la disposición de productos, hacer cross-selling y mejorar la experiencia del cliente.
+                • <strong>Recencia:</strong> Días desde la última compra.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Frecuencia:</strong> Cantidad de compras realizadas.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Monto:</strong> Valor total gastado por el cliente.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Segmento:</strong> Clasificación del cliente (Campeón, Leal, Potencial, etc.).
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words">
+                <strong>Para qué sirve:</strong> Identificar clientes valiosos, clientes en riesgo y oportunidades de reactivación.
               </p>
             </div>
           </div>

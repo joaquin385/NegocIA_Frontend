@@ -365,51 +365,146 @@ const Inventario = () => {
         <ExpandableSidebar
           title="Ayuda educativa - Análisis de Inventario"
           iconPosition="right"
-          content={
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">¿Qué es el Análisis de Inventario?</h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  El análisis de inventario es una herramienta fundamental para la gestión eficiente de productos en stock. 
-                  Permite optimizar la inversión en inventario, reducir costos de almacenamiento y mejorar la disponibilidad de productos.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="text-md font-semibold text-gray-800 mb-2">Métricas Clave</h4>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li><strong>Valor total del inventario:</strong> Suma del valor de todos los productos en stock</li>
-                  <li><strong>Rotación:</strong> Veces que se renueva el inventario en un período</li>
-                  <li><strong>Días de inventario:</strong> Tiempo promedio que permanece un producto en stock</li>
-                  <li><strong>Precisión:</strong> Exactitud entre inventario físico y sistema</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-md font-semibold text-gray-800 mb-2">Análisis ABC</h4>
-                <p className="text-sm text-gray-600 mb-2">
-                  Clasificación que categoriza productos según su importancia:
-                </p>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li><strong>Categoría A:</strong> 20% de productos que representan 80% del valor</li>
-                  <li><strong>Categoría B:</strong> 30% de productos con valor medio</li>
-                  <li><strong>Categoría C:</strong> 50% de productos con menor valor</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-md font-semibold text-gray-800 mb-2">Beneficios del Análisis</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Optimización de la inversión en inventario</li>
-                  <li>• Reducción de costos de almacenamiento</li>
-                  <li>• Mejora en la disponibilidad de productos</li>
-                  <li>• Identificación de productos obsoletos</li>
-                  <li>• Mejor planificación de compras</li>
-                </ul>
-              </div>
+        >
+          <div>
+            {/* Métricas Generales */}
+            <div className="bg-blue-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-blue-900 mb-2">📊 Métricas Generales de Inventario</h3>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Stock Total:</strong>
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Stock total (unidades):</strong> Cantidad total de productos en inventario.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Stock total ($):</strong> Valor total del inventario en dinero.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Valorización:</strong>
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Stock valorizado a costo:</strong> Valor del inventario según costo de compra.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Stock valorizado a precio de venta:</strong> Valor del inventario según precio de venta.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Indicadores de Gestión:</strong>
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Rotación de inventario:</strong> Veces que se renueva el inventario en un año.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>% Stock sobrevalorado:</strong> Porcentaje de productos con precio superior al mercado.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Productos críticos:</strong> Cantidad de productos con stock bajo o agotado.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words">
+                • <strong>Stock inmovilizado (30+ días):</strong> Productos que llevan más de 30 días sin movimiento.
+              </p>
             </div>
-          }
-        />
+
+            {/* Filtros */}
+            <div className="bg-green-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-green-900 mb-2">🔍 Filtros de Análisis</h3>
+              <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Filtro por Fecha:</strong> Permite seleccionar el período de análisis de inventario (hoy, ayer, última semana, etc.).
+              </p>
+              <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Filtro Categoría/Producto:</strong> Permite enfocar el análisis en categorías específicas (Libros, Papelería, Arte, etc.) o productos individuales.
+              </p>
+              <p className="text-green-800 text-xs leading-relaxed break-words">
+                Los filtros se aplican a todas las métricas, gráficos y la tabla de la página para análisis específicos.
+              </p>
+            </div>
+
+            {/* Gráficos */}
+            <div className="bg-slate-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-slate-900 mb-2">📈 Gráficos de Análisis</h3>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Evolución:</strong>
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Muestra la evolución temporal del valor del stock (cantidad, valor a costo, valor a venta). Permite identificar tendencias de inventario.
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Distribución:</strong>
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Gráfico circular que muestra la distribución del stock por categorías (Libros, Papelería, Arte, etc.).
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Rotación:</strong>
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Análisis de la rotación de inventario por producto o categoría (pendiente de implementación).
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Por categorías:</strong>
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Análisis detallado del inventario por categoría de productos (pendiente de implementación).
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words">
+                <strong>Análisis ABC:</strong> Clasificación del inventario por valor e importancia (pendiente de implementación).
+              </p>
+            </div>
+
+            {/* Tabla de Inventario */}
+            <div className="bg-indigo-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-indigo-900 mb-2">📋 Tabla de Inventario de Productos</h3>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Qué muestra:</strong>
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                Lista detallada de todos los productos en inventario con métricas de stock y análisis de rotación.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Métricas de Stock:</strong>
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Código:</strong> Identificador único del producto.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Nombre:</strong> Nombre del producto y categoría.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Stock Actual:</strong> Cantidad de unidades en inventario.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Stock Mínimo/Máximo:</strong> Límites de stock configurados.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Costo Unitario:</strong> Costo de compra por unidad.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Valor Inventario:</strong> Valor total del stock del producto.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Métricas de Rotación:</strong>
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Días Cobertura:</strong> Días que durará el stock actual.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Rotación Inventario:</strong> Veces que se renueva el stock en un año.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Stock Producto:</strong> Indicador de eficiencia de stock.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Producto Crítico:</strong> Si el producto está en riesgo de agotamiento.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Estado:</strong> Clasificación del nivel de stock (NORMAL, ALTO, BAJO).
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words">
+                <strong>Para qué sirve:</strong> Monitorear niveles de stock, identificar productos críticos, optimizar compras y gestionar la rotación de inventario.
+              </p>
+            </div>
+          </div>
+        </ExpandableSidebar>
       </div>
     </div>
   )

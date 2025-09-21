@@ -30,44 +30,145 @@ const PanelGeneral = () => {
         title="Ayuda educativa - Panel General" 
         iconPosition="left"
       >
-        <div className="space-y-5">
-          <div className="bg-slate-50 rounded-lg p-4">
-            <h3 className="text-base font-semibold text-slate-900 mb-3 flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2zm0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-              Indicadores Globales (Semáforo)
-            </h3>
-            <p className="text-blue-800 text-xs">
-              Métricas clave con colores: verde (bien), amarillo (atención), rojo (crítico).
+        <div>
+          {/* Tabla de Indicadores Globales */}
+          <div className="bg-blue-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-blue-900 mb-2">📊 Tabla de Indicadores Globales</h3>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Qué muestra:</strong>
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              Sistema de semáforo con métricas clave organizadas por categorías de salud del negocio.
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Estructura de la Tabla:</strong>
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Indicador:</strong> Nombre de la métrica
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Valor:</strong> Valor actual de la métrica
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Status:</strong> Estado con colores: Verde (Bien), Amarillo (Revisar), Rojo (Crítico)
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Detalle:</strong> Botón para expandir análisis específico
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words">
+              <strong>Categorías de Salud:</strong> Financiera, Comercial, Operativa, Proveedores, Clientes
             </p>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="font-semibold text-gray-800">Salud Financiera</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• Margen neto</li>
-              <li>• Liquidez</li>
-              <li>• Flujo de caja</li>
-            </ul>
+          {/* Métricas por Categoría */}
+          <div className="bg-green-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-green-900 mb-2">📈 Métricas por Categoría</h3>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Salud Financiera:</strong>
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Ventas:</strong> Ingresos totales generados
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Costos:</strong> Gastos totales del negocio
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Beneficio Neto:</strong> Ganancia después de gastos
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Margen de Beneficio:</strong> Porcentaje de rentabilidad
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Utilidad Neta:</strong> Beneficio final del negocio
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Salud Comercial:</strong>
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Ventas vs Objetivo:</strong> Cumplimiento de metas de ventas
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Ticket Promedio:</strong> Valor promedio por transacción
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Crecimiento Ventas:</strong> Incremento porcentual de ventas
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Salud Operativa:</strong>
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Rotación Inventario:</strong> Veces que se renueva el stock
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Stock Crítico:</strong> Porcentaje de productos con stock bajo
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Días Cobertura:</strong> Días que durará el stock actual
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Proveedores:</strong>
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Plazo Promedio Pago:</strong> Días promedio para pagar proveedores
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Cumplimiento:</strong> Porcentaje de cumplimiento de entregas
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Clientes:</strong>
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Satisfacción:</strong> Nivel de satisfacción del cliente
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words">
+              • <strong>Retención:</strong> Porcentaje de clientes que regresan
+            </p>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="font-semibold text-gray-800">Salud Comercial</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• Ventas vs objetivo</li>
-              <li>• Ticket promedio</li>
-              <li>• Crecimiento ventas</li>
-            </ul>
+          {/* Panel de Análisis Detallado */}
+          <div className="bg-slate-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-slate-900 mb-2">🔍 Panel de Análisis Detallado</h3>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              <strong>Qué hace:</strong>
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              Al hacer clic en "Detalle" de cualquier métrica, se despliega un análisis específico con gráficos, tablas y recomendaciones.
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              <strong>Tipos de Análisis Disponibles:</strong>
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              • <strong>Detalle de Ventas:</strong> Gráficos de evolución, distribución por categoría, análisis de productos
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              • <strong>Detalle de Costos:</strong> Análisis de costos por producto, proveedor y categoría
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              • <strong>Detalle de Beneficio:</strong> Análisis de rentabilidad, márgenes y ratios financieros
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words">
+              <strong>Para qué sirve:</strong> Obtener insights profundos sobre cada métrica para tomar decisiones informadas y acciones correctivas.
+            </p>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="font-semibold text-gray-800">Salud Operativa</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• Eficiencia operativa</li>
-              <li>• Satisfacción del cliente</li>
-              <li>• Tiempo de respuesta</li>
-            </ul>
+          {/* Sistema de Semáforo */}
+          <div className="bg-indigo-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-indigo-900 mb-2">🚦 Sistema de Semáforo</h3>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Colores de Status:</strong>
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Verde (Bien):</strong> La métrica está en rango óptimo y funcionando correctamente
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Amarillo (Revisar):</strong> La métrica necesita atención o está fuera del rango óptimo
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Rojo (Crítico):</strong> La métrica requiere acción inmediata o está en estado crítico
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words">
+              <strong>Interpretación:</strong> Los colores ayudan a identificar rápidamente qué áreas del negocio necesitan atención prioritaria.
+            </p>
           </div>
         </div>
       </ExpandableSidebar>

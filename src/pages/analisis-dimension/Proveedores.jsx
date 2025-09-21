@@ -866,57 +866,120 @@ const Proveedores = () => {
           title="Ayuda educativa - Análisis de Proveedores"
           iconPosition="right"
         >
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-sm font-semibold text-gray-800 mb-2">¿Qué es el Análisis de Proveedores?</h3>
-              <p className="text-xs text-gray-600 break-words">
-                El análisis de proveedores te permite evaluar el rendimiento, la confiabilidad y el valor de tus proveedores. 
-                Incluye métricas como retención, frecuencia de compras, y segmentación RFM para optimizar las relaciones comerciales.
+          <div>
+            {/* Métricas Generales */}
+            <div className="bg-blue-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-blue-900 mb-2">📊 Métricas Generales de Proveedores</h3>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Métricas de Compras:</strong>
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Monto total de compras:</strong> Valor total gastado en compras a proveedores en el período.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Cantidad de proveedores activos:</strong> Número de proveedores con compras en el período.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Variaciones de Costo:</strong>
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Variación del costo promedio vs período anterior:</strong> Cambio en el costo promedio comparado con el período anterior.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Variación del costo promedio vs mismo período año anterior:</strong> Cambio comparado con el mismo período del año pasado.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words">
+                • <strong>Relación cantidad comprada vs vendida:</strong> Ratio entre lo comprado y lo vendido (indica eficiencia de compras).
               </p>
             </div>
-            
-            <div>
-              <h3 className="text-sm font-semibold text-gray-800 mb-2">Métricas Generales</h3>
-              <p className="text-xs text-gray-600 break-words">
-                <strong>Proveedores Activos:</strong> Total de proveedores con actividad reciente.<br/>
-                <strong>Proveedores Nuevos:</strong> Proveedores incorporados en el período.<br/>
-                <strong>Proveedores Recurrentes:</strong> Proveedores con compras regulares.
+
+            {/* Filtros */}
+            <div className="bg-green-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-green-900 mb-2">🔍 Filtros de Análisis</h3>
+              <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Filtro por Fecha:</strong> Permite seleccionar el período de análisis de compras (hoy, ayer, última semana, etc.).
+              </p>
+              <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Filtro Categoría/Producto:</strong> Permite enfocar el análisis en categorías específicas (Libros, Papelería, Arte, etc.) o productos individuales.
+              </p>
+              <p className="text-green-800 text-xs leading-relaxed break-words">
+                Los filtros se aplican a todas las métricas, gráficos y la tabla de la página para análisis específicos.
               </p>
             </div>
-            
-            <div>
-              <h3 className="text-sm font-semibold text-gray-800 mb-2">Tasas de Retención</h3>
-              <p className="text-xs text-gray-600 break-words">
-                <strong>Tasa de Retención:</strong> Porcentaje de proveedores que continúan activos.<br/>
-                <strong>Tasa de Abandono:</strong> Porcentaje de proveedores que dejaron de comprar.
+
+            {/* Gráficos */}
+            <div className="bg-slate-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-slate-900 mb-2">📈 Gráficos de Análisis</h3>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Evolución:</strong>
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Muestra la evolución temporal del gasto en compras por mes. Permite identificar tendencias de gasto y estacionalidad.
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Distribución por compra:</strong>
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Analiza la distribución de compras por monto, mostrando cómo se concentran las compras en diferentes rangos de valor.
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Variación del costo promedio:</strong>
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Visualiza las variaciones porcentuales del costo promedio a lo largo del tiempo.
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Evolución de costos por categoría:</strong>
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Muestra cómo evolucionan los costos de compra por categoría de productos (Libros, Papelería, Arte, etc.).
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words">
+                <strong>Curva ABC:</strong> Clasificación de proveedores según su importancia (A: más importantes, B: moderados, C: menos importantes).
               </p>
             </div>
-            
-            <div>
-              <h3 className="text-sm font-semibold text-gray-800 mb-2">Valor del Proveedor</h3>
-              <p className="text-xs text-gray-600 break-words">
-                <strong>Valor Promedio:</strong> Monto promedio de compras por proveedor.<br/>
-                <strong>Frecuencia:</strong> Número promedio de compras por período.<br/>
-                <strong>Tiempo entre Compras:</strong> Días promedio entre transacciones.
+
+            {/* Tabla de Análisis */}
+            <div className="bg-indigo-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-indigo-900 mb-2">📋 Tabla de Análisis de Proveedores</h3>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Qué muestra:</strong>
               </p>
-            </div>
-            
-            <div>
-              <h3 className="text-sm font-semibold text-gray-800 mb-2">Segmentación RFM</h3>
-              <p className="text-xs text-gray-600 break-words">
-                <strong>Premium:</strong> Proveedores de alto valor y frecuencia.<br/>
-                <strong>Regulares:</strong> Proveedores con comportamiento moderado.<br/>
-                <strong>En Riesgo:</strong> Proveedores con actividad decreciente.
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                Lista detallada de proveedores con métricas de rendimiento y análisis de productos comprados.
               </p>
-            </div>
-            
-            <div>
-              <h3 className="text-sm font-semibold text-gray-800 mb-2">Gráficos Disponibles</h3>
-              <p className="text-xs text-gray-600 break-words">
-                <strong>Evolución:</strong> Tendencias de proveedores nuevos vs recurrentes.<br/>
-                <strong>Distribución por Compra:</strong> Análisis de frecuencia de compras.<br/>
-                <strong>Curva de Retención:</strong> Análisis temporal de retención.<br/>
-                <strong>Mapa de Calor:</strong> Patrones de actividad por tiempo.
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Métricas de Proveedores:</strong>
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>ID Proveedor:</strong> Identificador único del proveedor.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Nombre:</strong> Nombre del proveedor.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Total Comprado:</strong> Monto total de compras realizadas.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Cantidad Compras:</strong> Número de transacciones realizadas.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Costo Promedio:</strong> Costo promedio por compra.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Última Compra:</strong> Fecha de la última transacción.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Días Última Compra:</strong> Días transcurridos desde la última compra.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Categoría ABC:</strong> Clasificación de importancia del proveedor.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Participación:</strong> Porcentaje que representa del total de compras.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words">
+                <strong>Para qué sirve:</strong> Evaluar el rendimiento de proveedores, identificar los más importantes y detectar oportunidades de optimización.
               </p>
             </div>
           </div>

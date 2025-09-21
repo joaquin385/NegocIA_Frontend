@@ -226,51 +226,110 @@ const Finanzas = () => {
         <ExpandableSidebar
           title="Ayuda educativa - Análisis Financiero"
           iconPosition="right"
-          content={
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">¿Qué es el Análisis Financiero?</h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  El análisis financiero es una herramienta fundamental para evaluar la salud económica de tu negocio. 
-                  Permite identificar tendencias, medir la rentabilidad y tomar decisiones informadas sobre inversiones y gastos.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="text-md font-semibold text-gray-800 mb-2">Métricas Clave</h4>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li><strong>Ingresos totales:</strong> Suma de todos los ingresos generados</li>
-                  <li><strong>Beneficio neto:</strong> Ingresos menos gastos totales</li>
-                  <li><strong>Margen de beneficio:</strong> Porcentaje de beneficio sobre ingresos</li>
-                  <li><strong>ROI:</strong> Retorno sobre la inversión realizada</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-md font-semibold text-gray-800 mb-2">Análisis de Rentabilidad</h4>
-                <p className="text-sm text-gray-600 mb-2">
-                  Métricas que evalúan la eficiencia financiera:
-                </p>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li><strong>ROA:</strong> Retorno sobre activos totales</li>
-                  <li><strong>ROE:</strong> Retorno sobre patrimonio neto</li>
-                  <li><strong>Margen bruto:</strong> Beneficio antes de gastos operativos</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-md font-semibold text-gray-800 mb-2">Beneficios del Análisis</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Identificación de tendencias financieras</li>
-                  <li>• Optimización de recursos y gastos</li>
-                  <li>• Mejora en la toma de decisiones</li>
-                  <li>• Control de flujo de caja</li>
-                  <li>• Evaluación de rentabilidad por segmentos</li>
-                </ul>
-              </div>
+        >
+          <div>
+            {/* Métricas Generales */}
+            <div className="bg-blue-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-blue-900 mb-2">📊 Métricas Generales Financieras</h3>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Resultados Financieros:</strong>
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Ingresos totales:</strong> Suma de todos los ingresos generados por el negocio.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Gastos totales:</strong> Suma de todos los gastos operativos y no operativos.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Beneficio neto:</strong> Diferencia entre ingresos y gastos (ganancia o pérdida).
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Margen de beneficio:</strong> Porcentaje de beneficio sobre los ingresos totales.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>ROI:</strong> Retorno sobre la inversión realizada en el negocio.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Flujo de Caja:</strong>
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Flujo de caja operativo:</strong> Dinero generado por las operaciones del negocio.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Flujo de caja libre:</strong> Dinero disponible después de inversiones y gastos operativos.
+              </p>
+              <p className="text-blue-800 text-xs leading-relaxed break-words">
+                • <strong>Días de caja disponibles:</strong> Días que puede operar el negocio con el efectivo actual.
+              </p>
             </div>
-          }
-        />
+
+            {/* Filtros */}
+            <div className="bg-green-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-green-900 mb-2">🔍 Filtros de Análisis</h3>
+              <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Filtro por Fecha:</strong> Permite seleccionar el período de análisis financiero (hoy, ayer, última semana, etc.).
+              </p>
+              <p className="text-green-800 text-xs leading-relaxed break-words">
+                Los filtros se aplican a todas las métricas, gráficos y la tabla de la página para análisis específicos por período.
+              </p>
+            </div>
+
+            {/* Gráficos */}
+            <div className="bg-slate-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-slate-900 mb-2">📈 Gráficos de Análisis</h3>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Evolución:</strong>
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Muestra la evolución temporal de ingresos totales, gastos totales y beneficio neto. Permite identificar tendencias de crecimiento y rentabilidad.
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                <strong>Rentabilidad:</strong>
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+                Visualiza la evolución de indicadores de rentabilidad: Margen %, ROI (Retorno sobre Inversión) y ROA (Retorno sobre Activos).
+              </p>
+              <p className="text-slate-700 text-xs leading-relaxed break-words">
+                <strong>Para qué sirve:</strong> Identificar patrones estacionales, tendencias de rentabilidad y el impacto de estrategias financieras.
+              </p>
+            </div>
+
+            {/* Tabla de Estado de Resultados */}
+            <div className="bg-indigo-50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-indigo-900 mb-2">📋 Estado de Resultados</h3>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Qué muestra:</strong>
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                Reporte financiero detallado que muestra los ingresos, gastos y beneficios del negocio en un período específico.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                <strong>Estructura del Estado de Resultados:</strong>
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Ingresos:</strong> Ventas brutas, descuentos, ingresos netos.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Costos:</strong> Costo de productos vendidos, costos directos.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Gastos Operativos:</strong> Gastos de administración, ventas, marketing.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Gastos No Operativos:</strong> Intereses, impuestos, otros gastos.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Resultados:</strong> Beneficio bruto, beneficio operativo, beneficio neto.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+                • <strong>Márgenes:</strong> Margen bruto, margen operativo, margen neto.
+              </p>
+              <p className="text-indigo-800 text-xs leading-relaxed break-words">
+                <strong>Para qué sirve:</strong> Evaluar la rentabilidad del negocio, identificar áreas de mejora en costos y gastos, y tomar decisiones financieras informadas.
+              </p>
+            </div>
+          </div>
+        </ExpandableSidebar>
       </div>
     </div>
   )

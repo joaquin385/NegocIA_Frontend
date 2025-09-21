@@ -295,28 +295,142 @@ const Productos = () => {
         iconPosition="right"
       >
         <div>
-          {/* Placeholder para contenido educativo */}
+          {/* Métricas Generales */}
           <div className="bg-blue-50 rounded-lg p-4">
-            <h3 className="text-sm font-semibold text-blue-900 mb-2">📦 Propósito de esta página</h3>
+            <h3 className="text-sm font-semibold text-blue-900 mb-2">📊 Métricas Generales de Productos</h3>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Ventas y Rotación:</strong>
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Unidades vendidas:</strong> Total de productos vendidos en el período seleccionado.
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Tickets vendidos:</strong> Cantidad de transacciones que incluyeron productos.
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Ventas totales:</strong> Valor en dinero de todas las ventas de productos.
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Rentabilidad total:</strong> Ganancia neta generada por los productos.
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>% de rotación:</strong> Velocidad con que se mueven los productos del inventario.
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Margen:</strong>
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Margen promedio %:</strong> Ganancia promedio por producto como porcentaje del precio de venta.
+            </p>
+            <p className="text-blue-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Margen máximo/mínimo %:</strong> Rango de rentabilidad entre productos.
+            </p>
             <p className="text-blue-800 text-xs leading-relaxed break-words">
-              Esta página te permite analizar el rendimiento de productos desde múltiples perspectivas temporales y métricas. 
-              Podrás identificar tendencias, patrones y oportunidades de mejora en tu catálogo de productos.
+              <strong>Concentración:</strong> Indica qué porcentaje de las ventas y rentabilidad provienen de los mejores productos.
             </p>
           </div>
 
-          {/* Placeholder para gráficos */}
+          {/* Filtros */}
           <div className="bg-green-50 rounded-lg p-4">
-            <h3 className="text-sm font-semibold text-green-900 mb-2">📈 Gráficos de Análisis</h3>
+            <h3 className="text-sm font-semibold text-green-900 mb-2">🔍 Filtros de Análisis</h3>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Filtro por Fecha:</strong> Permite seleccionar el período de análisis (hoy, ayer, última semana, etc.).
+            </p>
+            <p className="text-green-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Filtro Categoría/Producto:</strong> Permite enfocar el análisis en categorías específicas (Libros, Papelería, Arte, etc.) o productos individuales.
+            </p>
             <p className="text-green-800 text-xs leading-relaxed break-words">
-              Los gráficos te ayudarán a visualizar tendencias, distribuciones y patrones en los datos de productos.
+              Los filtros se aplican a todos los gráficos y la tabla de la página para análisis específicos.
             </p>
           </div>
 
-          {/* Placeholder para tabla */}
+          {/* Gráfico de Evolución */}
+          <div className="bg-slate-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-slate-900 mb-2">📈 Gráfico de Evolución de Productos</h3>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              <strong>Qué muestra:</strong>
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              La evolución temporal de diferentes métricas de productos según el período seleccionado.
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              <strong>Métricas disponibles:</strong>
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              • <strong>Unidades vendidas:</strong> Cantidad de productos vendidos por período.
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              • <strong>Ventas:</strong> Valor en dinero de las ventas por período.
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              • <strong>Margen $:</strong> Ganancia en pesos por período.
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              • <strong>Margen %:</strong> Porcentaje de ganancia por período.
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words mb-2">
+              <strong>Agrupaciones:</strong> Día, Mes, Año - para ver tendencias a diferentes escalas de tiempo.
+            </p>
+            <p className="text-slate-700 text-xs leading-relaxed break-words">
+              <strong>Para qué sirve:</strong> Identificar patrones estacionales, tendencias de crecimiento/declive y el impacto de estrategias comerciales.
+            </p>
+          </div>
+
+          {/* Tabla de Análisis */}
           <div className="bg-indigo-50 rounded-lg p-4">
-            <h3 className="text-sm font-semibold text-indigo-900 mb-2">📋 Tabla de Comparación</h3>
+            <h3 className="text-sm font-semibold text-indigo-900 mb-2">📋 Tabla de Análisis de Productos</h3>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Qué muestra:</strong>
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              Lista detallada de todos los productos con sus métricas de rendimiento individual.
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Columnas principales:</strong>
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Producto:</strong> Nombre y categoría del producto.
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Ventas:</strong> Cantidad de unidades vendidas y valor en dinero.
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Margen:</strong> Ganancia en pesos y porcentaje.
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Rotación:</strong> Velocidad de venta del producto.
+            </p>
+            <p className="text-indigo-800 text-xs leading-relaxed break-words mb-2">
+              • <strong>Análisis:</strong> Clasificación del rendimiento (Alto, Medio, Bajo).
+            </p>
             <p className="text-indigo-800 text-xs leading-relaxed break-words">
-              La tabla te permitirá comparar métricas de productos entre diferentes períodos.
+              <strong>Para qué sirve:</strong> Identificar productos estrella, productos problemáticos y oportunidades de mejora específicas por producto.
+            </p>
+          </div>
+
+          {/* Preguntas de Análisis */}
+          <div className="bg-purple-50 rounded-lg p-4">
+            <h3 className="text-sm font-semibold text-purple-900 mb-2">❓ Preguntas de Análisis</h3>
+            <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Qué es:</strong>
+            </p>
+            <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+              Preguntas predefinidas que ayudan a interpretar los datos y tomar decisiones basadas en la información mostrada.
+            </p>
+            <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+              <strong>Ejemplos de preguntas:</strong>
+            </p>
+            <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+              • "¿Cuáles son los productos con mejor margen?"
+            </p>
+            <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+              • "¿Qué productos necesitan promoción?"
+            </p>
+            <p className="text-purple-800 text-xs leading-relaxed break-words mb-2">
+              • "¿Cuál es la tendencia de ventas por categoría?"
+            </p>
+            <p className="text-purple-800 text-xs leading-relaxed break-words">
+              <strong>Para qué sirve:</strong> Guiar el análisis y ayudar a identificar insights importantes de los datos.
             </p>
           </div>
         </div>
