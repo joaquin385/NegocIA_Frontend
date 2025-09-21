@@ -146,9 +146,21 @@ package-lock.json.bak
 yarn.lock.bak
 pnpm-lock.yaml.bak
 
-# Context and documentation files (optional - remove if you want to version them)
+# Documentation files (optional - remove if you want to version them)
 # CONTEXT.md
 # PROJECT_NOTES.md
 # DEVELOPMENT_NOTES.md
 # TODO.md
 # IDEAS.md
+
+# Project documentation files
+FOLDER_STRUCTURE.md
+README_INSTALLATION.md
+TECHNICAL_GUIDE.md
+SECURITY_ANALYSIS.md
+SECURITY_HEADERS.md
+PROJECT_STRUCTURE.md
+
+# Development and analysis files
+*.analysis
+*.audit

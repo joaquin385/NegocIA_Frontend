@@ -1,0 +1,93 @@
+# Documentation files
+*.md
+README.md
+README_INSTALLATION.md
+FOLDER_STRUCTURE.md
+TECHNICAL_GUIDE.md
+SECURITY_ANALYSIS.md
+SECURITY_HEADERS.md
+PROJECT_STRUCTURE.md
+src/components/README_Layout.md
+src/components/README_Filtros.md
+
+# Development files
+.eslintrc*
+.eslintcache
+.gitignore
+.vercelignore
+.npmignore
+.vscode/
+.idea/
+
+# Build and cache directories
+dist/
+build/
+.vite/
+.cache/
+.parcel-cache/
+
+# Environment files
+.env*
+!.env.example
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Security and analysis files
+*.analysis
+*.audit
+security-report.*
+
+# Python files (if any)
+*.py
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+requirements.txt
+
+# Other deployment files
+Dockerfile
+docker-compose.yml
+.dockerignore

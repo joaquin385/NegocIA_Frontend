@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { validateDate } from '@/utils/validation';
 
 const FiltrosFecha = ({ 
   fechaInicio = "2025-07-28", 
@@ -12,17 +13,25 @@ const FiltrosFecha = ({
 
   const handleFechaInicioChange = (e) => {
     const newDate = e.target.value;
-    setFechaInicioLocal(newDate);
-    if (onFechaInicioChange) {
-      onFechaInicioChange(newDate);
+    
+    // Validar fecha antes de actualizar
+    if (validateDate(newDate)) {
+      setFechaInicioLocal(newDate);
+      if (onFechaInicioChange) {
+        onFechaInicioChange(newDate);
+      }
     }
   };
 
   const handleFechaFinChange = (e) => {
     const newDate = e.target.value;
-    setFechaFinLocal(newDate);
-    if (onFechaFinChange) {
-      onFechaFinChange(newDate);
+    
+    // Validar fecha antes de actualizar
+    if (validateDate(newDate)) {
+      setFechaFinLocal(newDate);
+      if (onFechaFinChange) {
+        onFechaFinChange(newDate);
+      }
     }
   };
 

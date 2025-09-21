@@ -2,6 +2,7 @@ import { useAtom } from 'jotai'
 import { useParams } from 'react-router-dom'
 import ExpandableSidebar from '@/components/ExpandableSidebar'
 import { sidebarOpenAtom } from '@/stores'
+import { validateUrlParam, VALID_DIMENSIONS } from '@/utils/validation'
 import Ventas from './analisis-dimension/Ventas'
 import Tickets from './analisis-dimension/Tickets'
 import Clientes from './analisis-dimension/Clientes'
@@ -11,8 +12,11 @@ import Inventario from './analisis-dimension/Inventario'
 import Finanzas from './analisis-dimension/Finanzas'
 
 const AnalisisDimension = () => {
-  const { dimension } = useParams()
+  const { dimension: rawDimension } = useParams()
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
+  
+  // Sanitizar y validar el parámetro de dimensión
+  const dimension = validateUrlParam(rawDimension, VALID_DIMENSIONS, 'ventas')
 
   const dimensionTitles = {
     ventas: 'Análisis por Dimensión - Ventas',
