@@ -6,6 +6,7 @@ import SecondaryNavigation from './components/SecondaryNavigation'
 import PanelGeneral from './pages/PanelGeneral'
 import AnalisisDimension from './pages/AnalisisDimension'
 import CargaDatos from './pages/CargaDatos'
+import Configuracion from './pages/Configuracion'
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
               
               {/* Ruta de carga de datos */}
               <Route path="/carga-datos" element={<CargaDatos />} />
+              
+              {/* Ruta de configuración */}
+              <Route path="/configuracion" element={<Configuracion />} />
               
               {/* Ruta por defecto para cualquier otra ruta */}
               <Route path="*" element={<Navigate to="/" replace />} />
