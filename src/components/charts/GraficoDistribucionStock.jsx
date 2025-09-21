@@ -15,29 +15,29 @@ const GraficoDistribucionStock = ({
 
   // Colores para las categorías
   const colores = [
-    '#3b82f6', // Azul - Carnes
-    '#10b981', // Verde - Lácteos
-    '#ef4444', // Rojo - Granos
-    '#4338ca', // Índigo - Verduras
-    '#f59e0b', // Naranja - Frutas
-    '#06b6d4', // Cian - Bebidas
-    '#1e40af', // Azul oscuro - Snacks
-    '#059669', // Verde oscuro - Limpieza
-    '#dc2626'  // Rojo oscuro - Higiene
+    '#3b82f6', // Azul - Libros
+    '#10b981', // Verde - Textos Académicos
+    '#ef4444', // Rojo - Papelería
+    '#4338ca', // Índigo - Arte
+    '#f59e0b', // Naranja - Oficina
+    '#06b6d4', // Cian - Electrónicos
+    '#1e40af', // Azul oscuro - Referencias
+    '#059669', // Verde oscuro - Literatura
+    '#dc2626'  // Rojo oscuro - Revistas
   ]
 
   // Función para generar datos simulados si no se proporcionan
   const generarDatosSimulados = () => {
     const categorias = [
-      { nombre: 'Carnes', valorCosto: 728378, valorVenta: 1092567, unidades: 15420 },
-      { nombre: 'Lácteos', valorCosto: 447927, valorVenta: 671891, unidades: 8920 },
-      { nombre: 'Granos', valorCosto: 363688, valorVenta: 545532, unidades: 12340 },
-      { nombre: 'Verduras', valorCosto: 113560, valorVenta: 170340, unidades: 4560 },
-      { nombre: 'Frutas', valorCosto: 291930, valorVenta: 437895, unidades: 7830 },
-      { nombre: 'Bebidas', valorCosto: 606603, valorVenta: 909905, unidades: 12980 },
-      { nombre: 'Snacks', valorCosto: 655767, valorVenta: 983651, unidades: 18750 },
-      { nombre: 'Limpieza', valorCosto: 702851, valorVenta: 1054277, unidades: 11200 },
-      { nombre: 'Higiene', valorCosto: 128755, valorVenta: 193133, unidades: 3450 }
+      { nombre: 'Libros', valorCosto: 728378, valorVenta: 1092567, unidades: 15420 },
+      { nombre: 'Textos Académicos', valorCosto: 447927, valorVenta: 671891, unidades: 8920 },
+      { nombre: 'Papelería', valorCosto: 363688, valorVenta: 545532, unidades: 12340 },
+      { nombre: 'Arte', valorCosto: 113560, valorVenta: 170340, unidades: 4560 },
+      { nombre: 'Oficina', valorCosto: 291930, valorVenta: 437895, unidades: 7830 },
+      { nombre: 'Electrónicos', valorCosto: 606603, valorVenta: 909905, unidades: 12980 },
+      { nombre: 'Referencias', valorCosto: 655767, valorVenta: 983651, unidades: 18750 },
+      { nombre: 'Literatura', valorCosto: 702851, valorVenta: 1054277, unidades: 11200 },
+      { nombre: 'Revistas', valorCosto: 128755, valorVenta: 193133, unidades: 3450 }
     ]
 
     return categorias.map((categoria, index) => ({

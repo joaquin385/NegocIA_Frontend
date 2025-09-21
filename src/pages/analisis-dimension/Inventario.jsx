@@ -14,7 +14,7 @@ const Inventario = () => {
   const [metrica, setMetrica] = useState('valorCosto')
   const [fechaInicio, setFechaInicio] = useState('2025-07-28')
   const [fechaFin, setFechaFin] = useState('2025-08-28')
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Carnes')
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Libros')
   const [productosSeleccionados, setProductosSeleccionados] = useState(new Set())
   const [dropdownAbierto, setDropdownAbierto] = useState(false)
   const dropdownRef = useRef(null)
@@ -85,11 +85,12 @@ const Inventario = () => {
 
   // Datos de categorías y productos para el filtro
   const categoriasProductos = {
-    'Carnes': ['Carne de Res', 'Carne de Pollo', 'Carne de Cerdo', 'Carne de Cordero'],
-    'Lácteos': ['Leche', 'Queso', 'Yogur', 'Mantequilla'],
-    'Verduras': ['Tomate', 'Lechuga', 'Zanahoria', 'Cebolla'],
-    'Frutas': ['Manzana', 'Plátano', 'Naranja', 'Fresa'],
-    'Granos': ['Arroz', 'Frijoles', 'Lentejas', 'Garbanzos']
+    'Libros': ['Novelas', 'Biografías', 'Historia', 'Ciencia Ficción'],
+    'Textos Académicos': ['Matemáticas', 'Ciencias', 'Literatura', 'Historia'],
+    'Papelería': ['Cuadernos', 'Bolígrafos', 'Lápices', 'Marcadores'],
+    'Arte': ['Acuarelas', 'Pinceles', 'Lienzos', 'Pegamento'],
+    'Oficina': ['Carpetas', 'Grapas', 'Tijeras', 'Reglas'],
+    'Electrónicos': ['Calculadoras', 'Tablets', 'Audífonos', 'Cargadores']
   }
 
   // Efecto para cerrar el dropdown cuando se hace clic fuera

@@ -12,7 +12,7 @@ const Productos = () => {
   const [isSidebarOpen] = useAtom(sidebarOpenAtom)
   const [activeTab, setActiveTab] = useState('evolucion')
   const [metrica, setMetrica] = useState('cantidad')
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Carnes')
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Libros')
   const [productosSeleccionados, setProductosSeleccionados] = useState(new Set())
   const [dropdownAbierto, setDropdownAbierto] = useState(false)
   const [fechaInicio, setFechaInicio] = useState('2025-07-28')
@@ -35,12 +35,12 @@ const Productos = () => {
 
   // Datos de categorías y productos
   const categoriasProductos = {
-    'Carnes': ['Carne vacuna', 'Pollo', 'Cerdo'],
-    'Galletitas': ['Galletita A', 'Galletita B'],
-    'Lácteos': ['Leche', 'Queso'],
-    'Bebidas': ['Gaseosa', 'Jugos', 'Agua'],
-    'Limpieza': ['Detergente', 'Lavandina', 'Jabón'],
-    'Panadería': ['Pan', 'Facturas', 'Tortas']
+    'Libros': ['Novelas', 'Biografías', 'Historia', 'Ciencia Ficción'],
+    'Textos Académicos': ['Matemáticas', 'Ciencias', 'Literatura', 'Historia'],
+    'Papelería': ['Cuadernos', 'Bolígrafos', 'Lápices', 'Marcadores'],
+    'Arte': ['Acuarelas', 'Pinceles', 'Lienzos', 'Pegamento'],
+    'Oficina': ['Carpetas', 'Grapas', 'Tijeras', 'Reglas'],
+    'Electrónicos': ['Calculadoras', 'Tablets', 'Audífonos', 'Cargadores']
   }
 
   // Datos simulados para el gráfico de evolución
