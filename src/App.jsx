@@ -7,6 +7,7 @@ import PanelGeneral from './pages/PanelGeneral'
 import AnalisisDimension from './pages/AnalisisDimension'
 import CargaDatos from './pages/CargaDatos'
 import Configuracion from './pages/Configuracion'
+import BotonFeedback from './components/BotonFeedback'
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
+          
+          {/* Botón de feedback flotante */}
+          <BotonFeedback />
         </div>
       </Router>
     </Provider>
